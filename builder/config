@@ -1,0 +1,39 @@
+# Configuration file for release-replicator.sh script
+
+# Base directory where we'll checkout the source code
+SRC_DIR=../sources
+# Where build projects will end up. 
+BUILD_DIR=build
+
+# SVN URLs of the required modules
+# Replicator URL.
+TREP_SVN_URL=https://tungsten-replicator.googlecode.com/svn/trunk/replicator
+# Replicator Extras URL.
+TREP_EXT_SVN_URL=https://tungsten-replicator.googlecode.com/svn/trunk/replicator-extra
+# Commons URL.
+TCOM_SVN_URL=https://tungsten-replicator.googlecode.com/svn/trunk/commons
+# Bristlecone URL.
+BRI_SVN_URL=https://bristlecone.svn.sourceforge.net/svnroot/bristlecone/trunk/bristlecone
+# Tungsten Cookbook URL.
+COOK_SVN_URL=https://tungsten-toolbox.googlecode.com/svn/trunk/cookbook
+
+# Version name of the release to build
+VERSION_MAJOR=2
+VERSION_MINOR=1
+VERSION_REVISION=0
+VERSION=$VERSION_MAJOR.$VERSION_MINOR.$VERSION_REVISION
+
+# Set to 1 to use existing code (found in $BUILD_DIR)
+SKIP_CHECKOUT=0
+
+# Set to 1 to skip the build.
+SKIP_BUILD=0
+
+# Set to 1 to skip source generation.
+SKIP_SOURCE=1
+
+# Set to 0 to also build a tools package
+SKIP_TOOLS=1
+
+# Include the tpm script and code
+INCLUDE_TPM=1
