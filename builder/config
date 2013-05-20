@@ -1,7 +1,7 @@
 # Configuration file for release-replicator.sh script
 
 # Base directory where we'll checkout the source code
-SRC_DIR=../sources
+SRC_DIR=..
 # Where build projects will end up. 
 BUILD_DIR=build
 
@@ -24,7 +24,7 @@ VERSION_REVISION=0
 VERSION=$VERSION_MAJOR.$VERSION_MINOR.$VERSION_REVISION
 
 # Set to 1 to use existing code (found in $BUILD_DIR)
-SKIP_CHECKOUT=0
+SKIP_CHECKOUT=1
 
 # Set to 1 to skip the build.
 SKIP_BUILD=0

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/1/trunk/replicator/doc/licenses
+END
+EXCEPTIONS-CONNECTOR-J
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1/trunk/replicator/doc/licenses/EXCEPTIONS-CONNECTOR-J
+END
+wrapper-community-license.txt
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1/trunk/replicator/doc/licenses/wrapper-community-license.txt
+END
+LICENSE-CONNECTOR-J
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1/trunk/replicator/doc/licenses/LICENSE-CONNECTOR-J
+END

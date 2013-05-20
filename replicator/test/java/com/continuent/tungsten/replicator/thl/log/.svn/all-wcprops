@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1341/trunk/replicator/test/java/com/continuent/tungsten/replicator/thl/log
+END
+LogRecordTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/255/trunk/replicator/test/java/com/continuent/tungsten/replicator/thl/log/LogRecordTest.java
+END
+LogHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/255/trunk/replicator/test/java/com/continuent/tungsten/replicator/thl/log/LogHelper.java
+END
+LogFileTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/381/trunk/replicator/test/java/com/continuent/tungsten/replicator/thl/log/LogFileTest.java
+END
+LogFileExtendedTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/255/trunk/replicator/test/java/com/continuent/tungsten/replicator/thl/log/LogFileExtendedTest.java
+END
+WriteLockTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/255/trunk/replicator/test/java/com/continuent/tungsten/replicator/thl/log/WriteLockTest.java
+END
+DiskLogTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1341/trunk/replicator/test/java/com/continuent/tungsten/replicator/thl/log/DiskLogTest.java
+END
+DiskLogExtendedTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/1341/trunk/replicator/test/java/com/continuent/tungsten/replicator/thl/log/DiskLogExtendedTest.java
+END
+SimpleLogReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/312/trunk/replicator/test/java/com/continuent/tungsten/replicator/thl/log/SimpleLogReader.java
+END
+SimpleLogFileReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/255/trunk/replicator/test/java/com/continuent/tungsten/replicator/thl/log/SimpleLogFileReader.java
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1293/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor
+END
+RawExtractor.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/356/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/RawExtractor.java
+END
+DummyExtractor.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/356/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/DummyExtractor.java
+END
+ParallelExtractor.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/355/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/ParallelExtractor.java
+END
+ExtractorException.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/23/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/ExtractorException.java
+END
+Extractor.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/356/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/Extractor.java
+END
+ExtractorWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/ExtractorWrapper.java
+END

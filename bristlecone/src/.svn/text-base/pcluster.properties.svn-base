@@ -1,0 +1,59 @@
+create.table=create table many_threads (a int primary key, b varchar(255), value int)
+drop.table=drop table many_threads
+truncateTable=truncate table many_threads
+sequoia.base=CREATE TABLE sequoiaSABase(\
+    objectName              varchar(255) NOT NULL,\
+    objectType              int          NOT NULL,\
+    lastUpdate              timestamp    NOT NULL,\
+    paramCount              int          DEFAULT 0 NOT NULL,\
+    hasSelect               int          DEFAULT 0 NOT NULL,\
+    hasInsert               int          DEFAULT 0 NOT NULL,\
+    hasUpdate               int          DEFAULT 0 NOT NULL,\
+    hasDelete               int          DEFAULT 0 NOT NULL,\
+    hasReplace              int          DEFAULT 0 NOT NULL,\
+    hasDDLWrite             int          DEFAULT 0 NOT NULL,\
+    hasTransaction          int          DEFAULT 0 NOT NULL,\
+    hasUniqueWriteReference int          DEFAULT 0 NOT NULL,\
+    isCausallyDependent     int          DEFAULT 0 NOT NULL,\
+    isCommutative           int          DEFAULT 0 NOT NULL,\
+    CONSTRAINT PK_SequoiaBase \
+    PRIMARY KEY (objectName))
+delete.sequoia.base=delete from sequoiaSABase where objectName like '%many_threads'
+sequoia.references=CREATE TABLE sequoiaSAReferences(\
+    baseObjectName       varchar(255) NOT NULL,\
+    objectName           varchar(255) NOT NULL,\
+    objectType           int          NOT NULL,\
+    referencedInSelect   int          DEFAULT 0 NOT NULL,\
+    referencedInInsert   int          DEFAULT 0 NOT NULL,\
+    referencedInUpdate   int          DEFAULT 0 NOT NULL,\
+    referencedInDelete   int          DEFAULT 0 NOT NULL,\
+    referencedInReplace  int          DEFAULT 0 NOT NULL,\
+    referencedInDDLWrite int          DEFAULT 0 NOT NULL,\
+    referencedInDDLRead  int          DEFAULT 0 NOT NULL,\
+    CONSTRAINT PK_SequoiaReferences \
+    PRIMARY KEY (baseObjectName,objectName))
+delete.sequoia.references=delete from sequoiaSAReferences where objectName = 'many_threads'
+callablestatement.executeUpate=false
+create.insertProc=\
+create function insert_many_threads(integer, text) returns integer as' \
+ insert into many_threads values($1, $2, 0); \
+ select 1 as result; \
+' LANGUAGE SQL
+drop.insertProc=drop function insert_many_threads(integer, text) 
+create.updateProc=\
+create function update_many_threads (text, integer)returns integer as' \
+ update many_threads set value = a * a, b = b || $1 where a = $2; \
+ select 1 as result; \
+' LANGUAGE SQL
+drop.updateProc=drop function update_many_threads(text, integer)
+create.deleteProc=\
+create function delete_many_threads(integer) returns integer as'\
+ delete from many_threads where a = $1; \
+ select 1 as result; \
+' LANGUAGE SQL
+drop.deleteProc=drop function delete_many_threads(integer)
+create.selectProc=\
+create function select_many_threads (integer) returns setof integer as ' \
+ select a from many_threads where a = $1; \
+' LANGUAGE sql 
+drop.selectProc=drop function select_many_threads(integer)

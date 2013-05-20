@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/bristlecone/!svn/ver/156/trunk/bristlecone
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/bristlecone/!svn/ver/136/trunk/bristlecone/.classpath
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/LICENSE
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/.project
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/bristlecone/!svn/ver/126/trunk/bristlecone/build.properties
+END
+sample.test.properties
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/bristlecone/!svn/ver/41/trunk/bristlecone/sample.test.properties
+END
+.checkstyle
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/.checkstyle
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/bristlecone/!svn/ver/22/trunk/bristlecone/README
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/bristlecone/!svn/ver/150/trunk/bristlecone/build.xml
+END

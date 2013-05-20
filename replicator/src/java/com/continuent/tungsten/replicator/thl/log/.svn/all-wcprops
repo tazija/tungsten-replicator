@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1341/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log
+END
+LogEventRotateWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/369/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/LogEventRotateWriter.java
+END
+LogConnection.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1341/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/LogConnection.java
+END
+LogEventReplWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/369/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/LogEventReplWriter.java
+END
+WriteLock.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/255/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/WriteLock.java
+END
+LogFlushTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/369/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/LogFlushTask.java
+END
+LogTimeoutException.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/255/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/LogTimeoutException.java
+END
+LogIndex.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1341/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/LogIndex.java
+END
+LogCursorManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/369/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/LogCursorManager.java
+END
+LogCursor.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/393/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/LogCursor.java
+END
+LogRecord.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/255/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/LogRecord.java
+END
+LogFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1341/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/LogFile.java
+END
+LogConsistencyException.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/255/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/LogConsistencyException.java
+END
+LogEventRotateReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/369/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/LogEventRotateReader.java
+END
+LogPositionException.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/408/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/LogPositionException.java
+END
+LogEventReadFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/369/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/LogEventReadFilter.java
+END
+LogEventReplReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/369/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/LogEventReplReader.java
+END
+LogIndexEntry.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1341/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/LogIndexEntry.java
+END
+LogConnectionManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/369/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/LogConnectionManager.java
+END
+DiskLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1341/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/log/DiskLog.java
+END

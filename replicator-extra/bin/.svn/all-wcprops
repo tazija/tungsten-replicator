@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/321/trunk/replicator-extra/bin
+END
+migrate-service-mysql-tungsten
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/19/trunk/replicator-extra/bin/migrate-service-mysql-tungsten
+END
+migrate-service-tungsten-mysql
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/19/trunk/replicator-extra/bin/migrate-service-tungsten-mysql
+END

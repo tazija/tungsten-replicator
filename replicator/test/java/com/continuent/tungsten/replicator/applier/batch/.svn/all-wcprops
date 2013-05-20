@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1151/trunk/replicator/test/java/com/continuent/tungsten/replicator/applier/batch
+END
+TestNativeBatch.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/1151/trunk/replicator/test/java/com/continuent/tungsten/replicator/applier/batch/TestNativeBatch.java
+END
+TestJavascriptBatch.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/1151/trunk/replicator/test/java/com/continuent/tungsten/replicator/applier/batch/TestJavascriptBatch.java
+END

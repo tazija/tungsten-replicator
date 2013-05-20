@@ -1,0 +1,111 @@
+#!/bin/bash
+# (C) Copyright 2012,2013 Continuent, Inc - Released under the New BSD License
+# Version 1.0.5 - 2013-04-03
+
+cookbook_dir=$(dirname $0)
+
+if [ ! -f $cookbook_dir/BOOTSTRAP.sh ]
+then
+    echo "$cookbook_dir/BOOTSTRAP.sh not found"
+    exit 1
+fi
+
+if [ ! -f $cookbook_dir/utilities.sh ]
+then
+    echo "$cookbook_dir/utilities.sh not found"
+    exit 1
+fi
+
+. $cookbook_dir/BOOTSTRAP.sh NODES_MASTER_SLAVE.sh
+. $cookbook_dir/utilities.sh
+
+check_current_topology "master_slave"
+
+function find_roles {
+    SLAVE_COUNT=0
+    SLAVES=()
+    FREE_COUNT=0
+    FREE=()
+    for NODE in ${ALL_NODES[*]} 
+    do 
+        echo -n "$NODE "
+        role=$($TREPCTL -host $NODE services |grep role | awk '{print $3}')
+        if [ "$role" == "master" ]
+        then
+            export MASTER=$NODE
+            echo "master"
+    	else
+	    	if  [ "$role" == "slave" ] 
+	    	then
+	            SLAVES[$SLAVE_COUNT]=$NODE
+	            SLAVE_COUNT=$(($SLAVE_COUNT+1))
+	            echo "slave"
+			else
+				FREE[$FREE_COUNT]=$NODE
+	            FREE_COUNT=$(($FREE_COUNT+1))
+			    echo "free"
+			fi
+	 fi
+    done
+
+    if [ -z "$MASTER" ]
+    then
+        echo "unable to find a master"
+        exit 1
+    fi
+    export  MASTERS=($MASTER)
+    export SLAVES=(${SLAVES[*]})
+    export FREE=(${FREE[*]})
+}
+
+find_roles
+
+NODE_TO_ADD=${FREE[0]}
+
+DONOR=${SLAVES[0]}
+
+echo "Populating $NODE_TO_ADD with data from $DONOR"
+MYSQL="mysql -u $DATABASE_USER -p$DATABASE_PASSWORD -P $DATABASE_PORT"
+MYSQLDUMP="mysqldump -u $DATABASE_USER -p$DATABASE_PASSWORD -P $DATABASE_PORT"
+
+$MYSQLDUMP --all-databases --single-transaction -h $DONOR > /tmp/donor.dmp
+$MYSQL -h $NODE_TO_ADD < /tmp/donor.dmp
+
+rm /tmp/donor.dmp
+
+echo "Adding $NODE_TO_ADD into the cluster"
+
+ 
+date >> $INSTALL_LOG
+
+INSTALL_COMMAND="./tools/tungsten-installer \
+    --master-slave \
+    --master-host=$MASTER \
+    --datasource-user=$DATABASE_USER \
+    --datasource-password=$DATABASE_PASSWORD \
+    --datasource-port=$DATABASE_PORT \
+    --service-name=$TUNGSTEN_SERVICE \
+    --home-directory=$TUNGSTEN_BASE \
+    --cluster-hosts=$NODE_TO_ADD \
+    --datasource-mysql-conf=$MY_CNF \
+    --datasource-log-directory=$BINLOG_DIRECTORY \
+    --rmi-port=$RMI_PORT \
+    --thl-port=$THL_PORT \
+    --skip-validation-check=InstallerMasterSlaveCheck \
+    $MORE_OPTIONS --$START_OPTION"     
+
+if [ -n "$VERBOSE" ]
+then
+    echo $INSTALL_COMMAND | perl -pe 's/--/\n\t--/g'
+fi
+
+echo $INSTALL_COMMAND >> $INSTALL_LOG
+
+$INSTALL_COMMAND
+
+if [ "$?" != "0"  ]
+then
+    exit
+fi
+
+$cookbook_dir/show_cluster

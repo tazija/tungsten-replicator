@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1293/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/oracle
+END
+OracleExtractException.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/oracle/OracleExtractException.java
+END
+OracleCDCSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/1293/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/oracle/OracleCDCSource.java
+END
+OracleExtractor.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/oracle/OracleExtractor.java
+END
+OracleParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/oracle/OracleParser.java
+END
+OracleCommunicator.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/oracle/OracleCommunicator.java
+END
+CDCCommitMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/1293/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/oracle/CDCCommitMessage.java
+END
+CDCDataMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/1293/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/oracle/CDCDataMessage.java
+END
+CDCErrorMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/1293/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/oracle/CDCErrorMessage.java
+END
+OracleCDCPublication.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/1293/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/oracle/OracleCDCPublication.java
+END
+OracleCDCReaderThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/1293/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/oracle/OracleCDCReaderThread.java
+END
+OracleCDCExtractor.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/1293/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/oracle/OracleCDCExtractor.java
+END
+OracleCDCReaderExtractor.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/1293/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/oracle/OracleCDCReaderExtractor.java
+END
+CDCMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/1293/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/oracle/CDCMessage.java
+END

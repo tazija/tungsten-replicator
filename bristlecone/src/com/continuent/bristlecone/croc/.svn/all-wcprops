@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/bristlecone/!svn/ver/141/trunk/bristlecone/src/com/continuent/bristlecone/croc
+END
+TableComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/bristlecone/!svn/ver/118/trunk/bristlecone/src/com/continuent/bristlecone/croc/TableComparator.java
+END
+CrocError.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bristlecone/!svn/ver/118/trunk/bristlecone/src/com/continuent/bristlecone/croc/CrocError.java
+END
+CrocException.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/bristlecone/!svn/ver/118/trunk/bristlecone/src/com/continuent/bristlecone/croc/CrocException.java
+END
+Croc.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bristlecone/!svn/ver/141/trunk/bristlecone/src/com/continuent/bristlecone/croc/Croc.java
+END
+Loader.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bristlecone/!svn/ver/118/trunk/bristlecone/src/com/continuent/bristlecone/croc/Loader.java
+END
+CrocLauncher.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/bristlecone/!svn/ver/141/trunk/bristlecone/src/com/continuent/bristlecone/croc/CrocLauncher.java
+END
+CrocContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bristlecone/!svn/ver/141/trunk/bristlecone/src/com/continuent/bristlecone/croc/CrocContext.java
+END
+LivenessChecker.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/bristlecone/!svn/ver/141/trunk/bristlecone/src/com/continuent/bristlecone/croc/LivenessChecker.java
+END

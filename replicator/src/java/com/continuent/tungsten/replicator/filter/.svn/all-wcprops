@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1293/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter
+END
+BuildIndexTable.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/977/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/BuildIndexTable.java
+END
+CDCMetadataFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1276/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/CDCMetadataFilter.java
+END
+FilterManualProperties.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/FilterManualProperties.java
+END
+DummyFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/DummyFilter.java
+END
+PrimaryKeyFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/826/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/PrimaryKeyFilter.java
+END
+RenameDefinitions.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1226/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/RenameDefinitions.java
+END
+EnumToStringFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1185/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/EnumToStringFilter.java
+END
+PrintEventFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/977/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/PrintEventFilter.java
+END
+ColumnNameFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/668/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/ColumnNameFilter.java
+END
+DatabaseTransformFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/1094/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/DatabaseTransformFilter.java
+END
+ShardFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/49/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/ShardFilter.java
+END
+MySQLSessionSupportFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/1133/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/MySQLSessionSupportFilter.java
+END
+JavaScriptFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/JavaScriptFilter.java
+END
+RenameFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1226/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/RenameFilter.java
+END
+ReplicateFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1179/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/ReplicateFilter.java
+END
+ReplicateColumnsFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/ReplicateColumnsFilter.java
+END
+TimeDelayFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/TimeDelayFilter.java
+END
+BidiRemoteSlaveFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/255/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/BidiRemoteSlaveFilter.java
+END
+Filter.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/Filter.java
+END
+SetToStringFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1226/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/SetToStringFilter.java
+END
+TungstenTableCDCTransformFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/1293/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/TungstenTableCDCTransformFilter.java
+END
+OptimizeUpdatesFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/926/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/OptimizeUpdatesFilter.java
+END
+LoggingFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/697/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/LoggingFilter.java
+END
+CaseMappingFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/CaseMappingFilter.java
+END
+BuildAuditTable.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/977/trunk/replicator/src/java/com/continuent/tungsten/replicator/filter/BuildAuditTable.java
+END

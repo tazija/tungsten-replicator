@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/bristlecone/!svn/ver/112/trunk/bristlecone/config/benchmark
+END
+WriteSimpleScenario_MYSQLREP.properties
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bristlecone/!svn/ver/26/trunk/bristlecone/config/benchmark/WriteSimpleScenario_MYSQLREP.properties
+END
+connection_mysql.properties
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bristlecone/!svn/ver/13/trunk/bristlecone/config/benchmark/connection_mysql.properties
+END
+PreparedStatementWriteScenario.properties
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/bristlecone/!svn/ver/112/trunk/bristlecone/config/benchmark/PreparedStatementWriteScenario.properties
+END
+WriteSimpleScenario.properties
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bristlecone/!svn/ver/13/trunk/bristlecone/config/benchmark/WriteSimpleScenario.properties
+END
+TPCB.properties
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/bristlecone/!svn/ver/92/trunk/bristlecone/config/benchmark/TPCB.properties
+END
+ReadScalingAggregatesScenario.properties
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svnroot/bristlecone/!svn/ver/26/trunk/bristlecone/config/benchmark/ReadScalingAggregatesScenario.properties
+END
+DeadlockScenario.properties
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bristlecone/!svn/ver/13/trunk/bristlecone/config/benchmark/DeadlockScenario.properties
+END
+connection_mysql_rep.properties
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bristlecone/!svn/ver/13/trunk/bristlecone/config/benchmark/connection_mysql_rep.properties
+END
+ReadSimpleScenario2.properties
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bristlecone/!svn/ver/13/trunk/bristlecone/config/benchmark/ReadSimpleScenario2.properties
+END
+connection_hsqldb.properties
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/config/benchmark/connection_hsqldb.properties
+END
+ReadScalingInvertedKeysScenario.properties
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/bristlecone/!svn/ver/13/trunk/bristlecone/config/benchmark/ReadScalingInvertedKeysScenario.properties
+END
+TungstenSlaveTest.properties
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bristlecone/!svn/ver/85/trunk/bristlecone/config/benchmark/TungstenSlaveTest.properties
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bristlecone/!svn/ver/13/trunk/bristlecone/config/benchmark/README
+END
+connection_mysql_nonrep.properties
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/bristlecone/!svn/ver/13/trunk/bristlecone/config/benchmark/connection_mysql_nonrep.properties
+END
+ReadSimpleLargeResultsScenario.properties
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/bristlecone/!svn/ver/66/trunk/bristlecone/config/benchmark/ReadSimpleLargeResultsScenario.properties
+END
+ReadSimpleScenario.properties
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bristlecone/!svn/ver/26/trunk/bristlecone/config/benchmark/ReadSimpleScenario.properties
+END
+WriteSimpleScenario2.properties
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bristlecone/!svn/ver/85/trunk/bristlecone/config/benchmark/WriteSimpleScenario2.properties
+END
+WriteSimpleScenario_SLONY.properties
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/bristlecone/!svn/ver/13/trunk/bristlecone/config/benchmark/WriteSimpleScenario_SLONY.properties
+END
+ReadScalingAggregatesScenario2.properties
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/bristlecone/!svn/ver/26/trunk/bristlecone/config/benchmark/ReadScalingAggregatesScenario2.properties
+END
+connection_mcluster.properties
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bristlecone/!svn/ver/13/trunk/bristlecone/config/benchmark/connection_mcluster.properties
+END
+ReadSimpleResultSetLatency.properties
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/bristlecone/!svn/ver/13/trunk/bristlecone/config/benchmark/ReadSimpleResultSetLatency.properties
+END
+connection_pcluster.properties
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bristlecone/!svn/ver/13/trunk/bristlecone/config/benchmark/connection_pcluster.properties
+END
+connection_postgresql.properties
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/bristlecone/!svn/ver/13/trunk/bristlecone/config/benchmark/connection_postgresql.properties
+END
+connection_slony.properties
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bristlecone/!svn/ver/13/trunk/bristlecone/config/benchmark/connection_slony.properties
+END

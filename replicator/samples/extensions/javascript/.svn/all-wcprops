@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1291/trunk/replicator/samples/extensions/javascript
+END
+shardbytable.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1073/trunk/replicator/samples/extensions/javascript/shardbytable.js
+END
+dropmetadata.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1195/trunk/replicator/samples/extensions/javascript/dropmetadata.js
+END
+noonlykeywords.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/593/trunk/replicator/samples/extensions/javascript/noonlykeywords.js
+END
+nocreatedbifnotexists.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/326/trunk/replicator/samples/extensions/javascript/nocreatedbifnotexists.js
+END
+dropcomments.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/337/trunk/replicator/samples/extensions/javascript/dropcomments.js
+END
+dbrename.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/318/trunk/replicator/samples/extensions/javascript/dbrename.js
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1/trunk/replicator/samples/extensions/javascript/README
+END
+dropstatementdata.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/462/trunk/replicator/samples/extensions/javascript/dropstatementdata.js
+END
+foreignkeychecks.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1/trunk/replicator/samples/extensions/javascript/foreignkeychecks.js
+END
+filter.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1/trunk/replicator/samples/extensions/javascript/filter.js
+END
+dbselector.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1/trunk/replicator/samples/extensions/javascript/dbselector.js
+END
+breadcrumbs.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1291/trunk/replicator/samples/extensions/javascript/breadcrumbs.js
+END
+insertsonly.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1/trunk/replicator/samples/extensions/javascript/insertsonly.js
+END
+tosingledb.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/323/trunk/replicator/samples/extensions/javascript/tosingledb.js
+END
+truncatetext.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/323/trunk/replicator/samples/extensions/javascript/truncatetext.js
+END
+zerodate2null.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1103/trunk/replicator/samples/extensions/javascript/zerodate2null.js
+END
+pgddl.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/612/trunk/replicator/samples/extensions/javascript/pgddl.js
+END
+ansiquotes.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/593/trunk/replicator/samples/extensions/javascript/ansiquotes.js
+END
+dbupper.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/808/trunk/replicator/samples/extensions/javascript/dbupper.js
+END
+shardbyseqno.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1236/trunk/replicator/samples/extensions/javascript/shardbyseqno.js
+END

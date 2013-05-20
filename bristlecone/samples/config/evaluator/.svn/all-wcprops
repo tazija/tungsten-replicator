@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/bristlecone/!svn/ver/156/trunk/bristlecone/samples/config/evaluator
+END
+sample.postgresql.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/bristlecone/!svn/ver/148/trunk/bristlecone/samples/config/evaluator/sample.postgresql.xml
+END
+sample.mysql.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/bristlecone/!svn/ver/148/trunk/bristlecone/samples/config/evaluator/sample.mysql.xml
+END
+sample.readwrite.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/bristlecone/!svn/ver/156/trunk/bristlecone/samples/config/evaluator/sample.readwrite.xml
+END
+sample.create_tables.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bristlecone/!svn/ver/148/trunk/bristlecone/samples/config/evaluator/sample.create_tables.xml
+END
+sample.readonly.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/bristlecone/!svn/ver/148/trunk/bristlecone/samples/config/evaluator/sample.readonly.xml
+END

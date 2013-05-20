@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1342/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage
+END
+InMemoryMultiQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1317/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/InMemoryMultiQueue.java
+END
+InMemoryQueueStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1110/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/InMemoryQueueStore.java
+END
+InMemoryTransactionalQueueApplier.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/1145/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/InMemoryTransactionalQueueApplier.java
+END
+InMemoryQueueAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/358/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/InMemoryQueueAdapter.java
+END
+CommitAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/936/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/CommitAction.java
+END
+InMemoryTransactionalQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/1342/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/InMemoryTransactionalQueue.java
+END
+ParallelStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1110/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/ParallelStore.java
+END
+InMemoryMultiQueueApplier.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/358/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/InMemoryMultiQueueApplier.java
+END
+Store.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/Store.java
+END

@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1330/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup
+END
+DummyBackupAgent.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/DummyBackupAgent.java
+END
+BackupManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/BackupManager.java
+END
+StorageSpecification.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/StorageSpecification.java
+END
+BackupCompletionNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/915/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/BackupCompletionNotification.java
+END
+RestoreTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/915/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/RestoreTask.java
+END
+BackupSpecification.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/BackupSpecification.java
+END
+AbstractBackupAgent.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1073/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/AbstractBackupAgent.java
+END
+UnsupportedCapabilityException.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/UnsupportedCapabilityException.java
+END
+BackupCapabilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/BackupCapabilities.java
+END
+StorageAgent.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/StorageAgent.java
+END
+BackupException.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/BackupException.java
+END
+BackupAgent.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/BackupAgent.java
+END
+RestoreCompletionNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/915/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/RestoreCompletionNotification.java
+END
+BackupPlugin.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/BackupPlugin.java
+END
+BackupTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/915/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/BackupTask.java
+END
+FileSystemStorageAgent.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/1278/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/FileSystemStorageAgent.java
+END
+BackupLocator.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/BackupLocator.java
+END
+FileBackupLocator.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1278/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/FileBackupLocator.java
+END
+StorageIndex.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/StorageIndex.java
+END
+LvmHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1073/trunk/replicator/src/java/com/continuent/tungsten/replicator/backup/LvmHelper.java
+END

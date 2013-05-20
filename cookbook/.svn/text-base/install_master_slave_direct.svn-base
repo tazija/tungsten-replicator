@@ -1,0 +1,75 @@
+#!/bin/bash
+# (C) Copyright 2012,2013 Continuent, Inc - Released under the New BSD License
+# Version 1.0.5 - 2013-04-03
+
+cookbook_dir=$(dirname $0)
+cd "$cookbook_dir/../"
+
+if [ ! -f $cookbook_dir/BOOTSTRAP.sh ]
+then
+    echo "$cookbook_dir/BOOTSTRAP.sh not found"
+    exit 1
+fi
+. $cookbook_dir/BOOTSTRAP.sh NODES_MASTER_SLAVE.sh
+
+export MASTER=${MASTERS[0]}
+
+check_installed
+
+if  [ -n "$DRYRUN" ]
+then
+    echo "DRYRUN not yet supported for this installer"
+    exit 1
+fi
+
+echo "installing MASTER_SLAVE_DIRECT" >$INSTALL_LOG
+date >> $INSTALL_LOG
+
+# install master_slave_direct
+INDEX=0
+for NODE in ${SLAVES[*]}
+do
+  INSTALL_COMMAND="/tmp/tungsten-install/tools/tungsten-installer \
+    --direct \
+    --master-host=$MASTER \
+    --master-port=$DATABASE_PORT \
+    --master-user=$DATABASE_USER \
+    --master-password=$DATABASE_PASSWORD \
+    --slave-host=$MASTER \
+    --slave-port=$DATABASE_PORT \
+    --slave-user=$DATABASE_USER \
+    --slave-password=$DATABASE_PASSWORD \
+    --service-name=$TUNGSTEN_SERVICE \
+    --home-directory=$TUNGSTEN_BASE \
+    --slave-host=$NODE \
+    --master-mysql-conf=$DIRECT_MASTER_MY_CNF \
+    --master-log-directory=$DIRECT_MASTER_BINLOG_DIRECTORY \
+    --slave-mysql-conf=$DIRECT_SLAVE_MY_CNF \
+    --slave-log-directory=$DIRECT_SLAVE_BINLOG_DIRECTORY \
+    $MORE_OPTIONS --$START_OPTION"
+
+    echo $INSTALL_COMMAND  | perl -pe 's/--/\n\t--/g' >> $INSTALL_LOG
+    if [ -n "$VERBOSE" ]
+    then
+        echo $INSTALL_COMMAND | perl -pe 's/--/\n\t--/g'
+    fi
+    
+    ssh $NODE "[ ! -d '/tmp/tungsten-install' ] && mkdir /tmp/tungsten-install"
+    rsync -avzP -e ssh  . $NODE:/tmp/tungsten-install/  > /dev/null 
+    ssh $NODE $INSTALL_COMMAND
+
+    if [ "$?" != "0"  ]
+    then
+        exit
+    fi
+done
+
+ 
+for NODE in ${SLAVES[*]}
+do
+	tungsten-replicator/bin/trepctl -host $NODE services
+done
+
+echo "master_slave_direct" > $CURRENT_TOPOLOGY
+ 
+post_installation

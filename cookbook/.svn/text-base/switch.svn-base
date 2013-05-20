@@ -1,0 +1,97 @@
+#!/bin/bash
+# (C) Copyright 2012,2013 Continuent, Inc - Released under the New BSD License
+# Version 1.0.5 - 2013-04-03
+cookbook_dir=$(dirname $0)
+if [ ! -f $cookbook_dir/BOOTSTRAP.sh ]
+then
+    echo "$cookbook_dir/BOOTSTRAP.sh not found"
+    exit 1
+fi
+. $cookbook_dir/BOOTSTRAP.sh NODES_MASTER_SLAVE.sh
+check_current_topology "master_slave"
+
+function find_roles {
+    SLAVE_COUNT=0
+    SLAVES=()
+    for NODE in ${ALL_NODES[*]} 
+    do 
+        echo -n "$NODE "
+        role=$($TREPCTL -host $NODE services |grep role | awk '{print $3}')
+        if [ "$role" == "master" ]
+        then
+            export MASTER=$NODE
+            echo "master"
+        else
+            SLAVES[$SLAVE_COUNT]=$NODE
+            SLAVE_COUNT=$(($SLAVE_COUNT+1))
+            echo "slave"
+        fi
+    done
+
+    if [ -z "$MASTER" ]
+    then
+        echo "unable to find a master"
+        exit 1
+    fi
+    export  MASTERS=($MASTER)
+    export SLAVES=(${SLAVES[*]})
+}
+
+echo "# Determining current roles"
+find_roles
+
+NEW_MASTER=$1
+if [ -z "$NEW_MASTER" ]
+then
+    NEW_MASTER=${SLAVES[0]}
+fi
+if [ "$MASTER" == "$NEW_MASTER" ]
+then
+    echo "designated new master is already a master"
+    exit 0
+fi
+
+echo "# Will promote $NEW_MASTER to be the new master server"
+
+# export MASTER=${MASTERS[0]}
+
+NEW_SLAVES=()
+SLAVE_COUNT=0
+for NODE in ${ALL_NODES[*]} 
+do 
+    if [ "$NODE" != "$NEW_MASTER" ]
+    then
+        NEW_SLAVES[$SLAVE_COUNT]=$NODE
+        SLAVE_COUNT=$(($SLAVE_COUNT+1))
+    fi
+done
+
+master_position=`$TREPCTL -host $MASTER flush|cut -d':' -f2`
+
+echo "# Waiting for slaves to catch up and pausing replication"
+for SLAVE in ${SLAVES[*]} 
+do
+	echo trepctl -host $SLAVE wait -applied $master_position
+	$TREPCTL -host $SLAVE wait -applied $master_position
+	echo trepctl -host $SLAVE offline
+	$TREPCTL -host $SLAVE offline
+done
+
+echo trepctl -host $MASTER offline
+$TREPCTL -host $MASTER offline
+
+echo "# Reconfiguring server roles and restarting replication"
+echo trepctl -host $NEW_MASTER setrole -role master
+$TREPCTL -host $NEW_MASTER setrole -role master
+echo trepctl -host $NEW_MASTER online
+$TREPCTL -host $NEW_MASTER online
+
+for SLAVE in ${NEW_SLAVES[*]} 
+do
+	echo trepctl -host $SLAVE setrole -role slave -uri thl://$NEW_MASTER:2112
+	$TREPCTL -host $SLAVE setrole -role slave -uri thl://$NEW_MASTER:2112
+	echo trepctl -host $SLAVE online
+	$TREPCTL -host $SLAVE online
+done
+
+$cookbook_dir/show_cluster

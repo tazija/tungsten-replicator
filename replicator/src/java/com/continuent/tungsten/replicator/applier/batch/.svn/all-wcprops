@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1151/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/batch
+END
+SqlWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1151/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/batch/SqlWrapper.java
+END
+VerticaCsvLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/1073/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/batch/VerticaCsvLoader.java
+END
+InfiniDBBatchApplier.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/1073/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/batch/InfiniDBBatchApplier.java
+END
+SqlCsvLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1073/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/batch/SqlCsvLoader.java
+END
+LoadMismatch.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1073/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/batch/LoadMismatch.java
+END
+BatchScript.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1073/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/batch/BatchScript.java
+END
+CsvInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1073/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/batch/CsvInfo.java
+END
+SimpleBatchApplier.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/1151/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/batch/SimpleBatchApplier.java
+END
+JavascriptRuntime.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/1151/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/batch/JavascriptRuntime.java
+END
+BatchCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1073/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/batch/BatchCommand.java
+END
+CsvLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1073/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/batch/CsvLoader.java
+END
+ScriptExecutor.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/1151/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/batch/ScriptExecutor.java
+END
+JavascriptExecutor.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/1151/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/batch/JavascriptExecutor.java
+END
+VerticaStreamBatchApplier.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/!svn/ver/1073/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/batch/VerticaStreamBatchApplier.java
+END
+NativeScriptExecutor.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/1151/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/batch/NativeScriptExecutor.java
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/939/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/conversion
+END
+LittleEndianConversion.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/!svn/ver/939/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/conversion/LittleEndianConversion.java
+END
+GeneralConversion.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/conversion/GeneralConversion.java
+END
+BigEndianConversion.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/conversion/BigEndianConversion.java
+END

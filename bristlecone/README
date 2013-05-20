@@ -1,0 +1,26 @@
+README file for Bristlecone Version @VERSION@
+Copyright (c) Continuent 2006-2008
+
+Bristlecone is a set of test tools that perform useful services for 
+measuring database and database cluster performance.   There are currently
+two main tools: 
+
+* Evaluator - Generates mixed load and measures response
+
+* Benchmark - Runs performance test scenarios using systematically varying 
+  parameters.  
+
+The contents of this directory are:
+  
+  bin - contains execution scripts
+  config - contains sample configuration files 
+  doc - contains user guides
+  doc/licenses - contains the licenses for software used by Bristlecone
+  lib - contains the jar files used by Bristlecone 
+  lib-ext - contains extra Jar files used by tests
+  xml - contains the DTD for the configuration files
+
+For more information please consult the user guides in the doc directory. 
+
+LICENSES FOR SOFTWARE USED BY BRISTLECONE ARE LOCATED IN THE DOCS/LICENSES
+DIRECTORY.  

@@ -1,0 +1,20 @@
+Evaluatin Configuration README
+
+This file contains standard configuration files used for Evaluator 
+test runs.  You can run an evaluator test by following the steps
+shown below: 
+
+1. Add the JDBC driver for your database to the lib-ext directory. 
+
+2. Edit one of the .xml configuration files.  Replace all variables 
+surrounded by '@' signs with values of your choice. 
+
+3. Run the evaluator.  
+
+The Hypersonic example file does not require any configuration to be 
+used, and the JDBC driver is already in the lib-ext directory.  You 
+can therefore run Evaluator just by issuing the following command: 
+
+  ../../bin/evaluator.sh -graph hsql_sample.xml
+  
+For more information consult the user guide files in the doc directory. 

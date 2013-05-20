@@ -1,0 +1,123 @@
+#********************************************************************
+# Wrapper License Properties (Ignored by Community Edition)
+#********************************************************************
+# Include file problems can be debugged by removing the first '#'
+#  from the following line:
+##include.debug
+#include ../../tungsten-replicator/conf/jsw-replicator-wrapper.conf
+
+#********************************************************************
+# Wrapper Java Properties
+#********************************************************************
+# Java Application
+wrapper.java.command=java
+
+# Delay 20 seconds to give the OS time to reclaim network ports, etc.
+wrapper.restart.delay=20
+wrapper.on_exit.1=RESTART
+
+# Java Main class.  This class must implement the WrapperListener interface
+#  or guarantee that the WrapperManager class is initialized.  Helper
+#  classes are provided to do this for you.  See the Integration section
+#  of the documentation for details.
+wrapper.java.mainclass=org.tanukisoftware.wrapper.WrapperSimpleApp
+
+# Java Classpath (include wrapper.jar)  Add class path elements as
+#  needed starting from 1
+wrapper.java.classpath.1=../../tungsten-replicator/lib/*.jar
+wrapper.java.classpath.2=../../tungsten-replicator/conf
+wrapper.java.classpath.3=../../cluster-home/lib/*.jar
+
+# Java Library Path (location of Wrapper.DLL or wrapper.java.classpath.X=../lib/wrapper.so)
+wrapper.java.library.path.1=../../cluster-home/lib
+
+# Java Additional Parameters
+wrapper.java.additional.1=-Dreplicator.home.dir=../../tungsten-replicator/
+wrapper.java.additional.2=-Dreplicator.log.dir=../../tungsten-replicator/log
+wrapper.java.additional.3=-Dcom.sun.management.jmxremote
+wrapper.java.additional.4=-Dcluster.home=../../cluster-home
+# These empty entries are here to fill gaps in number when 
+# enabling features below
+wrapper.java.additional.5=
+wrapper.java.additional.6=
+wrapper.java.additional.7=
+wrapper.java.additional.8=
+wrapper.java.additional.9=
+wrapper.java.additional.10=
+
+# You may need to set the Java platform charset to replicate heterogeneously
+# from MySQL using row replication.  This should match the default charset
+# of your MySQL tables.  Common values are UTF8 and ISO_8859_1.  Many Linux
+# platforms default to ISO_8859_1 (latin1). 
+@{#(REPL_JAVA_FILE_ENCODING)}wrapper.java.additional.5=-Dfile.encoding=@{REPL_JAVA_FILE_ENCODING|UTF8}
+
+# To ensure consistent handling of dates in heterogeneous and batch replication
+# you should set the JVM timezone explicitly.  Otherwise the JVM will default
+# to the platform time, which can result in unpredictable behavior when 
+# applying date values to slaves.  GMT is recommended to avoid inconsistencies.
+@{#(REPL_JAVA_USER_TIMEZONE)}wrapper.java.additional.6=-Duser.timezone=@{REPL_JAVA_USER_TIMEZONE|GMT}
+
+# Enable Java concurrent GC.  This is helpful for avoiding prolonged replicator
+# stalls due to the default garbage collector.  It does not, however, do much
+# to prevent running out of heap space.  For that you must increase the 
+# maxmemory property below. 
+@{REPL_JAVA_ENABLE_CONCURRENT_GC}wrapper.java.additional.7=-XX:+UseConcMarkSweepGC 
+@{REPL_JAVA_ENABLE_CONCURRENT_GC}wrapper.java.additional.8=-XX:+CMSIncrementalMode
+
+# To enable Jolokia JMX to JSON agent on HTTP uncomment the line below:
+@{REPL_API}wrapper.java.additional.9=-javaagent:../../tungsten-replicator/lib/jolokia-jvm-jdk6-0.91-agent.jar=port=@{REPL_API_PORT},host=@{REPL_API_HOST},user=@{REPL_API_USER},password=@{REPL_API_PASSWORD}
+# To enable Jolokia on HTTPS add the following options. See documentation
+#  on how to prepare the keystore.
+#,protocol=https,keystore=/opt/keystore.jks,keystorePassword=secret
+
+# To remotely debug the Replicator uncomment the lines below:
+#wrapper.java.additional.8=-Xdebug
+#wrapper.java.additional.9=-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=54002
+
+# To perform remote profiling with Yourkit, uncomment and edit the line below:
+#wrapper.java.additional.9=-agentpath:/opt/yourkit/yjp-9.5.4/bin/linux-x86-64/libyjpagent.so=port=10001
+
+# Initial Java Heap Size (in MB)
+#wrapper.java.initmemory=3
+
+# Maximum Java Heap Size (in MB)
+wrapper.java.maxmemory=@{REPL_JAVA_MEM_SIZE}
+
+# Restart if there is an OutOfMemoryError. 
+wrapper.filter.trigger.1=java.lang.OutOfMemoryError
+wrapper.filter.action.1=RESTART
+wrapper.filter.message.1=Replicator ran out of memory, restarting
+
+# Application parameters.  Add parameters as needed starting from 1
+wrapper.app.parameter.1=com.continuent.tungsten.replicator.management.ReplicationServiceManager
+
+#********************************************************************
+# Wrapper Logging Properties
+#********************************************************************
+# Format of output for the console.  (See docs for formats)
+wrapper.console.format=PM
+
+# Log Level for console output.  (See docs for log levels)
+wrapper.console.loglevel=INFO
+
+# Log file to use for wrapper output logging.
+wrapper.logfile=../../tungsten-replicator/log/trepsvc.log
+
+# Format of output for the log file.  (See docs for formats)
+wrapper.logfile.format=LPTM
+
+# Log Level for log file output.  (See docs for log levels)
+wrapper.logfile.loglevel=INFO
+
+# Maximum size that the log file will be allowed to grow to before
+#  the log is rolled. Size is specified in bytes.  The default value
+#  of 0, disables log rolling.  May abbreviate with the 'k' (kb) or
+#  'm' (mb) suffix.  For example: 10m = 10 megabytes.
+wrapper.logfile.maxsize=10m
+
+# Maximum number of rolled log files which will be allowed before old
+#  files are deleted.  The default value of 0 implies no limit.
+wrapper.logfile.maxfiles=0
+
+# Log Level for sys/event log output.  (See docs for log levels)
+wrapper.syslog.loglevel=NONE

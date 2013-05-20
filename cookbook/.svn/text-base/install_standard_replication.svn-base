@@ -1,0 +1,61 @@
+#!/bin/bash
+# (C) Copyright 2012,2013 Continuent, Inc - Released under the New BSD License
+# Version 1.0.5 - 2013-04-03
+
+cookbook_dir=$(dirname $0)
+cd "$cookbook_dir/../"
+
+if [ ! -f $cookbook_dir/BOOTSTRAP.sh ]
+then
+    echo "$cookbook_dir/BOOTSTRAP.sh not found"
+    exit 1
+fi
+. $cookbook_dir/BOOTSTRAP.sh NODES_MASTER_SLAVE.sh
+
+check_installed
+
+# $cookbook_dir/clear_cluster
+
+if  [ -n "$DRYRUN" ]
+then
+    echo "DRYRUN not yet supported for this installer"
+    exit 1
+fi
+
+export MASTER=${MASTERS[0]}
+MYSQL="mysql -u $DATABASE_USER -p$DATABASE_PASSWORD -P $DATABASE_PORT"
+
+echo "installing STANDARD" >$INSTALL_LOG
+date >> $INSTALL_LOG
+
+MASTER_STATUS=`mysql -h $MASTER -u $DATABASE_USER -p$DATABASE_PASSWORD -P $DATABASE_PORT -NE -e"show master status"|awk '(NR==2 || NR==3) {print $0}'`
+MASTER_FILE=$(echo $MASTER_STATUS | cut --delimiter=' ' -f 1) 
+MASTER_POS=$(echo $MASTER_STATUS | cut --delimiter=' ' -f 2)
+
+SQL="stop slave; change master to master_host='$MASTER',master_user='$DATABASE_USER',master_password='$DATABASE_PASSWORD',master_port=$DATABASE_PORT,master_log_file='$MASTER_FILE',master_log_pos=$MASTER_POS;start slave;"
+
+for SLAVE in ${SLAVES[*]}
+do
+	$MYSQL -h $SLAVE -e"$SQL"
+	echo "Starting slave on $SLAVE Master File = $MASTER_FILE, Master Position = $MASTER_POS"
+done
+
+#testing 
+$MYSQL -h $MASTER -e 'create schema if not exists test'
+$MYSQL -h $MASTER -e 'drop table if exists test.t1'
+$MYSQL -h $MASTER -e 'create table test.t1(i int)'
+$MYSQL -h $MASTER -e 'insert into test.t1 values (1)'
+sleep 1
+echo  "# master  $MASTER"
+$MYSQL -h $MASTER -BN -e 'show master status'
+for SLAVE in ${SLAVES[*]}
+do
+    echo "#slave $SLAVE"
+	$MYSQL -h $SLAVE -e 'show slave status\G' | grep "\(Running:\|Master_Log_Pos\|\<Master_Log_File\)"
+    FOUND_TABLES=$($MYSQL -h $SLAVE -BN -e 'select count(*) from test.t1')
+    echo -n "replication test: "
+    if [ "$FOUND_TABLES" == "1" ] ; then echo "ok" ; else echo "NOT ok" ; fi
+    echo ""
+done
+echo "standard_mysql_replication" > $CURRENT_TOPOLOGY
+

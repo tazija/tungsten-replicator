@@ -1,0 +1,23 @@
+<!DOCTYPE EvaluatorConfiguration SYSTEM "file://../xml/evaluator.dtd">
+<EvaluatorConfiguration name="readwrite" testDuration="1200"
+	autoCommit="false" statusInterval="500" htmlFile="readwriteResults.html" separator=" ">
+
+    <DataSource name="s1" driver="@{REPL_DBJDBCDRIVER}"
+        url="jdbc:@{REPL_DBJDBCVENDOR}://@{HOST.HOST}:@{CONN_LISTEN_PORT}/evaluator@qos=RW_STRICT&amp;createDatabaseIfNotExist=true&amp;autoReconnect=true"
+        user="@{CONN_CLIENTLOGIN}"
+        password="@{CONN_CLIENTPASSWORD}"/>
+     
+    <DataSource name="s2" driver="@{REPL_DBJDBCDRIVER}"
+        url="jdbc:@{REPL_DBJDBCVENDOR}://@{HOST.HOST}:@{CONN_LISTEN_PORT}/evaluator@qos=RO_RELAXED&amp;autoReconnect=true"
+        user="@{CONN_CLIENTLOGIN}"
+        password="@{CONN_CLIENTPASSWORD}"/>
+
+    <TableGroup name="ta" size="1000" dataSource="s1"> 
+        <ThreadGroup name="A" dataSource="s1" threadCount="5" thinkTime="10" 
+            updates="20" deletes="20" inserts="20" readSize="1" 
+            rampUpInterval="30" rampUpIncrement="1" reconnectInterval="10" /> 
+        <ThreadGroup name="B" dataSource="s2" threadCount="5" thinkTime="10"
+            readSize="1000"
+            rampUpInterval="30" rampUpIncrement="2" reconnectInterval="10" />
+    </TableGroup>
+</EvaluatorConfiguration>

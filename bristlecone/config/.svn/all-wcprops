@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svnroot/bristlecone/!svn/ver/124/trunk/bristlecone/config
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bristlecone/!svn/ver/19/trunk/bristlecone/config/log4j.properties
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/config/.cvsignore
+END

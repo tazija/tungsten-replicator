@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/replicator/bin/extras
+END
+start_slave.sh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1/trunk/replicator/bin/extras/start_slave.sh
+END
+env.sh
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1/trunk/replicator/bin/extras/env.sh
+END
+start_master.sh
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1/trunk/replicator/bin/extras/start_master.sh
+END
+mysql_cc_sample.sh
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1/trunk/replicator/bin/extras/mysql_cc_sample.sh
+END
+function.sh
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/1/trunk/replicator/bin/extras/function.sh
+END

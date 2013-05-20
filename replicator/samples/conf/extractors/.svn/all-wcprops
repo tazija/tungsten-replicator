@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1300/trunk/replicator/samples/conf/extractors
+END
+postgresql.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/601/trunk/replicator/samples/conf/extractors/postgresql.tpl
+END
+oracle.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1294/trunk/replicator/samples/conf/extractors/oracle.tpl
+END
+mysql.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/798/trunk/replicator/samples/conf/extractors/mysql.tpl
+END
+oracle-scan.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1300/trunk/replicator/samples/conf/extractors/oracle-scan.tpl
+END

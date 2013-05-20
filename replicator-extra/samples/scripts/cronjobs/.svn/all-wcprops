@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/12/trunk/replicator-extra/samples/scripts/cronjobs
+END
+purge_history
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/12/trunk/replicator-extra/samples/scripts/cronjobs/purge_history
+END

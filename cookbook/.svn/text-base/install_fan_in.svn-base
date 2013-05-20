@@ -1,0 +1,128 @@
+#!/bin/bash
+# (C) Copyright 2012,2013 Continuent, Inc - Released under the New BSD License
+# Version 1.0.5 - 2013-04-03
+
+cookbook_dir=$(dirname $0)
+cd "$cookbook_dir/../"
+
+if [ ! -f $cookbook_dir/BOOTSTRAP.sh ]
+then
+    echo "$cookbook_dir/BOOTSTRAP.sh not found"
+    exit 1
+fi
+. $cookbook_dir/BOOTSTRAP.sh NODES_FAN_IN.sh
+
+check_installed
+
+# $cookbook_dir/clear_cluster
+
+echo "installing FAN-IN" >$INSTALL_LOG
+date >> $INSTALL_LOG
+
+if [ -n "$DRYRUN" ]
+then
+    [ -z "$VERBOSE" ] && VERBOSE=1
+fi 
+
+COMMAND_SEQUENCE=1
+
+# install fan in
+INDEX=0
+
+#Install the Master replicators on all the hosts
+
+for NODE in ${MASTERS[*]} $FAN_IN_SLAVE
+do
+
+  INSTALL_COMMAND="./tools/tungsten-installer \
+    --master-slave \
+    --master-host=$NODE \
+    --datasource-port=$DATABASE_PORT \
+    --datasource-user=$DATABASE_USER \
+    --datasource-password=$DATABASE_PASSWORD \
+    --datasource-log-directory=$BINLOG_DIRECTORY \
+    --service-name=${MM_SERVICES[$INDEX]} \
+    --home-directory=$TUNGSTEN_BASE \
+    --cluster-hosts=$NODE \
+    --datasource-mysql-conf=$MY_CNF \
+    --datasource-log-directory=$BINLOG_DIRECTORY \
+    -a --datasource-boot-script=$MYSQL_BOOT_SCRIPT \
+    --rmi-port=$RMI_PORT \
+    --thl-port=$THL_PORT \
+    $MORE_OPTINS --$START_OPTION"     
+
+    echo "## $COMMAND_SEQUENCE (host: $NODE)" >> $INSTALL_LOG
+	echo $INSTALL_COMMAND | perl -pe 's/--/\\\n\t--/g' >> $INSTALL_LOG
+	if [ -n "$VERBOSE" ]
+	then
+        echo "## $COMMAND_SEQUENCE (host: $NODE)"
+	    echo $INSTALL_COMMAND | perl -pe 's/--/\\\n\t--/g'
+	fi
+    COMMAND_SEQUENCE=$(($COMMAND_SEQUENCE+1))
+    if [ -z "$DRYRUN" ]
+    then
+	    $INSTALL_COMMAND
+
+        if [ "$?" != "0"  ]
+        then
+            exit
+        fi
+    fi
+    INDEX=$(($INDEX+1))
+done
+
+FAN_IN_DS=`echo $FAN_IN_SLAVE|perl -lpe's/\W/_/g'`
+
+TUNGSTEN_TOOLS=$TUNGSTEN_BASE/tungsten/tools
+COMMON_OPTIONS="--advanced -C -q 
+    --local-service-name=$FAN_IN_LOCAL_SERVICE
+    --role=slave 
+    --service-type=remote 
+    --log-slave-updates=true
+    --datasource=$FAN_IN_DS"
+
+INDEX=0
+# set -x
+
+#Install all the Slave replicators from the Masters on the Fan-In Slave
+
+for REMOTE_MASTER in ${MASTERS[*]}
+do
+    INSTALL_COMMAND="$TUNGSTEN_TOOLS/configure-service \
+        --host=$FAN_IN_SLAVE \
+        ${COMMON_OPTIONS} \
+        --master-thl-host=$REMOTE_MASTER \
+        --master-thl-port=$THL_PORT \
+        --svc-$START_OPTION ${MM_SERVICES[$INDEX]}"
+
+    echo "## $COMMAND_SEQUENCE (host: $FAN_IN_SLAVE)" >> $INSTALL_LOG
+    echo $INSTALL_COMMAND | perl -pe 's/--/\n\t--/g' >> $INSTALL_LOG
+    if [ -n "$VERBOSE" ]
+    then
+        echo "## $COMMAND_SEQUENCE (host: $FAN_IN_SLAVE)"
+        echo $INSTALL_COMMAND | perl -pe 's/--/\\\n\t--/g'
+    fi
+    COMMAND_SEQUENCE=$(($COMMAND_SEQUENCE+1))
+    if [ -z "$DRYRUN" ]
+    then
+        $INSTALL_COMMAND
+        if [ "$?" != "0"  ]
+        then
+            exit
+        fi
+    fi
+    INDEX=$(($INDEX+1))
+done
+#set +x
+
+if  [ -n "$DRYRUN" ]
+then
+    echo "## $COMMAND_SEQUENCE (host: $(hostname)"
+    echo "echo 'fan_in' > $CURRENT_TOPOLOGY"
+    exit
+fi
+
+echo "fan_in" > $CURRENT_TOPOLOGY
+$cookbook_dir/show_cluster 
+post_installation
+

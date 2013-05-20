@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/919/trunk/replicator-extra/samples/scripts/javascript-advanced
+END
+ignore_server_id.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/12/trunk/replicator-extra/samples/scripts/javascript-advanced/ignore_server_id.js
+END
+dbignore.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/919/trunk/replicator-extra/samples/scripts/javascript-advanced/dbignore.js
+END
+tableignore.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/116/trunk/replicator-extra/samples/scripts/javascript-advanced/tableignore.js
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1223/trunk/replicator/test/java/com/continuent/tungsten/replicator/filter
+END
+RenameDefinitionsTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/1221/trunk/replicator/test/java/com/continuent/tungsten/replicator/filter/RenameDefinitionsTest.java
+END
+EnumToStringFilterTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/1143/trunk/replicator/test/java/com/continuent/tungsten/replicator/filter/EnumToStringFilterTest.java
+END
+FilterVerificationHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/1209/trunk/replicator/test/java/com/continuent/tungsten/replicator/filter/FilterVerificationHelper.java
+END
+SetToStringFilterTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/1185/trunk/replicator/test/java/com/continuent/tungsten/replicator/filter/SetToStringFilterTest.java
+END
+OptimizeUpdatesFilterTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/927/trunk/replicator/test/java/com/continuent/tungsten/replicator/filter/OptimizeUpdatesFilterTest.java
+END
+RenameFilterTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1223/trunk/replicator/test/java/com/continuent/tungsten/replicator/filter/RenameFilterTest.java
+END
+ReplicateFilterTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/1179/trunk/replicator/test/java/com/continuent/tungsten/replicator/filter/ReplicateFilterTest.java
+END

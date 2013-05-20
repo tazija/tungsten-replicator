@@ -23,7 +23,7 @@
 <project name="tungsten_common" default="all">
     <description>
         Tungsten Scale-Out Stack
-    	Commons Component
+        Commons Component
         http://community.continuent.com
     </description>
 
@@ -35,7 +35,7 @@
     <property name="conf.dir" value="conf"/>
     <property name="java.src.dir" value="src/java"/>
     <property name="test.src.dir" value="test/java"/>
-	<property name="test.data.dir" value="test/data"/>
+    <property name="test.data.dir" value="test/data"/>
     <property name="classes.dir" value="${build.dir}/java/classes"/>
     <property name="test.classes.dir" value="${build.dir}/test/classes"/>
     <property name="test.reports" value="${build.dir}/reports"/>
@@ -50,28 +50,28 @@
     <property name="deploy.dir" value="${user.home}/tungsten"/>
 
     <path id="compile.classpath">
-		<fileset dir="lib/">
-			<include name="*.jar" unless="library.compile.files"/>
-			<include name="${library.compile.files}" if="library.compile.files"/>
-		</fileset>
-    	<fileset dir="lib.tools/">
-			<include name="*.jar" unless="tools.compile.files"/>
-			<include name="${lib.tools.compile.files}" if="lib.tools.compile.files"/>
-		</fileset>
+        <fileset dir="lib/">
+            <include name="*.jar" unless="library.compile.files"/>
+            <include name="${library.compile.files}" if="library.compile.files"/>
+        </fileset>
+        <fileset dir="lib.tools/">
+            <include name="*.jar" unless="tools.compile.files"/>
+            <include name="${lib.tools.compile.files}" if="lib.tools.compile.files"/>
+        </fileset>
     </path>
 
     <path id="test.classpath">
         <path refid="compile.classpath"/>
         <path location="${classes.dir}"/>
-		<fileset dir="lib-test/">
-			<include name="*.jar"/>
-		</fileset>
+        <fileset dir="lib-test/">
+            <include name="*.jar"/>
+        </fileset>
     </path>
 
     <target name="all" depends="clean,test, releases"
             description="--> test code and create releases"/>
 
-	<target name="allExceptJunit" depends="clean,compile, releases"
+    <target name="allExceptJunit" depends="clean,compile, releases"
             description="Builds the project without running unit tests. "/>
 
 
@@ -80,16 +80,16 @@
     </target>
 
 
-	<target name="zipdoc">
-		<zip destfile="${build.dir}/tungsten-common_javadoc.zip">
-			<fileset dir="${dist.dir}/docs/javadoc"/>
-		</zip>
-		<tar compression="gzip" destfile="${build.dir}/tungsten-common_javadoc.tar.gz" longfile="gnu">
-			<fileset dir="${dist.dir}/docs/javadoc"/>
-		</tar>
-	</target>
+    <target name="zipdoc">
+        <zip destfile="${build.dir}/tungsten-common_javadoc.zip">
+            <fileset dir="${dist.dir}/docs/javadoc"/>
+        </zip>
+        <tar compression="gzip" destfile="${build.dir}/tungsten-common_javadoc.tar.gz" longfile="gnu">
+            <fileset dir="${dist.dir}/docs/javadoc"/>
+        </tar>
+    </target>
 
-	<target name="compile">
+    <target name="compile">
         <mkdir dir="${classes.dir}"/>
         <javac srcdir="${java.src.dir}"
                destdir="${classes.dir}"
@@ -159,28 +159,28 @@
         <mkdir dir="${test.reports}"/>
         <delete dir="${test.work}"/>
         <mkdir dir="${test.work}"/>
-    	<copy todir="${test.work}">
-    		<fileset dir="${test.data.dir}">
-    			<include name="*"/>
-    		</fileset>
-    		<fileset dir="${conf.dir}">
-    		    <include name="*"/>
-    		</fileset>
-   		</copy>
+        <copy todir="${test.work}">
+            <fileset dir="${test.data.dir}">
+                <include name="*"/>
+            </fileset>
+            <fileset dir="${conf.dir}">
+                <include name="*"/>
+            </fileset>
+        </copy>
         <junit printsummary="yes" haltonfailure="no" fork="yes"
-            dir="${test.work}" failureproperty="tests.failed">
+               dir="${test.work}" failureproperty="tests.failed">
             <classpath>
                 <pathelement location="${classes.dir}"/>
                 <pathelement location="${test.classes.dir}"/>
                 <pathelement location="${conf.dir}"/>
                 <path refid="compile.classpath"/>
-            	<path refid="test.classpath"/>
+                <path refid="test.classpath"/>
             </classpath>
             <formatter type="xml"/>
             <batchtest fork="yes" todir="${test.reports}">
                 <fileset dir="${test.src.dir}">
                     <include name="**/*Test*.java"/>
-                	<exclude name="**/*Abstract*.java"/>
+                    <exclude name="**/*Abstract*.java"/>
                 </fileset>
             </batchtest>
         </junit>
@@ -190,7 +190,7 @@
             </fileset>
             <report format="frames" todir="${test.reports}/html"/>
         </junitreport>
-    	<fail if="tests.failed" message="Not all unit tests were completed. Process aborted!"/>
+        <fail if="tests.failed" message="Not all unit tests were completed. Process aborted!"/>
     </target>
 
     <target name="dist" depends="dist-bin, dist-src"
@@ -200,22 +200,22 @@
             description="--> build binary distribution">
         <mkdir dir="${dist.dir}"/>
         <!-- Copy scripts from bin directory -->
-    	<copy todir="${dist.dir}/bin/">
-    		<fileset dir="bin/"/>
+        <copy todir="${dist.dir}/bin/">
+            <fileset dir="bin/"/>
         </copy>
         <chmod dir="${dist.dir}/bin" perm="ugo+rx" includes="*"/>
-        
+
         <copy todir="${dist.dir}/lib">
             <fileset dir="${jars.dir}"/>
         </copy>
         <available property="has.conf" file="conf" type="dir"/>
-    	<copy todir="${dist.dir}/conf" failonerror="has.conf">
+        <copy todir="${dist.dir}/conf" failonerror="has.conf">
             <fileset dir="conf"/>
         </copy>
         <copy todir="${dist.dir}/lib">
             <fileset dir="lib/">
-            	<include name="*.jar" unless="library.compile.files"/>
-            	<include name="${library.compile.files}" if="library.compile.files"/>
+                <include name="*.jar" unless="library.compile.files"/>
+                <include name="${library.compile.files}" if="library.compile.files"/>
             </fileset>
         </copy>
         <mkdir dir="${dist.dir}/lib-ext"/>
@@ -224,7 +224,7 @@
     <target name="dist-src" depends="jar"
             description="--> build source distribution">
         <mkdir dir="${dist.src.dir}"/>
-    	<!-- Create bin directory for scripts -->
+        <!-- Create bin directory for scripts -->
         <mkdir dir="${dist.src.dir}/bin"/>
 
         <copy todir="${dist.src.dir}">
@@ -256,23 +256,23 @@
 
     <target name="docs">
         <javadoc packagenames="com.continuent.*"
-            sourcepath="${java.src.dir}"
-            classpathref="compile.classpath"
-            defaultexcludes="yes"
-            destdir="${dist.dir}/docs/javadoc"
-            author="true"
-            version="true"
-            use="true"
-            windowtitle="Tungsten API">
+                 sourcepath="${java.src.dir}"
+                 classpathref="compile.classpath"
+                 defaultexcludes="yes"
+                 destdir="${dist.dir}/docs/javadoc"
+                 author="true"
+                 version="true"
+                 use="true"
+                 windowtitle="Tungsten API">
         </javadoc>
     </target>
 
     <target name="releases" depends="dist, docs"
-        description="--> create distributable softare (.zip &amp; .tgz files)">
-		<available property="has.readme" file="README"/>
+            description="--> create distributable softare (.zip &amp; .tgz files)">
+        <available property="has.readme" file="README"/>
 
-    	<copy file="README" tofile="${dist.dir}/README" failonerror="${has.readme}"/>
-    	<available property="has.license" file="README"/>
+        <copy file="README" tofile="${dist.dir}/README" failonerror="${has.readme}"/>
+        <available property="has.license" file="README"/>
         <copy file="LICENSE" tofile="${dist.dir}/LICENSE" failonerror="${has.license}"/>
         <tar destfile="${dist.dir}.tgz" compression="gzip" basedir="${dist.dir}" includes="none" longfile="gnu">
             <tarfileset dir="${dist.dir}" mode="755" prefix="tungsten-common">
@@ -301,12 +301,12 @@
                 <include name="*/**"/>
             </zipfileset>
         </zip>
-    	<antcall target="zipdoc"/>
+        <antcall target="zipdoc"/>
     </target>
 
     <target name="deploy" depends="dist">
         <condition property="deploy.localhost">
-          <equals arg1="localhost" arg2="${deploy.host}"/>
+            <equals arg1="localhost" arg2="${deploy.host}"/>
         </condition>
         <!-- One of these must work since both depend on deploy.localhost. -->
         <antcall target="deploy.local"/>

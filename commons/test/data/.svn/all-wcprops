@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/1135/trunk/commons/test/data
+END
+tungsten_sample.crt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1129/trunk/commons/test/data/tungsten_sample.crt
+END
+tungsten_keystore.jks
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1135/trunk/commons/test/data/tungsten_keystore.jks
+END
+tungsten_sample_keystore.jks
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1129/trunk/commons/test/data/tungsten_sample_keystore.jks
+END
+tungsten_truststore.ts
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1135/trunk/commons/test/data/tungsten_truststore.ts
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/1129/trunk/commons/test/data/readme.txt
+END
+tungsten_sample_truststore.ts
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1129/trunk/commons/test/data/tungsten_sample_truststore.ts
+END
+public_tungsten_sample.cer
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1129/trunk/commons/test/data/public_tungsten_sample.cer
+END

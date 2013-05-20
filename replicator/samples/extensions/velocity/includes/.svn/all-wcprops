@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1273/trunk/replicator/samples/extensions/velocity/includes
+END
+ddl-mysql-oracle-table.vm
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1273/trunk/replicator/samples/extensions/velocity/includes/ddl-mysql-oracle-table.vm
+END
+ddl-mysql-oracle-help.vm
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1234/trunk/replicator/samples/extensions/velocity/includes/ddl-mysql-oracle-help.vm
+END
+table-counter.vm
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1234/trunk/replicator/samples/extensions/velocity/includes/table-counter.vm
+END
+ddl-header.vm
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1234/trunk/replicator/samples/extensions/velocity/includes/ddl-header.vm
+END

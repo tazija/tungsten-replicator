@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1014/trunk/commons/test/java/com/continuent/tungsten/common/io
+END
+BufferedFileDataInputTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1014/trunk/commons/test/java/com/continuent/tungsten/common/io/BufferedFileDataInputTest.java
+END
+BufferedFileDataOutputTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1014/trunk/commons/test/java/com/continuent/tungsten/common/io/BufferedFileDataOutputTest.java
+END

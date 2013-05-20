@@ -1,0 +1,19 @@
+#
+# This is a sample test.properties file for running the scluster ManyThreads test
+# Copy this file to test.properties and fill in the information below with 
+# the correct values for your system.
+#
+# You can customize the stored procedures as long as the first update count 
+# or resultset does not change.
+controllerOne.address=192.168.84.128
+controllerOne.jdbcPort=25332
+controllerTwo.address=192.168.84.128
+controllerTwo.jdbcPort=25333
+login=postgres
+password=
+vdb=pc
+cluster.properties=pcluster.properties
+clear=true
+backend.driver=org.postgresql.Driver
+backend1.url=jdbc:postgresql://192.168.84.128/test
+backend2.url=jdbc:postgresql://192.168.84.128/test2

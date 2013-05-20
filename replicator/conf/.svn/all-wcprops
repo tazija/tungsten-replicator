@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/1326/trunk/replicator/conf
+END
+log4j-thl.properties
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1226/trunk/replicator/conf/log4j-thl.properties
+END
+replication-svc-wrapper.conf
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1/trunk/replicator/conf/replication-svc-wrapper.conf
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1185/trunk/replicator/conf/log4j.properties
+END
+development.log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1/trunk/replicator/conf/development.log4j.properties
+END
+shard.list
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/936/trunk/replicator/conf/shard.list
+END
+replicator.service.properties
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1/trunk/replicator/conf/replicator.service.properties
+END

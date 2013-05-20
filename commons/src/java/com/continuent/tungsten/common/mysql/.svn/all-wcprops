@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1339/trunk/commons/src/java/com/continuent/tungsten/common/mysql
+END
+MySQLAuthPacket.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/mysql/MySQLAuthPacket.java
+END
+Utils.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1014/trunk/commons/src/java/com/continuent/tungsten/common/mysql/Utils.java
+END
+MySQLIOs.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1339/trunk/commons/src/java/com/continuent/tungsten/common/mysql/MySQLIOs.java
+END
+MySQLConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/mysql/MySQLConstants.java
+END
+MySQLGreetingPacket.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/mysql/MySQLGreetingPacket.java
+END
+MySQLQueryPacket.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/mysql/MySQLQueryPacket.java
+END
+MySQLPacket.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/mysql/MySQLPacket.java
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1241/trunk/replicator/samples/conf/appliers
+END
+batch.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1151/trunk/replicator/samples/conf/appliers/batch.tpl
+END
+postgresql.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/988/trunk/replicator/samples/conf/appliers/postgresql.tpl
+END
+mongodb.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/606/trunk/replicator/samples/conf/appliers/mongodb.tpl
+END
+oracle.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/988/trunk/replicator/samples/conf/appliers/oracle.tpl
+END
+mysql.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/988/trunk/replicator/samples/conf/appliers/mysql.tpl
+END
+oracle-scan.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1241/trunk/replicator/samples/conf/appliers/oracle-scan.tpl
+END
+vertica.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/901/trunk/replicator/samples/conf/appliers/vertica.tpl
+END
+prefetch.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/873/trunk/replicator/samples/conf/appliers/prefetch.tpl
+END

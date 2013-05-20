@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1096/trunk/replicator/src/java/com/continuent/tungsten/replicator/heartbeat
+END
+HeartbeatFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/heartbeat/HeartbeatFilter.java
+END
+HeartbeatTable.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1096/trunk/replicator/src/java/com/continuent/tungsten/replicator/heartbeat/HeartbeatTable.java
+END

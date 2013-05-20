@@ -1,0 +1,85 @@
+10
+
+dir
+1355
+https://tungsten-replicator.googlecode.com/svn/trunk/commons/src/java/com/continuent/tungsten/common
+https://tungsten-replicator.googlecode.com/svn
+
+
+
+2013-05-15T13:18:33.986123Z
+1353
+ludovic.launer@continuent.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9f5e3340-5c9a-25cb-7c1c-c133a2e9e928
+
+cluster
+dir
+
+concurrent
+dir
+
+exec
+dir
+
+help
+dir
+
+network
+dir
+
+csv
+dir
+
+exception
+dir
+
+jmx
+dir
+
+utils
+dir
+
+patterns
+dir
+
+commands
+dir
+
+parsing
+dir
+
+cache
+dir
+
+directory
+dir
+
+mysql
+dir
+
+config
+dir
+
+security
+dir
+
+io
+dir
+
+tdf
+dir
+

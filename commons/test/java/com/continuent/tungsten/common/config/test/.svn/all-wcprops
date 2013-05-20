@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1126/trunk/commons/test/java/com/continuent/tungsten/common/config/test
+END
+SampleContainingObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/1014/trunk/commons/test/java/com/continuent/tungsten/common/config/test/SampleContainingObject.java
+END
+TungstenPropertiesTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/1126/trunk/commons/test/java/com/continuent/tungsten/common/config/test/TungstenPropertiesTest.java
+END
+IntervalTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1014/trunk/commons/test/java/com/continuent/tungsten/common/config/test/IntervalTest.java
+END
+SampleObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1014/trunk/commons/test/java/com/continuent/tungsten/common/config/test/SampleObject.java
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1015/trunk/replicator/test/java/com/continuent/tungsten/replicator/conf
+END
+TestPropertiesManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/1015/trunk/replicator/test/java/com/continuent/tungsten/replicator/conf/TestPropertiesManager.java
+END
+TestReplicatorRuntime.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/1015/trunk/replicator/test/java/com/continuent/tungsten/replicator/conf/TestReplicatorRuntime.java
+END

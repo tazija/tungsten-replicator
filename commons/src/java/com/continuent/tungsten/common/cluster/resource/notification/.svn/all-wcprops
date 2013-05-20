@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1040/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification
+END
+ClusterResourceNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/!svn/ver/1028/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/ClusterResourceNotification.java
+END
+ConnectorNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/ConnectorNotification.java
+END
+ReplicationServiceNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/!svn/ver/1014/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/ReplicationServiceNotification.java
+END
+DataSourceNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/DataSourceNotification.java
+END
+NotificationPropertyKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/NotificationPropertyKey.java
+END
+DataServerStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/DataServerStatus.java
+END
+DataServerNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/1040/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/DataServerNotification.java
+END
+SQLRouterNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/SQLRouterNotification.java
+END
+ReplicatorStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/ReplicatorStatus.java
+END
+DirectoryNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/DirectoryNotification.java
+END
+ReplicatorNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/ReplicatorNotification.java
+END
+NotificationStreamID.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/1028/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/NotificationStreamID.java
+END
+ClusterConfigurationNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/ClusterConfigurationNotification.java
+END
+HostStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/HostStatus.java
+END
+ManagerNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/ManagerNotification.java
+END
+HostNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/HostNotification.java
+END
+SequoiaBackendNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/SequoiaBackendNotification.java
+END
+UserEventNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/UserEventNotification.java
+END
+ClusterResourceNotificationFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/ClusterResourceNotificationFactory.java
+END
+ClusterMemberHeartbeat.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/ClusterMemberHeartbeat.java
+END
+ManagerHeartbeat.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/ManagerHeartbeat.java
+END
+ResourceStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/ResourceStatus.java
+END
+RemoteDataServiceHeartbeatNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/RemoteDataServiceHeartbeatNotification.java
+END
+DataSourceStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/notification/DataSourceStatus.java
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/manager/resource/shared
+END
+ResourceConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/manager/resource/shared/ResourceConfiguration.java
+END
+Folder.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/manager/resource/shared/Folder.java
+END
+RootResource.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/manager/resource/shared/RootResource.java
+END

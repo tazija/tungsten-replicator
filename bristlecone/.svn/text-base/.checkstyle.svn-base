@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileset-config file-format-version="1.1.0" simple-config="true">
+<fileset name="all" enabled="true" check-config-name="evaluator" type="project" location="eclipse-settings/checkstyle.config.4.0.xml" description=""><file-match-pattern match-pattern="." include-pattern="true"/>
+</fileset>
+<filter name="FileTypesFilter" enabled="true"/>
+</fileset-config>

@@ -1,0 +1,29 @@
+# Deadlock benchmark
+#
+# Runs a benchmark to test number of deadlocks encountered as the number
+# of statements per transaction or the time between them increases. 
+#
+# To invoke this test try the following command.
+#   $benchmark.sh -props DeadlockScenario.properties
+#
+
+# Scenario name. 
+scenario=com.continuent.bristlecone.benchmark.scenarios.DeadlockScenario
+
+# Database connection information.  Compare MySQL and PostgreSQL. 
+include=connection_mysql.properties|connection_postgresql.properties
+
+# Test duration and number of threads.  
+bound=duration
+duration=30
+threads=25|50|100
+
+# Database table information. 
+tables=4
+datatype=varchar
+datawidth=100
+datarows=1000
+
+# Number of updates per transaction and delay between them. 
+operations=2|4|8
+delaymillis=0|20|40

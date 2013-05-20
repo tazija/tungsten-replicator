@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1343/trunk/commons/src/java/com/continuent/tungsten/common/io
+END
+BufferedFileDataInput.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1343/trunk/commons/src/java/com/continuent/tungsten/common/io/BufferedFileDataInput.java
+END
+BufferedFileDataOutput.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1014/trunk/commons/src/java/com/continuent/tungsten/common/io/BufferedFileDataOutput.java
+END

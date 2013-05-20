@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1353/trunk/commons/src/java/com/continuent/tungsten/common/security
+END
+PasswordManagerCtrl.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1218/trunk/commons/src/java/com/continuent/tungsten/common/security/PasswordManagerCtrl.java
+END
+Encryptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1172/trunk/commons/src/java/com/continuent/tungsten/common/security/Encryptor.java
+END
+SecurityHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1353/trunk/commons/src/java/com/continuent/tungsten/common/security/SecurityHelper.java
+END
+RealmJMXAuthenticator.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1180/trunk/commons/src/java/com/continuent/tungsten/common/security/RealmJMXAuthenticator.java
+END
+AuthenticationInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1353/trunk/commons/src/java/com/continuent/tungsten/common/security/AuthenticationInfo.java
+END
+PasswordManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1225/trunk/commons/src/java/com/continuent/tungsten/common/security/PasswordManager.java
+END
+SecurityConf.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1180/trunk/commons/src/java/com/continuent/tungsten/common/security/SecurityConf.java
+END

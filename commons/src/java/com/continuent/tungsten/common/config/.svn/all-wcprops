@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1327/trunk/commons/src/java/com/continuent/tungsten/common/config
+END
+PropertyException.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1028/trunk/commons/src/java/com/continuent/tungsten/common/config/PropertyException.java
+END
+TungstenProperties.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1124/trunk/commons/src/java/com/continuent/tungsten/common/config/TungstenProperties.java
+END
+Interval.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1028/trunk/commons/src/java/com/continuent/tungsten/common/config/Interval.java
+END
+WildcardPattern.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1028/trunk/commons/src/java/com/continuent/tungsten/common/config/WildcardPattern.java
+END

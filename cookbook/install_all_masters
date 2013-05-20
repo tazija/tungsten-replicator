@@ -1,0 +1,130 @@
+#!/bin/bash
+# (C) Copyright 2012,2013 Continuent, Inc - Released under the New BSD License
+# Version 1.0.5 - 2013-04-03
+
+cookbook_dir=$(dirname $0)
+cd "$cookbook_dir/../"
+
+if [ ! -f $cookbook_dir/BOOTSTRAP.sh ]
+then
+    echo "$cookbook_dir/BOOTSTRAP.sh not found"
+    exit 1
+fi
+. $cookbook_dir/BOOTSTRAP.sh NODES_ALL_MASTERS.sh
+
+check_installed
+
+# $cookbook_dir/clear_cluster
+
+echo "installing ALL_MASTERS" >$INSTALL_LOG
+date >> $INSTALL_LOG
+if [ -n "$DRYRUN" ]
+then
+    [ -z "$VERBOSE" ] && VERBOSE=1
+fi 
+
+COMMAND_SEQUENCE=1
+
+
+# install all masters
+INDEX=0
+for NODE in ${MASTERS[*]}
+do
+  INSTALL_COMMAND="./tools/tungsten-installer \
+    --master-slave \
+    --master-host=$NODE \
+    --datasource-port=$DATABASE_PORT \
+    --datasource-user=$DATABASE_USER \
+    --datasource-password=$DATABASE_PASSWORD \
+    --datasource-log-directory=$BINLOG_DIRECTORY \
+    --service-name=${MM_SERVICES[$INDEX]} \
+    --home-directory=$TUNGSTEN_BASE \
+    --cluster-hosts=$NODE \
+    --datasource-mysql-conf=$MY_CNF \
+    --datasource-log-directory=$BINLOG_DIRECTORY \
+    -a --datasource-boot-script=$MYSQL_BOOT_SCRIPT \
+    --rmi-port=$RMI_PORT \
+    --thl-port=$THL_PORT \
+    $MORE_OPTIONS --$START_OPTION"
+
+    echo "## $COMMAND_SEQUENCE (host: $NODE)" >> $INSTALL_LOG
+    echo $INSTALL_COMMAND  | perl -pe 's/--/\\\n\t--/g' >> $INSTALL_LOG
+    if [ -n "$VERBOSE" ]
+    then
+        echo "## $COMMAND_SEQUENCE (host: $NODE)"
+        echo $INSTALL_COMMAND | perl -pe 's/--/\\\n\t--/g'
+    fi
+    COMMAND_SEQUENCE=$(($COMMAND_SEQUENCE+1))
+
+    if [ -z "$DRYRUN" ]
+    then
+        $INSTALL_COMMAND
+
+        if [ "$?" != "0"  ]
+        then
+            exit
+        fi
+    fi
+    INDEX=$(($INDEX+1))
+done
+
+TUNGSTEN_TOOLS=$TUNGSTEN_BASE/tungsten/tools
+
+# set -x
+S_INDEX=0
+for SLAVE in ${SLAVES[*]}
+do
+    M_INDEX=0
+    for MASTER in ${MASTERS[*]}
+    do
+        if [ "$SLAVE" != "$MASTER" ]
+        then
+            SLAVE_DS=`echo $SLAVE|perl -lpe's/\W/_/g'`
+
+            INSTALL_COMMAND="$TUNGSTEN_TOOLS/configure-service \
+            -C --quiet \
+            --host=$SLAVE \
+            --datasource=$SLAVE_DS \
+            --local-service-name=${MM_SERVICES[$S_INDEX]} \
+            --role=slave \
+            --service-type=remote \
+            --release-directory=$TUNGSTEN_BASE/tungsten \
+            --skip-validation-check=THLStorageCheck \
+            --master-thl-host=$MASTER \
+            --master-thl-port=$THL_PORT \
+            --svc-$START_OPTION ${MM_SERVICES[$M_INDEX]} "
+
+            echo "## $COMMAND_SEQUENCE (host: $SLAVE)" >> $INSTALL_LOG
+            echo $INSTALL_COMMAND | perl -pe 's/--/\\\n\t--/g' >> $INSTALL_LOG
+            if [ -n "$VERBOSE" ]
+            then
+                echo "## $COMMAND_SEQUENCE (host: $SLAVE)"
+                echo $INSTALL_COMMAND | perl -pe 's/--/\\\n\t--/g'
+            fi
+
+            COMMAND_SEQUENCE=$(($COMMAND_SEQUENCE+1))
+
+            if [ -z "$DRYRUN" ]
+            then
+                $INSTALL_COMMAND
+                if [ "$?" != "0"  ]
+                then
+                    exit
+                fi
+            fi
+        fi
+        M_INDEX=$(($M_INDEX+1))
+    done
+    S_INDEX=$(($S_INDEX+1))
+done
+# set +x
+if  [ -n "$DRYRUN" ]
+then
+    echo "## $COMMAND_SEQUENCE (host: $(hostname)"
+    echo "echo 'all_masters' > $CURRENT_TOPOLOGY"
+    exit
+fi
+
+echo "all_masters" > $CURRENT_TOPOLOGY
+$cookbook_dir/show_cluster 
+post_installation

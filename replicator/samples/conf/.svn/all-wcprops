@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/1331/trunk/replicator/samples/conf
+END
+replicator.properties.postgresql.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1272/trunk/replicator/samples/conf/replicator.properties.postgresql.tpl
+END
+replicator.properties.archive
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1327/trunk/replicator/samples/conf/replicator.properties.archive
+END
+replicator.properties.slave-relay
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1327/trunk/replicator/samples/conf/replicator.properties.slave-relay
+END
+replicator.properties.masterslave
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1327/trunk/replicator/samples/conf/replicator.properties.masterslave
+END
+wrapper.conf
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1324/trunk/replicator/samples/conf/wrapper.conf
+END
+replicator.properties.slave-prefetch
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1327/trunk/replicator/samples/conf/replicator.properties.slave-prefetch
+END
+replicator.properties.direct
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1327/trunk/replicator/samples/conf/replicator.properties.direct
+END
+replicator.properties.slave
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1327/trunk/replicator/samples/conf/replicator.properties.slave
+END
+postgresql.tungsten.conf.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/448/trunk/replicator/samples/conf/postgresql.tungsten.conf.tpl
+END
+postgresql-wal.properties.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/448/trunk/replicator/samples/conf/postgresql-wal.properties.tpl
+END
+sample.services.properties
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1298/trunk/replicator/samples/conf/sample.services.properties
+END

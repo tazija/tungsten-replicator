@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/405/trunk/replicator/samples/conf/backup_methods/default
+END
+script.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/405/trunk/replicator/samples/conf/backup_methods/default/script.tpl
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1211/trunk/replicator/lib-ext
+END
+vertica-jdk5-6.1.0-0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1211/trunk/replicator/lib-ext/vertica-jdk5-6.1.0-0.jar
+END
+derby.jar
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1/trunk/replicator/lib-ext/derby.jar
+END

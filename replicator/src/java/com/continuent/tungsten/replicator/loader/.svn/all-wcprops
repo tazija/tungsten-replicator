@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1122/trunk/replicator/src/java/com/continuent/tungsten/replicator/loader
+END
+CSVLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/990/trunk/replicator/src/java/com/continuent/tungsten/replicator/loader/CSVLoader.java
+END
+Loader.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1093/trunk/replicator/src/java/com/continuent/tungsten/replicator/loader/Loader.java
+END
+JdbcLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1122/trunk/replicator/src/java/com/continuent/tungsten/replicator/loader/JdbcLoader.java
+END
+LoaderCtrl.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/loader/LoaderCtrl.java
+END
+MySQLLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/990/trunk/replicator/src/java/com/continuent/tungsten/replicator/loader/MySQLLoader.java
+END

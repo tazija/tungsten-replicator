@@ -1,0 +1,87 @@
+#!/bin/bash
+# (C) Copyright 2012,2013 Continuent, Inc - Released under the New BSD License
+# Version 1.0.5 - 2013-04-03
+
+
+cookbook_dir=`dirname $0`
+cd $cookbook_dir
+
+MISSING=""
+UNDOCUMENTED=""
+NOT_IN_MANIFEST=""
+exit_code=0
+
+function final_check
+{
+    ok_msg=$1
+    not_ok_msg=$2
+    file_list=$3
+    if [ -z "$file_list" ]
+    then
+        echo $ok_msg
+    else
+        echo "**** WARNING *********************************"
+        echo "** $not_ok_msg : $file_list"
+        echo "**********************************************"
+        exit_code=1
+    fi
+}
+
+for REQUIRED in MANIFEST REFERENCE.txt
+do
+    if [ ! -f $REQUIRED ]
+    then
+        echo "Can't check the software without $REQUIRED"
+        MISSING="$MISSING $REQUIRED"
+    fi
+done
+
+[ -n "$MISSING" ] && exit $exit_code
+
+# Looking for expected files
+for F in `cat MANIFEST` 
+do
+    COMMENT=$(echo $F |grep '#')
+    if [ -n "$COMMENT" ]
+    then
+        echo $COMMENT
+    else
+        if [ -f $F ]
+        then
+            echo "ok $F"
+        else
+            echo "not ok - $F not found"
+            MISSING="$MISSING $F"
+        fi
+        FOUND_IN_DOCS=$(grep $F REFERENCE.txt)
+        if [ -z "$FOUND_IN_DOCS" ]
+        then
+            echo "not ok - '$F' not described in the documentation"
+            UNDOCUMENTED="$UNDOCUMENTED $F"
+        fi
+    fi
+done
+
+# Looking for unexpected files
+for F in * $(ls -d */*)
+do
+    SKIP=$(echo $F | perl -lne 'print 1 if /(~|\.bak)$/') 
+    if [ "$F" == "TODO" ] ; then SKIP=1; fi
+    if [ -d $F ] ; then SKIP=1; fi
+    if [ -z "$SKIP" ]
+    then
+        LISTED=$(grep "^$F$" MANIFEST)
+        if [ -z "$LISTED" ]
+        then
+            echo "not ok - file $F not in MANIFEST"
+            NOT_IN_MANIFEST="$NOT_IN_MANIFEST $F"
+        fi
+    fi
+done
+
+echo ""
+final_check "All files from MANIFEST are accounted for" "Missing files" $MISSING
+final_check "All files are documented in REFERENCE.txt" "Undocumented files" $UNDOCUMENTED
+final_check "All files are listed in MANIFEST" "Files not in MANIFEST" $NOT_IN_MANIFEST
+exit $exit_code
+

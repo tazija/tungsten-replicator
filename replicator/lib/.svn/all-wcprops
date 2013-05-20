@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/1340/trunk/replicator/lib
+END
+mysql-connector-java-5.1.6WithEscapeProcessingFix-bin.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1/trunk/replicator/lib/mysql-connector-java-5.1.6WithEscapeProcessingFix-bin.jar
+END
+tungsten-fsm.jar
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1317/trunk/replicator/lib/tungsten-fsm.jar
+END
+js.jar
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/replicator/lib/js.jar
+END
+protobuf-java-2.3.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/255/trunk/replicator/lib/protobuf-java-2.3.0.jar
+END
+vertica_4.1.13_jdk_5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/851/trunk/replicator/lib/vertica_4.1.13_jdk_5.jar
+END
+opencsv-2.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/935/trunk/replicator/lib/opencsv-2.3.jar
+END
+drizzle-jdbc-1.2-SNAPSHOT.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/905/trunk/replicator/lib/drizzle-jdbc-1.2-SNAPSHOT.jar
+END
+protobuf-java-2.3.0-sources.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1002/trunk/replicator/lib/protobuf-java-2.3.0-sources.jar
+END
+drizzle-jdbc-1.2-SNAPSHOT-sources.jar
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/905/trunk/replicator/lib/drizzle-jdbc-1.2-SNAPSHOT-sources.jar
+END
+tungsten-fsm-src.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1317/trunk/replicator/lib/tungsten-fsm-src.jar
+END
+jolokia-jvm-jdk6-0.91-agent.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/178/trunk/replicator/lib/jolokia-jvm-jdk6-0.91-agent.jar
+END
+classes12.jar
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1/trunk/replicator/lib/classes12.jar
+END
+mongo-2.5.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/134/trunk/replicator/lib/mongo-2.5.3.jar
+END
+postgresql-8.4-701.jdbc3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/9/trunk/replicator/lib/postgresql-8.4-701.jdbc3.jar
+END

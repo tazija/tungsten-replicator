@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1330/trunk/replicator/samples/conf/backup_methods/mysql
+END
+xtrabackup-incremental.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1330/trunk/replicator/samples/conf/backup_methods/mysql/xtrabackup-incremental.tpl
+END
+xtrabackup-full.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1330/trunk/replicator/samples/conf/backup_methods/mysql/xtrabackup-full.tpl
+END
+xtrabackup.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1330/trunk/replicator/samples/conf/backup_methods/mysql/xtrabackup.tpl
+END
+mysqldump.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1330/trunk/replicator/samples/conf/backup_methods/mysql/mysqldump.tpl
+END

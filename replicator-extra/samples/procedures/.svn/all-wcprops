@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/12/trunk/replicator-extra/samples/procedures
+END
+tungsten_master_pos_wait_func.sql
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/12/trunk/replicator-extra/samples/procedures/tungsten_master_pos_wait_func.sql
+END
+README.tungsten_master_pos_wait.txt
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/12/trunk/replicator-extra/samples/procedures/README.tungsten_master_pos_wait.txt
+END
+tungsten_master_pos_wait_proc.sql
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/12/trunk/replicator-extra/samples/procedures/tungsten_master_pos_wait_proc.sql
+END

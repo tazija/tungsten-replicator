@@ -1,0 +1,128 @@
+#########################
+## Documentation
+#########################
+README.txt                             Quick start guide
+REFERENCE.txt                          This file
+MANIFEST                               List of files in the cookbook
+check_cookbook                         Verifies that the cookbook directory contains all files
+help  [command]                        Shows this file (if a file name is given, displays the help for that command) 
+readme                                 Shows the quick start guide
+
+#########################
+## Cluster configuration
+#########################
+COMMON_NODES.sh                        List of nodes in the cluster
+USER_VALUES.sh                         Cluster configuration (user defined values)
+BOOTSTRAP.sh                           System definition builder (For internal use)
+utilities.sh                           Cluster shared routines
+NODES_MASTER_SLAVE.sh                  Nodes definition for a master-slave topology
+NODES_ALL_MASTERS.sh                   Nodes definition for an all-masters topology
+NODES_STAR.sh                          Nodes definition for a star topology
+NODES_FAN_IN.sh                        Nodes definition for a fan-in topology
+
+#########################
+## pre-installation tools
+#########################
+pre_req_checker/tungsten_prereq        Checks and installs pre-requisites
+deploy_to_sandboxes                    Create database sandboxes in all servers for further installation
+validate_cluster                       Validates the cluster with all the installation pre-checks
+
+#########################
+## Installation tools
+#########################
+install_master_slave                   Installs a master-slave topology
+install_all_masters                    Installs an all-masters topology
+install_fan_in                         Installs a fan-in topology
+install_star                           Installs a star topology
+install_master_slave_direct            Installs a master-slave topology with 'direct mode'
+install_standard_replication           Installs standard MySQL replication
+
+#########################
+## Administrative tools
+#########################
+take-over                              Takes over a master-slave cluster from MySQL replication
+add_node_master_slave                  Add a node to a master-slave topology
+add_node_star                          Add a node to a star topology
+switch                                 Switches role between the master and one given slave
+collect_logs                           Gets all the logs from all servers
+load_data                              Starts concurrent transaction load in all masters
+copy_backup                            Copies backup from a given node to another
+
+#########################
+## Cleanup tools
+#########################
+clear_all                              Clears the cluster inconditionally
+clear_cluster                          Clears the cluster regardless of the topology
+clear_cluster_all_masters.sh           Clears an all-masters topology (DEPRECATED)
+clear_cluster_fan_in.sh                Clears a fan-in topology (DEPRECATED)
+clear_cluster_master_slave.sh          Clears a master-slave topology (DEPRECATED)
+clear_cluster_master_slave_direct.sh   Clears a master-slave (direct) topology (DEPRECATED)
+clear_cluster_star.sh                  Clears a star topology (DEPRECATED)
+
+#########################
+## Monitoring tools
+#########################
+simple_services                        Filter the output of 'trepctl services'
+show_cluster                           Shows the services across all hosts 
+show_all_masters.sh                    Shows the services across all hosts (all-masters topology) (DEPRECATED)
+show_fan_in.sh                         Shows the services across all hosts (fan-in topology) (DEPRECATED)
+show_master_slave.sh                   Shows the services across all hosts (master-slave topology) (DEPRECATED)
+show_star.sh                           Shows the services across all hosts (star topology) (DEPRECATED)
+
+
+#########################
+## Shortcuts
+#########################
+replicator                             Shortcut to the 'replicator' command
+trepctl                                Shortcut to the 'trepctl' command
+thl                                    Shortcut to the 'thl' command
+tool.sh                                Internal shortcut engine (not to use directly)
+
+query_node  node query                 runs a query in a given node
+query_all_nodes query                  runs a query in all nodes
+configure_service                      Shortcut to $TUNGSTEN_BASE/configure_service
+conf                                   Shows the configuration files using 'less'
+show_conf                              Same as 'conf.sh'
+edit_conf                              Edits the configuration files using 'vim'
+vimconf                                Same as 'vimconf.sh'
+emacsconf                              Edits the configuration files using 'emacs'
+log                                    Shows the replicator log using 'less'
+show_log                               Same as 'log.sh'
+vilog                                  Edits the replicator log using 'vi'
+vimlog                                 Edits the replicator log using 'vim'
+emacslog                               Edits the replicator log using 'emacs'
+
+heartbeat                              Performs a heartbeat in each master
+paths                                  Shows the path to all important tools and services
+services                               Performs 'trepctl services'
+backups                                Shows which backups were taken in all nodes
+
+
+#########################
+## Testing tools
+#########################
+test_all_topologies                    Installs and tests all topologies
+test_cluster                           Tests a cluster 
+test_all_masters.sh                    Tests an all-masters topology (DEPRECATED)
+test_fan_in.sh                         Tests a fan-in topology (DEPRECATED)
+test_master_slave.sh                   Tests a master-slave topology (DEPRECATED)
+test_star.sh                           Tests a star topology (DEPRECATED)
+insert_retrieve  node1 node2           Creates a table in node1 and retrieves it from node2
+tungsten_service {node|all} [service]  Shows the contents of trep_commit_seqno for a given node for all nodes. If 'service' is not given, it shows all
+
+#########################
+## ENVIRONMENT VARIABLES
+#########################
+## USED DURING INSTALLATION
+VERBOSE=1                              Gives more information during installation
+VERBOSE=2                              Enables debug mode during validation
+DRYRUN=1                               Used by all installation scripts. Shows installation commands
+MORE_OPTIONS="..."                     Used by all installation scripts. Adds more options to the installer command
+## USED DURING CLEAN-UP
+STOP_REPLICATORS                       Stops the replicators
+REMOVE_TUNGSTEN_BASE                   Removes the directory where the software was installed
+REMOVE_SERVICE_SCHEMA                  Removes the schemas tungsten_*
+REMOVE_TEST_SCHEMAS                    Removes the schemas created for tests
+REMOVE_DATABASE_CONTENTS=0             Removes all the database contents (default: no)
+CLEAN_NODE_DATABASE_SERVER             Resets the database server to default state.
+

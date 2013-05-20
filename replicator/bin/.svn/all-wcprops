@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/1348/trunk/replicator/bin
+END
+binlog-find-restart.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1291/trunk/replicator/bin/binlog-find-restart.pl
+END
+replicator
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1325/trunk/replicator/bin/replicator
+END
+xtrabackup
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1330/trunk/replicator/bin/xtrabackup
+END
+binlog-analyze.pl
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/770/trunk/replicator/bin/binlog-analyze.pl
+END
+loader
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/945/trunk/replicator/bin/loader
+END
+thl
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1050/trunk/replicator/bin/thl
+END
+ddlscan
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/1143/trunk/replicator/bin/ddlscan
+END
+mysqldump
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/1330/trunk/replicator/bin/mysqldump
+END
+trepctl
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/1348/trunk/replicator/bin/trepctl
+END

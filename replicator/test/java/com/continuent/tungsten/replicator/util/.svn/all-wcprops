@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1263/trunk/replicator/test/java/com/continuent/tungsten/replicator/util
+END
+TestEventWatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/255/trunk/replicator/test/java/com/continuent/tungsten/replicator/util/TestEventWatcher.java
+END
+TestAtomicIntervalGuard.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/1263/trunk/replicator/test/java/com/continuent/tungsten/replicator/util/TestAtomicIntervalGuard.java
+END
+TestAtomicCounter.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1/trunk/replicator/test/java/com/continuent/tungsten/replicator/util/TestAtomicCounter.java
+END

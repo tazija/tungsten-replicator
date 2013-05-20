@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/1340/trunk/replicator/lib/ruby
+END
+xtrabackup.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1340/trunk/replicator/lib/ruby/xtrabackup.rb
+END
+backup.rb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/1330/trunk/replicator/lib/ruby/backup.rb
+END
+mysqldump.rb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1330/trunk/replicator/lib/ruby/mysqldump.rb
+END

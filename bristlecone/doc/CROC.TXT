@@ -1,0 +1,123 @@
+               INTRODUCTION TO CROC (REPLICATOR CROCODILE)
+                                R. Hodges
+                             17 October 2011
+                   Copyright (c) 2011 Continuent, Inc.
+
+1 WHAT CROC DOES
+
+Croc is a simple utility to test replication programs.  It runs
+cases (called Loader implementations) that add data to one or more
+tables.  Croc takes care of creating the tables, ensuring replication
+is running before and after each loader runs, and compares tables.
+The idea is that each Loader lets you confirm that a particular
+stream of SQL can be replicated correctly between a master and
+slave.
+
+Loaders are Java classes that implement the Loader interface, shown
+below.
+
+public interface Loader
+{
+    /** Return tables this test uses. */
+    public List<Table> getTables();
+
+    /** Load data into tables. */
+    public void load(CrocContext context);
+}
+
+Loader implementations are responsible for two things:  giving croc
+the definitions of tables it will load, and executing a procedure
+to load data.  Croc takes care of managing DDL setup, testing
+liveness, and comparisons, which means that loaders are very simple.
+
+Croc has no dependencies on any particular type of replication and
+does not assume the ability to replicate DDL.  Croc currently does
+not set up replication or fix it when it breaks.  If replication
+fails during a test run croc will report an error and exit.
+
+2 CROC LOADERS
+
+Loader classes must be in the classpath.  You must supply cross a
+list of loaders in a file called the testList.  Here is a typical
+list:
+
+# List of tests to run. 
+com.continuent.bristlecone.croc.run.SimpleInsert
+com.continuent.bristlecone.croc.run.MultiTypeInsert
+
+This file is submitted to croc using the -testList option. 
+
+3 RUNNING CROC
+
+You can run croc using the handy croc.sh script.  Here is a typical
+example of invocation:
+
+$ bin/croc.sh -masterUrl jdbc:mysql://logos1/croc \
+  -slaveUrl jdbc:mysql://logos2/croc \
+  -user tungsten -password secret -timeout 10 -ddlReplication false \
+  -testList /tmp/tests.croc
+
+Croc will print output on stdout by default.  You can adjust output
+levels to get debug output by editing the log4j.properties file in
+the config directory.
+
+To get help, use the croc.sh command line -help option:
+
+$ bin/croc.sh -help
+CROCODILE REPLICATOR TEST PROGRAM ("croc")
+Usage: croc options
+Options:
+  -compare {true|false}         If true, compare tables (default=true)
+  -ddlReplication {true|false}  If true, DDL replicates (default=true)
+  -masterUrl url                Master db url
+  -password pw                  Db password
+  -slaveUrl url                 Slave db url
+  -testList file                File containing list of tests
+  -timeout secs                 Time out to wait for replication (default=60)
+  -user user                    Db login
+  -verbose                      Print verbose error output
+  -help                         Print usage and exit
+Notes:
+  Test list is a set of croc Loader class names, one per line
+
+4 SETUP PECULIRITIES
+
+4.1 MySQL -> PostgreSQL
+
+Here's an example of running tests against heterogeneous topology with MySQL
+and PostgreSQL running on the same host's different ports:
+
+$ scripts/croc.sh \
+  -masterUrl jdbc:mysql://sp:12001/croc \
+  -slaveUrl jdbc:postgresql://sp:54324/postgres \
+  -user tungsten -password secret -timeout 10 -ddlReplication false \
+  -testList config/all.croc
+
+Notes:
+
+* MySQL database corresponds to a PostgreSQL _schema_, hence you will need to
+  create the corresponding schema in the database "postgres" beforehand:
+
+  CREATE SCHEMA croc;
+
+* You need to create the specified DBMS user and assign it the "croc" schema as
+  the default one. That's where the test tables are created. Eg.:
+  
+  CREATE ROLE tungsten WITH SUPERUSER LOGIN;
+  ALTER USER tungsten SET search_path to croc;
+
+5 HACKING CROC
+
+The croc class files are in package com.continuent.bristlecone.croc.
+Sample Loader implementations are in package
+com.continuent.bristlecone.croc.run.
+
+Croc is designed to work across different types of relational
+databases and even between SQL and NoSQL databases at some point.
+So far it has only been tested on MySQL.
+
+6 ABOUT THE NAME
+
+"Croc" is short for "crocodile."  Crocodiles have extremely strong
+jaws and do not let go once they have something in them.  We want
+to do the same thing to misbehaving replication programs.

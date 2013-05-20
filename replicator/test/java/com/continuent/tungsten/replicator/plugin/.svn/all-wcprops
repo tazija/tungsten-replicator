@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/370/trunk/replicator/test/java/com/continuent/tungsten/replicator/plugin
+END
+DummyPluginImplementation.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/1/trunk/replicator/test/java/com/continuent/tungsten/replicator/plugin/DummyPluginImplementation.java
+END
+TestPluginLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/370/trunk/replicator/test/java/com/continuent/tungsten/replicator/plugin/TestPluginLoader.java
+END
+DummyPlugin.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1/trunk/replicator/test/java/com/continuent/tungsten/replicator/plugin/DummyPlugin.java
+END
+DummyPluginInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1/trunk/replicator/test/java/com/continuent/tungsten/replicator/plugin/DummyPluginInterface.java
+END

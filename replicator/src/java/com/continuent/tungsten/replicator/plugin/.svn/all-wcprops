@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1122/trunk/replicator/src/java/com/continuent/tungsten/replicator/plugin
+END
+PluginSpecification.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/plugin/PluginSpecification.java
+END
+PluginConfigurator.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/362/trunk/replicator/src/java/com/continuent/tungsten/replicator/plugin/PluginConfigurator.java
+END
+PluginContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1122/trunk/replicator/src/java/com/continuent/tungsten/replicator/plugin/PluginContext.java
+END
+ReplicatorPlugin.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/plugin/ReplicatorPlugin.java
+END
+PluginLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/362/trunk/replicator/src/java/com/continuent/tungsten/replicator/plugin/PluginLoader.java
+END
+ShutdownHook.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/866/trunk/replicator/src/java/com/continuent/tungsten/replicator/plugin/ShutdownHook.java
+END
+PluginException.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/plugin/PluginException.java
+END

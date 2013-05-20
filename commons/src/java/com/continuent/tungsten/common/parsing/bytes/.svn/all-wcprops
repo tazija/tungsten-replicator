@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1028/trunk/commons/src/java/com/continuent/tungsten/common/parsing/bytes
+END
+MySQLStatementTranslator.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/1028/trunk/commons/src/java/com/continuent/tungsten/common/parsing/bytes/MySQLStatementTranslator.java
+END
+ByteState.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1028/trunk/commons/src/java/com/continuent/tungsten/common/parsing/bytes/ByteState.java
+END
+CharacterTranslationBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/1028/trunk/commons/src/java/com/continuent/tungsten/common/parsing/bytes/CharacterTranslationBuffer.java
+END
+ByteTranslationStateMachine.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/1028/trunk/commons/src/java/com/continuent/tungsten/common/parsing/bytes/ByteTranslationStateMachine.java
+END

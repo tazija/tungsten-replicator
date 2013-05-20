@@ -1,0 +1,57 @@
+#!/bin/sh
+# Tungsten Replicator @VERSION@
+# (c) 2009 Continuent, Inc.  All rights reserved.
+#
+# Replicator *nix start script
+#
+# Environmental variables accepted by this script:
+#   JAVA_HOME - Java release directory
+#   JVM_OPTIONS - Java VM options (e.g. -Xmx=1024M)
+# Find home.
+CLUSTER_BIN=`dirname $0`
+CLUSTER_LIB=`cd $CLUSTER_BIN/..; pwd`
+
+CLUSTER_HOME_ARGS=""
+CLUSTER_HOME="$CLUSTER_BIN/../../cluster-home"
+if [ -d "$CLUSTER_HOME" ]; then
+        clusterHomeDir="`cd $CLUSTER_HOME;pwd`"
+        # echo "Using $clusterHomeDir as cluster.home"
+        CLUSTER_HOME_ARGS="-Dcluster.home=$clusterHomeDir"
+else
+	echo "Could not find the directory $CLUSTER_HOME for cluster home"
+	echo "Exiting..."
+	exit 1
+fi
+
+# Add jars from all directories to class path.
+#echo "Getting libraries from $CLUSTER_LIB/lib and $CLUSTER_LIB/lib-ext"
+for jar in $CLUSTER_LIB/lib/*.jar $CLUSTER_LIB/lib-ext/*.jar; do
+#  echo "Adding JAR=$jar"
+  if [ -z "$CP" ]; then
+    CP=$jar
+  else
+    CP=$CP:$jar
+  fi
+done
+
+# Add configuration directory to class path.
+CP=$CP:$CLUSTER_LIB/conf
+#echo "CLASSPATH=$CP"
+# Find Java.
+if [ -z "$JAVA_HOME" ]; then
+  JAVA=`which java`
+else
+  JAVA=$JAVA_HOME/bin/java
+fi
+if [ ! -x "$JAVA" ]; then
+  echo "Cannot find java command.  Please set the JAVA_HOME environment"
+  echo "variable or add java to the execution path."
+  exit 1
+fi
+
+# Uncomment to debug replicator control client.
+#CLUSTER_JVMDEBUG_PORT=54002
+#JVM_OPTIONS="${JVM_OPTIONS} -enableassertions -Xdebug -Xnoagent -Djava.compiler=none -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=$CLUSTER_JVMDEBUG_PORT"
+
+# Run the utility.
+$JAVA -cp $CP $CLUSTER_HOME_ARGS $JVM_OPTIONS com.continuent.tungsten.manager.client.ClusterManagerCtrl $*

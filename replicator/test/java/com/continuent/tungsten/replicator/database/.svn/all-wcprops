@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1262/trunk/replicator/test/java/com/continuent/tungsten/replicator/database
+END
+TestSqlOperation.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1/trunk/replicator/test/java/com/continuent/tungsten/replicator/database/TestSqlOperation.java
+END
+TestSqlStatementParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/1179/trunk/replicator/test/java/com/continuent/tungsten/replicator/database/TestSqlStatementParser.java
+END
+TestMySQLStringBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/212/trunk/replicator/test/java/com/continuent/tungsten/replicator/database/TestMySQLStringBuilder.java
+END
+TestDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1210/trunk/replicator/test/java/com/continuent/tungsten/replicator/database/TestDatabase.java
+END
+TestSqlOperationMatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/897/trunk/replicator/test/java/com/continuent/tungsten/replicator/database/TestSqlOperationMatcher.java
+END
+TestMySQLEventId.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/812/trunk/replicator/test/java/com/continuent/tungsten/replicator/database/TestMySQLEventId.java
+END
+TestTable.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/684/trunk/replicator/test/java/com/continuent/tungsten/replicator/database/TestTable.java
+END
+TestSqlCommentEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/1262/trunk/replicator/test/java/com/continuent/tungsten/replicator/database/TestSqlCommentEditor.java
+END
+TestSqlScriptGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/785/trunk/replicator/test/java/com/continuent/tungsten/replicator/database/TestSqlScriptGenerator.java
+END
+TestTableMatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/707/trunk/replicator/test/java/com/continuent/tungsten/replicator/database/TestTableMatcher.java
+END
+TestTableMetadataCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/154/trunk/replicator/test/java/com/continuent/tungsten/replicator/database/TestTableMetadataCache.java
+END

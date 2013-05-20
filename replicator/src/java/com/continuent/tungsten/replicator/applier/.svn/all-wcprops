@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1287/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier
+END
+DrizzleApplier.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/387/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/DrizzleApplier.java
+END
+RawApplier.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1093/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/RawApplier.java
+END
+DummyApplier.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/353/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/DummyApplier.java
+END
+ParallelApplier.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/352/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/ParallelApplier.java
+END
+JdbcPrefetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/764/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/JdbcPrefetcher.java
+END
+ApplierException.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/388/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/ApplierException.java
+END
+ApplierStats.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/ApplierStats.java
+END
+JdbcApplier.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1287/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/JdbcApplier.java
+END
+PostgreSQLApplier.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/353/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/PostgreSQLApplier.java
+END
+MySQLApplier.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1259/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/MySQLApplier.java
+END
+OracleApplier.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/353/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/OracleApplier.java
+END
+MySQLDrizzleApplier.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/1259/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/MySQLDrizzleApplier.java
+END
+MongoApplier.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1145/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/MongoApplier.java
+END
+Applier.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/346/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/Applier.java
+END
+ApplierWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1093/trunk/replicator/src/java/com/continuent/tungsten/replicator/applier/ApplierWrapper.java
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1355/trunk/replicator/src/java/com/continuent/tungsten/replicator
+END
+ErrorNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1317/trunk/replicator/src/java/com/continuent/tungsten/replicator/ErrorNotification.java
+END
+VersionManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/VersionManager.java
+END
+ReplicatorException.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/460/trunk/replicator/src/java/com/continuent/tungsten/replicator/ReplicatorException.java
+END
+Version.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/Version.java
+END
+InSequenceNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/915/trunk/replicator/src/java/com/continuent/tungsten/replicator/InSequenceNotification.java
+END
+OutOfSequenceNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/915/trunk/replicator/src/java/com/continuent/tungsten/replicator/OutOfSequenceNotification.java
+END
+StateChangeNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/StateChangeNotification.java
+END

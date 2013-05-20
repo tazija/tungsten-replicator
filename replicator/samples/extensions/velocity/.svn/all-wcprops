@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/1273/trunk/replicator/samples/extensions/velocity
+END
+ddl-mysql-oracle-cdc.vm
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1273/trunk/replicator/samples/extensions/velocity/ddl-mysql-oracle-cdc.vm
+END
+ddl-mysql-vertica.vm
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1234/trunk/replicator/samples/extensions/velocity/ddl-mysql-vertica.vm
+END
+ddl-check-pkeys.vm
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1233/trunk/replicator/samples/extensions/velocity/ddl-check-pkeys.vm
+END
+ddl-mysql-oracle.vm
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1234/trunk/replicator/samples/extensions/velocity/ddl-mysql-oracle.vm
+END
+ddl-mysql-vertica-staging.vm
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1234/trunk/replicator/samples/extensions/velocity/ddl-mysql-vertica-staging.vm
+END

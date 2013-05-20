@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1327/trunk/commons/src/java/com/continuent/tungsten/common/config/cluster
+END
+ConfigUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/config/cluster/ConfigUtilities.java
+END
+ConfigurationConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/config/cluster/ConfigurationConstants.java
+END
+ClusterPolicyManagerConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/config/cluster/ClusterPolicyManagerConfiguration.java
+END
+DataServicesConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/1076/trunk/commons/src/java/com/continuent/tungsten/common/config/cluster/DataServicesConfiguration.java
+END
+ConfigurationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/config/cluster/ConfigurationException.java
+END
+RouterConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/1327/trunk/commons/src/java/com/continuent/tungsten/common/config/cluster/RouterConfiguration.java
+END
+ClusterConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/1076/trunk/commons/src/java/com/continuent/tungsten/common/config/cluster/ClusterConfiguration.java
+END
+QueryStatusToResourceStateConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/!svn/ver/1076/trunk/commons/src/java/com/continuent/tungsten/common/config/cluster/QueryStatusToResourceStateConfiguration.java
+END

@@ -1,0 +1,718 @@
+#!/bin/bash
+# (C) Copyright 2012,2013 Continuent, Inc - Released under the New BSD License
+# Version 1.0.4 - 2013-03-07
+
+
+
+ 
+RUNCOMMANDS=false
+PROMPTS=false
+REDHAT=false
+DEBIAN=false
+LOGFILE=/tmp/tungsten_prereq.log
+HELP=""
+HOSTNAME=`hostname`
+helpNo=0
+dryrun=true
+user='tungsten'
+user_password='123tungsten'
+home_directory='/opt/continuent'  
+mysql_connectorj_dir='/opt/mysql'  
+mysql_connectorj_version='5.1.21' 
+datasource_user='tungsten' 
+datasource_password='secret'  
+application_user='appuser' 
+application_password='password' 
+cluster_hosts='localhost'
+cluster_hosts_a=''
+skip_deploy=''
+skip_deploy_a=''
+cluster_hosts_specified=false
+mysql_root_password='password'
+
+override_dryrun=false     #this is used to ensure files get copied to remote hosts during dryrun
+
+remote=false      #this one is passed when starting script on remote host
+
+#Deployment steps add any new subroutines where is they need to be run
+#Steps cam be skipped via the --skip-deploy parameter
+deploy_steps='doHosts doJava doRuby doSudo doTungstenUser doDirs doConnector doSystemSetup doMysql doIptables doCreateAppUser doCreateDSUser'
+#DoRepo is missing from here until a licence server exists
+
+
+SCRIPTDIR=`dirname $0`
+
+options=$(echo $@ | sed -e 's/=/ /g')
+
+# Options converted to array
+arguments=($options)
+
+# Loop index
+index=0
+
+# Usage
+usage() {
+        echo "
+Available parameters:
+ --execute                      -> Execute All Commands (False)
+ --prompt                       -> Display a prompt before running each command (false)
+ --dryrun                       -> Show all the command that would be executed (true)
+ --user                         -> Unix User to create for tungsten (tungsten)
+ --user-password                -> Password for UNIX user (123password)
+ --home-directory               -> Home directory for tungsten (/opt/continuent)
+ --mysql-connectorj-dir         -> Directory for the Mysql/J Connector (/opt/mysql)
+ --mysql-connectorj-version     -> Mysql/J Version (5.1.21)
+ --datasource-user              -> Mysql User for tungsten to use (tungsten)
+ --datasource-password          -> Password for tungsten mysql user (secret)
+ --application-user             -> Mysql User the Application will user (appuser)
+ --application-password         -> Password for the applicaiton Mysql user (password)
+ --help                         -> Display this help
+ --cluster-hosts                -> Hosts to deploy to (localhost)
+ --mysql-root-password          -> Password for the Mysql Root account (password)
+ --skip-deploy                  -> Skip deploy steps ()
+         Valid steps are $deploy_steps
+"
+exit 0
+}
+
+options=$(echo $options | sed -e 's/=/ /g')
+
+for argument in $options
+do
+        # Incrementing loop index
+        index=`expr $index + 1`
+
+        # Getting parameters
+        case $argument in
+                -x|--execute) RUNCOMMANDS=true ;;
+                -p|--prompt) PROMPTS=true  ;;
+                -d|--dryrun) dryrun=true ;;
+                -u|--user) user=${arguments[index]} ;;
+                -up|--user-password) user_password=${arguments[index]} ;;
+                -hd|--home-directory) home_directory=${arguments[index]} ;;
+                -mjd|--mysql-connectorj-dir) mysql_connectorj_dir=${arguments[index]} ;;
+                -mjv|--mysql-connectorj-version) mysql_connectorj_version=${arguments[index]} ;;
+                -du|--datasource-user) datasource_user=${arguments[index]} ;;
+                -dp|--datasource-password) datasource_password=${arguments[index]} ;;
+                -au|--application-user) application_user=${arguments[index]} ;;
+                -ap|--application-password) application_password=${arguments[index]} ;;
+                -mr|--musql-root-password) mysql_root_password=${arguments[index]} ;;
+                --cluster-hosts) 
+                	cluster_hosts_specified=true
+                	cluster_hosts=${arguments[index]} 
+                	cluster_hosts_a=(`echo $cluster_hosts | tr "," "\n"`)
+                ;;
+                -h|--help) usage ;;
+                --skip-deploy)
+                	skip_deploy=${arguments[index]}
+                	skip_deploy_a=(`echo $skip_deploy | tr "," "\n"`)
+                	;;
+                --remote) remote=true ;;
+        esac
+done
+        
+HELP[0]="
+		No Help is available
+		"
+HELP[1]="
+		This command switch allows the tungsten user to run SUDO commands without using a password.
+		"
+HELP[2]="
+This command switches off the requiretty option for SUDO commands. This is a requirement\n for the
+tungsten installer to work
+"
+
+doCheckRoot()
+{
+	#Check to see it root is running the script or via SUDO
+	if [ "$(id -u)" != "0" ]; then
+	   echo "This script must be run as root"  
+	   exit 1
+	fi
+}
+doCheckArg()
+{
+	if $RUNCOMMANDS && $PROMPTS
+	then
+		echo "You can not specify --prompt (-p) and --execute (-x) together"
+		exit 1
+	fi
+}
+info ()
+{
+	echo "INFO   : $1"
+}
+
+command_exists () {
+    type "$1" &> /dev/null ;
+}
+
+contains() {
+    local n=$#
+    local value=${!n}
+    for ((i=1;i < $#;i++)) {
+        if [ "${!i}" == "${value}" ]; then
+            echo "y"
+            return 0
+        fi
+    }
+    echo "n"
+    return 1
+}
+
+doDeployRootKeys()
+{
+	echo 'Deploying SSH keys to cluster hosts'
+	echo 'This step may require the root password to be entered several times'
+	echo 'while password less access is established...'
+
+	#Ensure the files get copied to the remote host and executed when in dryrun mode
+	override_dryrun=true
+	if [ ! -f /root/.ssh/id_rsa.pub ]
+	then 
+		doExec "ssh-keygen -N '' -f /root/.ssh/id_rsa"
+	fi
+	
+	for host in "${cluster_hosts_a[@]}"
+	do
+		info "Deploying keys to $host"
+		if [ $host == 'localhost' ] || [ $host == `hostname` ]
+		then
+			doExec "mkdir /root/.ssh;cat /root/.ssh/id_rsa.pub >>/root/.ssh/authorized_keys; chmod 600 /root/.ssh/authorized_keys "
+		else
+			doExec "ssh $host mkdir /root/.ssh/"
+		   	doExec "cat /root/.ssh/id_rsa.pub |ssh $host 'sh -c \"cat - >>/root/.ssh/authorized_keys\";chmod 600 /root/.ssh/authorized_keys' "
+	   	fi
+	done
+	override_dryrun=false
+}
+
+doHelp()
+{
+	if [ -z "$helpNo" ] 
+	then
+		echo "No help available"
+	else
+		echo -e ${HELP[$helpNo]}
+		echo "See Tungsten documentation for more information"
+	fi
+	
+}
+doExec()
+{
+	#Run any shell commands
+	#if -x is passed in the command line the commands will actually be
+	#run otherwise they will just be displayed
+	if $RUNCOMMANDS || $override_dryrun
+	then
+		echo "EXEC   : $1"
+		eval $1 &>> $LOGFILE
+	else
+		if $PROMPTS
+		then
+			while true; do
+			    read -p "Execute ? :   $1  (y/n/h) [n]  " yn
+			    case $yn in
+			        [Yy]* ) echo "EXEC   : $1";eval $1 &>> $LOGFILE; break;;
+			        [Nn]* ) echo "SKIP   : $1";break;;
+			        [Hh]* ) doHelp;;
+			        "" ) break;;
+			        * ) echo "Please answer y or n.";;
+			    esac
+			done
+		else
+			if $remote
+			then
+				echo "DRYRUN : $1" &>> $LOGFILE
+			else
+				echo "DRYRUN : $1"
+			fi
+	   fi
+	fi
+}
+
+
+runMysql()
+{
+	#Run any mysql command commands
+	#NOTE: This currently assumes the root password is not set
+	
+	
+	if $RUNCOMMANDS
+	then
+		echo "EXEC   : $1"
+		mysql -p$mysql_root_password -e"$1" &>> $LOGFILE
+	else
+		if $PROMPTS
+		then
+			while true; do
+			    read -p "Execute ? :   $1  (y/n/h) [n]  " yn
+			    case $yn in
+			        [Yy]* ) echo "EXEC   : $1";mysql -p$mysql_root_password -e"$1" &>> $LOGFILE; break;;
+			        [Nn]* ) echo "SKIP   : $1";break;;
+			        [Hh]* ) doHelp;;
+			        "" ) break;;
+			        * ) echo "Please answer y or n.";;
+			    esac
+			done
+		else
+			if $remote
+			then
+				echo "DRYRUN : $1" &>> $LOGFILE
+			else
+				echo "DRYRUN : $1"
+			fi
+	   fi
+	fi
+}
+
+
+
+doJava()
+{
+	#Install open-jdk
+	HELP="Install OpenJDK Version 1.6"
+	if command_exists java
+	then
+		info "Java is already installed"
+	else
+		if $REDHAT ; then doExec "yum -y install java-1.6.0-openjdk"; fi
+		if $DEBIAN ; then doExec "apt-get -y install openjdk-6-jre"; fi
+	fi
+	HELP=""
+
+}
+
+doRuby()
+{
+	#Install ruby
+	HELP="Install Ruby"
+	if command_exists ruby
+	then
+		info "Ruby is already installed"
+	else
+		if $REDHAT ; then doExec "yum -y install ruby"; fi
+		if $DEBIAN ; then doExec "apt-get -y install ruby"; fi
+	fi
+	HELP=""
+}
+
+doSudo()
+{
+
+	 
+	#Install sudo
+	
+	if command_exists sudo
+	then
+		info "sudo is already installed"
+	else
+		if $REDHAT ; then doExec "yum -y install sudo"; fi
+		if $DEBIAN ; then doExec "apt-get -y install sudo"; fi
+	fi
+	
+	doExec "cp /etc/sudoers /etc/sudoers.tungsten.pre"	
+	helpNo=1
+	info "Allow $user to run command's as root without a password" 
+	doExec "echo '$user ALL=(root) NOPASSWD: ALL' >> /etc/sudoers"
+	helpNo=2
+	info "Remove the requiretty option from sudoers" 
+	doExec "sed -i  '/requiretty/s/^/#/'  /etc/sudoers"
+	helpNo=0
+}
+
+doTungstenUser()
+{
+ 
+	#Create the tungsten user and SSH key
+   id -u $user &> /dev/null
+   if [ $? -ne 0 ]
+   then
+	   if $REDHAT ; then doExec "useradd $user"; fi
+	   if $DEBIAN ; then doExec "useradd -d /home/$user -m $user"; fi
+	   doExec "echo '$user_password' | passwd $user --stdin"
+   else
+   		info "The user $user already exists"
+   fi
+   if [ ! -f /home/$user/.ssh/id_rsa ]
+   then
+        info "Create a SSH keypair for $user" 
+        doExec "mkdir /home/$user/.ssh"
+        doExec "chown $user.$user /home/$user/.ssh"
+   		doExec "sudo -u $user ssh-keygen -N '' -f /home/$user/.ssh/id_rsa"
+   		doExec "chmod 600 /home/$user/.ssh/id_rsa.pub"
+   else
+   		info "Private Key already exists for $user user"
+   fi
+}
+
+doDirs()
+{
+   #Create /opt/continuent and /opt/mysql and change owner to tungsten
+
+   doExec "mkdir -p $home_directory"
+   doExec "chown $user.$user $home_directory"
+ 
+}
+
+doConnector()
+{
+	#Install the ConnectorJ
+	info "Download and unpack MySQL Connector/J into $mysql_connectorj_dir " 
+	doExec "mkdir $mysql_connectorj_dir"
+   if $REDHAT ; then doExec "yum -y install wget"; fi
+   if [ ! -f $$mysql_connectorj_dir/mysql-connector-java-$mysql_connectorj_version.tar.gz ]
+   then 
+   		doExec "cd /opt/mysql; wget  http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-$mysql_connectorj_version.tar.gz/from/http://cdn.mysql.com/"
+   else
+   		echo "INFO   : Mysql Connector J already downloaded"
+   fi
+   doExec "tar -xvzf $mysql_connectorj_dir/mysql-connector-java-$mysql_connectorj_version.tar.gz -C $mysql_connectorj_dir "
+ }
+ 
+ doSystemSetup()
+ {
+ 
+ 	 
+ 	doExec "cp /etc/security/limits.conf /etc/security/limits.conf.tungsten.pre"
+ 	doExec "echo 'mysql           nofile  65535' >> /etc/security/limits.conf"
+	doExec "echo '$user        nofile  65535' >> /etc/security/limits.conf"
+	doExec "echo '*       soft    nofile  65535' >> /etc/security/limits.conf"
+	doExec "echo '*       hard    nofile  65535' >> /etc/security/limits.conf"
+	if $REDHAT ; then doExec "yum -y install which curl bc rsync"; fi
+	
+}
+
+doRepo()
+{
+	if $REDHAT
+	then
+		if [ ! -f /etc/yum.repos.d/continuent.repo ]
+		then
+			doExec "echo '[tungsten]' >> /etc/yum.repos.d/continuent.repo "
+			doExec "echo 'name=Tungsten Packages' >> /etc/yum.repos.d/continuent.repo "
+			doExec "echo 'baseurl=http://yum.continuent.com' >> /etc/yum.repos.d/continuent.repo "
+			doExec "echo 'enabled=1' >> /etc/yum.repos.d/continuent.repo "
+			doExec "echo 'gpgcheck=0' >> /etc/yum.repos.d/continuent.repo "
+		 
+	 	fi
+	    doExec "yum -y install continuent-tungsten"
+	fi
+}
+
+doIptables()
+{
+	#TODO : Currently this will disable the firewall - this needs to change to configure ports to be open
+	doExec "service iptables stop"
+	doExec "chkconfig iptables off"
+}
+
+doHosts()
+{
+ 
+   doExec "cp /etc/hosts /etc/hosts.tungsten.pre"
+   #Remove strange debian loopback
+   if $DEBIAN ; then doExec "sed -i   '/127.0.1.1/s/^/#/' /etc/hosts"; fi
+   IP=`ifconfig eth0 | awk '/inet addr/ {split ($2,A,":"); print A[2]}'`
+   HOSTNAME=`hostname`
+   ping -q -c1 $HOSTNAME &> /dev/null
+   if [ $? -eq 0 ]
+   then
+   		info "Able to Ping $HOSTNAME no changes needed to /etc/hosts"
+   else
+	   if [ `grep  $HOSTNAME /etc/hosts | wc -l` -eq 0 ]
+	   then
+		   line="$IP $HOSTNAME"
+		   doExec "echo $line >> /etc/hosts"
+	   else
+	   	   info "Hostname already exists in Hosts File"
+	   fi
+   fi
+	
+	#if [ `grep  yum.continuent.com /etc/hosts | wc -l` -eq 0 ]
+	#then
+	#	 doExec "echo 23.21.169.95 yum.continuent.com >> /etc/hosts"
+	#fi
+ }
+ 
+updateCnf()
+{
+	#Expects 2 parms key and value
+	if [ -z "$1" ] || [ -z "$2" ]
+	then
+		echo 'SEVERE : updateCnf function expect 2 parameters key and value'
+		exit 1;
+	fi
+	
+	KEY=$1
+	VALUE=$2
+	
+	defaults=`which my_print_defaults 2>/dev/null`
+      
+    if [ "$defaults" == "" ]
+      then
+       info "Unable to check $KEY is missing from my.cnf adding entry, no my_print_defaults installed"
+       info "If $KEY is missing it will be added via the following command when executed"
+	   info "sed -i \"$MYSQLD_POS i\\$KEY=$VALUE\" $CNF"
+    else
+		if [ `my_print_defaults --config-file=$CNF mysqld | grep "^--$KEY"|wc -l` -eq 0 ]
+			then
+				info "$KEY is missing from my.cnf adding entry $KEY=$VALUE "
+				doExec "sed -i \"$MYSQLD_POS i\\$KEY=$VALUE\" $CNF"
+		fi
+	fi
+
+}
+
+doMysqlStart()
+{
+	if [ -f /etc/init.d/mysqld ] ; then doExec "service mysqld restart"; fi
+	if [ -f /etc/init.d/mysql ]  ; then doExec "service mysql restart"; fi
+}
+
+doMysql()
+{
+	      
+	if ! command_exists mysqld_safe
+	then
+	   info "No mysqld_safe found in path - will install standard MySQL binaries"
+	   if $REDHAT ; then doExec "yum -y install mysql-server"; fi
+	   if $DEBIAN ; then doExec "export DEBIAN_FRONTEND=noninteractive; apt-get -y install mysql-server"; fi
+	   doMysqlStart 
+	   
+	   #Set the mysql root password
+	   doExec "mysqladmin -u root password $mysql_root_password"
+	fi
+	 
+	
+	SERVER_ID=`ifconfig eth0 | awk '/inet addr/ {split ($2,A,":"); print A[2]}'| cut -d"." -f2,3,4 | sed 's/\.//g'`
+	if [ -f /etc/my.cnf ] || [ -f /etc/mysql/my.cnf ] 
+	then
+	
+		CNF=''
+		if [ -f /etc/my.cnf ]; then CNF='/etc/my.cnf'; fi
+		if [ -f /etc/mysql/my.cnf ]; then CNF='/etc/mysql/my.cnf'; fi
+		
+		
+		doExec "cp /etc/my.cnf /etc/my.cnf.tungsten"
+		#Find [mysqld] section
+		MYSQLD_POS=`sed -n '/\[mysqld]/=' /etc/my.cnf`
+		let MYSQLD_POS=$MYSQLD_POS+1
+		
+		updateCnf server-id $SERVER_ID
+		updateCnf open_files_limit 65535	
+		updateCnf log-bin mysql-bin
+		updateCnf default-storage-engine innodb
+				
+		#unbind mysql from localhost on debian machines
+		if $DEBIAN 
+		then
+			info "Unbinding mysql from localhost" 
+			doExec "sed -i '/bind-address/s/^/#/' /etc/mysql/my.cnf "
+		fi
+		
+		doMysqlStart
+	else
+		
+		doExec "echo '[mysqld]' >> /etc/my.cnf"
+		doExec "echo 'datadir=/var/lib/mysql' >> /etc/my.cnf"
+		doExec "echo 'socket=/var/lib/mysql/mysql.sock' >> /etc/my.cnf"
+		doExec "echo 'user=mysql' >> /etc/my.cnf"
+		doExec "echo 'server-id=$SERVER_ID' >> /etc/my.cnf"
+		doExec "echo 'default-storage-engine=innodb' >> /etc/my.cnf"
+		doExec "echo 'log-bin=mysql-bin' >> /etc/my.cnf"
+		doExec "echo 'max_allowed_packet=52m' >> /etc/my.cnf"
+		doExec "echo 'open_files_limit=65535' >> /etc/my.cnf"
+		doMysqlStart
+	fi
+	runMysql "delete from mysql.user where user='';flush privileges;"
+	
+	info "Adding the mysql group to $user to allow the reading of binlog files"
+	doExec "usermod -a -G mysql $user"
+}
+
+doCreateAppUser()
+{
+	runMysql "grant SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION CLIENT, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, EVENT, TRIGGER on *.* to '$application_user' identified by '$application_password'"
+}
+
+doCreateDSUser()
+{
+	runMysql "grant all privileges on *.* to '$datasource_user' identified by '$datasource_password' with grant option"
+}
+
+lowercase(){
+    echo "$1" | sed "y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/"
+}
+
+doCheckOS()
+{
+	OS=`lowercase \`uname\``
+	KERNEL=`uname -r`
+	MACH=`uname -m`
+	
+	if [ "{$OS}" == "windowsnt" ]; then
+	    OS=windows
+	elif [ "{$OS}" == "darwin" ]; then
+	    OS=mac
+	else
+	    OS=`uname`
+	    if [ "${OS}" = "SunOS" ] ; then
+	        OS=Solaris
+	        ARCH=`uname -p`
+	        OSSTR="${OS} ${REV}(${ARCH} `uname -v`)"
+	    elif [ "${OS}" = "AIX" ] ; then
+	        OSSTR="${OS} `oslevel` (`oslevel -r`)"
+	    elif [ "${OS}" = "Linux" ] ; then
+	        if [ -f /etc/redhat-release ] ; then
+	            DistroBasedOn='RedHat'
+	            DIST=`cat /etc/redhat-release |sed s/\ release.*//`
+	            PSUEDONAME=`cat /etc/redhat-release | sed s/.*\(// | sed s/\)//`
+	            REV=`cat /etc/redhat-release | sed s/.*release\ // | sed s/\ .*//`
+	        elif [ -f /etc/SuSE-release ] ; then
+	            DistroBasedOn='SuSe'
+	            PSUEDONAME=`cat /etc/SuSE-release | tr "\n" ' '| sed s/VERSION.*//`
+	            REV=`cat /etc/SuSE-release | tr "\n" ' ' | sed s/.*=\ //`
+	        elif [ -f /etc/mandrake-release ] ; then
+	            DistroBasedOn='Mandrake'
+	            PSUEDONAME=`cat /etc/mandrake-release | sed s/.*\(// | sed s/\)//`
+	            REV=`cat /etc/mandrake-release | sed s/.*release\ // | sed s/\ .*//`
+	        elif [ -f /etc/debian_version ] ; then
+	            DistroBasedOn='Debian'
+	            DIST=`cat /etc/lsb-release | grep '^DISTRIB_ID' | awk -F=  '{ print $2 }'`
+	            PSUEDONAME=`cat /etc/lsb-release | grep '^DISTRIB_CODENAME' | awk -F=  '{ print $2 }'`
+	            REV=`cat /etc/lsb-release | grep '^DISTRIB_RELEASE' | awk -F=  '{ print $2 }'`
+	        fi
+	        if [ -f /etc/UnitedLinux-release ] ; then
+	            DIST="${DIST}[`cat /etc/UnitedLinux-release | tr "\n" ' ' | sed s/VERSION.*//`]"
+	        fi
+	        OS=`lowercase $OS`
+	        DistroBasedOn=`lowercase $DistroBasedOn`
+	        readonly OS
+	        readonly DIST
+	        readonly DistroBasedOn
+	        readonly PSUEDONAME
+	        readonly REV
+	        readonly KERNEL
+	        readonly MACH
+	    fi
+	
+	fi
+	
+	if [ $DistroBasedOn == "redhat" ]
+	then
+		REDHAT=true
+	
+	elif [ $DistroBasedOn == "debian" ]
+	then
+		DEBIAN=true
+	else 
+		echo 'This operating system is not supported'
+		echo "Operating System : $DIST - $REV - $MACH"
+		echo 'Currently only Redhat and Ubuntu based O/S is supported'
+		exit 1
+	fi
+	 
+}
+
+doDeploy()
+{	
+		
+	for step in $deploy_steps
+	do
+		if [ $(contains "${skip_deploy_a[@]}" $step) == "n" ]
+		then
+			eval ${step}
+		fi
+	done
+	
+}
+
+doDeployRemote()
+{
+	#Ensure the files get copied to the remote host and executed when in dryrun mode
+	override_dryrun=true
+	if [ -d /tmp/prereq_ssh ]; then rm -rf /tmp/prereq_ssh; fi
+	mkdir /tmp/prereq_ssh
+	for host in "${cluster_hosts_a[@]}"
+	do
+		info "Deploying remote script to $host"
+		doExec "ssh $host \"mkdir /tmp/tungsten_prereq_deploy;rm /tmp/tungsten_prereq_deploy/*; \" "
+		doExec "scp tungsten_prereq* $host:/tmp/tungsten_prereq_deploy;"
+		doExec "ssh $host \"cd /tmp/tungsten_prereq_deploy;/tmp/tungsten_prereq_deploy/tungsten_prereq $options --remote\" "
+		doExec "scp $host:/home/tungsten/.ssh/id_rsa.pub /tmp/prereq_ssh/$host.pub"
+	done
+	doExec "cat /tmp/prereq_ssh/*.pub >> /tmp/prereq_ssh/prereq_authorized_keys"
+	for host in "${cluster_hosts_a[@]}"
+	do
+		info "Deploying tungsten ssh keys to $host"
+		doExec "scp /tmp/prereq_ssh/prereq_authorized_keys $host:/home/tungsten/.ssh/authorized_keys"
+	done
+	override_dryrun=false
+}
+
+doCheckOS
+
+
+echo
+echo 'Continuent Tungsten Pre-Req Installer'
+echo '-------------------------------------'
+echo "Host             : $HOSTNAME"
+echo "Operating System : $DIST - $REV - $MACH"
+echo 
+
+doCheckRoot
+doCheckArg  
+
+
+
+if  $RUNCOMMANDS
+then
+    echo
+	echo "Running installer all commands will be executed"
+else
+	if $PROMPTS
+	then
+		 echo
+		echo "Running installer all commands will be prompted"
+    else
+	    echo
+		echo "Running installer in DryRun mode no commands will be executed"
+    fi
+fi
+
+if ! $remote
+then
+	read -p "Press [Enter] key to start installer..."
+	echo
+fi
+
+
+
+if $remote
+then
+	doDeploy
+else
+	if $cluster_hosts_specified
+	then
+		#doDeployRootKeys - Not sure on this NA
+		doDeployRemote
+	else
+		doDeploy
+	fi
+fi
+
+
+if $RUNCOMMANDS 
+then
+    if [ -f /home/tungsten/.ssh/id_rsa.pub ]
+    then
+		echo 
+		echo 'Copy the following key to the file /home/tungsten/.ssh/authorized_keys on all the other servers'
+		cat /home/tungsten/.ssh/id_rsa.pub
+	fi
+fi
+exit 0
+
+
+

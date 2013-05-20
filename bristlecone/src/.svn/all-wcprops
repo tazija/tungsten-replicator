@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/bristlecone/!svn/ver/154/trunk/bristlecone/src
+END
+scluster.properties
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/src/scluster.properties
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/bristlecone/!svn/ver/91/trunk/bristlecone/src/log4j.properties
+END
+pcluster.test.properties
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/src/pcluster.test.properties
+END
+test.properties
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/src/test.properties
+END
+test.properties.sample
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/src/test.properties.sample
+END
+pcluster.properties
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/src/pcluster.properties
+END
+scluster.test.properties
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/src/scluster.test.properties
+END

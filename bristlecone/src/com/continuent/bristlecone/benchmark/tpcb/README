@@ -1,0 +1,131 @@
+This README guides the reader through the process of running a "TPCB like" test load through JMeter.
+
+The overall process is
+
+1) Download and install JMeter on all nodes that will drive test load.
+2) Build bristlecone.jar (which will include TPCB test client code).
+3) Push needed jar files to test nodes and configure JMeter on each node.
+4) Create and populate TPCB tables.
+5) Run test load
+
+---- 1) Download and install JMeter on all nodes that will drive test load. ----
+
+Jmeter can be found at http://jakarta.apache.org.  A binary download can be found there.  Unpack download on
+each of the machines that will be used to drive test load.
+
+% tar xzf jakarta-jmeter-2.3.4.tgz
+
+For clarity I will refer to this installation directory as $JMHOME.
+
+
+---- 2) Build bristlecone.jar (which will include TPCB test client). ----
+
+Using eclipse or the command line build bristlecone.jar
+
+% cd workspace/bristlecone
+% ant jar
+
+---- 3) Push needed jar files to test nodes and configure JMeter on each node. ----
+
+As a java based jmeter-server will be started on each of the test driving nodes, the needed jar files need to
+be on each node.  In this case bristlecone.jar and mysql-connector-java-5.1.6-bin.jar.  It may be helpful to
+create a ~/jmeterjars directory on each node to contain these.
+
+% cd workspace/bristlecone
+% scp build/jar/bristlecone.jar smartin@bashful:~/jmeterjars/
+% scp lib-ext/mysql/mysql-connector-java-5.1.6-bin.jar smartin@bashful:~/jmeterjars/
+
+On each node, locate and edit $JMHOME/bin/jmeter.properties.  The property search_paths needs to be modified 
+to point to our jars...
+
+search_paths=/home/smartin/jmeterjars/bristlecone.jar;/home/smartin/jmeterjars/mysql-connector-java-5.1.6-bin.jar
+
+also, in jmeter.properties, set the names of the hosts that will be under test in 
+"remote_hosts" (this only needs to be done on the coordinating host).
+
+remote_hosts=happy,bashful
+
+On the one node, coordinating the load driving, the test configuration file TPCB.jmx and TPCBLoad.jmx need to be 
+placed in $JMHOME/bin.
+
+% cd workspace/bristlecone
+% cp src/com/continuent/bristlecone/benchmark/tpcb/TPCB.jmx ~/jakarta-jmeter-2.3.4/bin
+% cp src/com/continuent/bristlecone/benchmark/tpcb/TPCBLoad.jmx ~/jakarta-jmeter-2.3.4/bin
+
+
+---- 4) Create and populate TPCB tables. ----
+
+To prepare to drive our test load, first start $JMHOME/bin/jmeter-server on each node.
+
+% cd ~/jakarta-jmeter-2.3.4/bin
+% ./jmeter-server
+
+Create the "tpcb" database in mysql.
+
+mysql> create database tpcb
+
+Using the "createTables=true" setting in the TPCB benchmark, create and populate the tpcb tables with precisely one
+thread.  This is a bit of a kludge but it only needs to be done once.  The jmx configuration file
+TPCBLoad.jmx, is configured to use one thread to create and populate the TPCB tables.  This can be done in the
+gui or via the command line.  On the command line one wants to be sure and specify only one node to perform
+the load. In my case, I used the node "happy".
+
+% cd ~/jakarta-jmeter-2.3.4/bin
+% jmeter -n -t TPCBLoad.jmx -R happy
+
+
+---- 5) Run test load ----
+
+With all nodes running a properly configured jmeter-server, and the MySQL TPCB database tables created and populated,
+you should be able to perform a test run.
+
+% cd ~/jakarta-jmeter-2.3.4/bin
+% ./jmeter
+
+Set the threads and loop count as appropriate, and "run->remoteStartAll".  A successful run can be confirmed
+by viewing the results stored in $JMHOME/bin/jmeter-server.log
+
+2010/03/10 15:24:09 INFO  - jmeter.protocol.java.sampler.AbstractJavaSamplerClient: TPCBs   = 3
+2010/03/10 15:24:09 INFO  - jmeter.protocol.java.sampler.AbstractJavaSamplerClient: Queries = 2
+2010/03/10 15:24:09 INFO  - jmeter.protocol.java.sampler.AbstractJavaSamplerClient: TPCBs   = 4
+2010/03/10 15:24:09 INFO  - jmeter.protocol.java.sampler.AbstractJavaSamplerClient: Queries = 1
+
+This confirms the first thread performed 3 TPCB transactions and 2 queries, while the second thread did 4 and 1
+respectively.
+
+There are a couple settings in the TPCB benchmark of particular interest
+
+queryPCT:  The percentage of the time the unit of work is selected to do a query, instead of the normal
+TPCB transaction.  Useful if you have a particular read/write mix you are trying to model.
+
+insertHistory:  Setting this to false removes the history insert from the normal TPCB transaction.  This might
+be desirable if one does not wish to manage a table growing without bounds during testing.
+
+If a simple, single row update is desired to perhaps be paired up with a percentage of single row queries, consider
+setting the following variables all to false - updateBranch, updateTeller, insertHistory.  This will leave
+a single row update to the somewhat large table "account".
+
+JMeter can also be run on the command line and is more fully documented at
+
+http://jakarta.apache.org/jmeter/usermanual/get-started.html#non_gui
+
+but the following command line example, runs all the configured remote nodes with the parameters previously set
+in the GUI and stored in TPCB.jmx
+
+% jmeter -n -t TPCB.jmx -r
+Created the tree successfully using TPCB.jmx
+Configuring remote engine for happy
+Using remote object: UnicastRef [liveRef: [endpoint:[192.168.1.13:38036](remote),objID:[-2eb8d6bc:1274a944157:-8000, 0]]]
+Configuring remote engine for bashful
+Using remote object: UnicastRef [liveRef: [endpoint:[192.168.1.14:51447](remote),objID:[2d3d1103:1274a942a00:-8000, 0]]]
+Starting remote engines
+Starting the test @ Wed Mar 10 16:18:07 PST 2010 (1268266687734)
+Remote engines have been started
+Tidying up ...    @ Wed Mar 10 16:18:09 PST 2010 (1268266689730)
+... end of run
+
+
+Enjoy...
+
+
+

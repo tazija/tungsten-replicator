@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1342/trunk/replicator/src/java/com/continuent/tungsten/replicator/pipeline
+END
+SingleThreadStageTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/1342/trunk/replicator/src/java/com/continuent/tungsten/replicator/pipeline/SingleThreadStageTask.java
+END
+TaskScheduler.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/pipeline/TaskScheduler.java
+END
+Stage.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1317/trunk/replicator/src/java/com/continuent/tungsten/replicator/pipeline/Stage.java
+END
+TaskState.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/312/trunk/replicator/src/java/com/continuent/tungsten/replicator/pipeline/TaskState.java
+END
+StageTaskGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1132/trunk/replicator/src/java/com/continuent/tungsten/replicator/pipeline/StageTaskGroup.java
+END
+StageProgressTracker.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/1263/trunk/replicator/src/java/com/continuent/tungsten/replicator/pipeline/StageProgressTracker.java
+END
+Pipeline.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1090/trunk/replicator/src/java/com/continuent/tungsten/replicator/pipeline/Pipeline.java
+END
+SimpleSchedule.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/968/trunk/replicator/src/java/com/continuent/tungsten/replicator/pipeline/SimpleSchedule.java
+END
+ShardProgress.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/23/trunk/replicator/src/java/com/continuent/tungsten/replicator/pipeline/ShardProgress.java
+END
+StageTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/915/trunk/replicator/src/java/com/continuent/tungsten/replicator/pipeline/StageTask.java
+END
+TaskProgress.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/717/trunk/replicator/src/java/com/continuent/tungsten/replicator/pipeline/TaskProgress.java
+END
+Schedule.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/968/trunk/replicator/src/java/com/continuent/tungsten/replicator/pipeline/Schedule.java
+END

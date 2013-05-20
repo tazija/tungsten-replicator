@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/bristlecone/!svn/ver/23/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/threads
+END
+ManyThreads.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svnroot/bristlecone/!svn/ver/23/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/threads/ManyThreads.java
+END
+ManyThreadsWithTransactions.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/threads/ManyThreadsWithTransactions.java
+END

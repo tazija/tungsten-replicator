@@ -1,0 +1,104 @@
+10
+
+dir
+1355
+https://tungsten-replicator.googlecode.com/svn/trunk/replicator/test/java/com/continuent/tungsten/replicator
+https://tungsten-replicator.googlecode.com/svn
+
+
+
+2013-05-12T05:25:25.612152Z
+1342
+robert.hodges@continuent.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9f5e3340-5c9a-25cb-7c1c-c133a2e9e928
+
+event
+dir
+
+filter
+dir
+
+dbms
+dir
+
+conf
+dir
+
+thl
+dir
+
+store
+dir
+
+applier
+dir
+
+plugin
+dir
+
+prefetch
+dir
+
+TestOpenReplicatorManager.java
+file
+
+
+
+
+2013-05-20T09:12:29.000000Z
+498f97f1b87d71bf0b458192f84670f6
+2012-10-23T22:05:15.410865Z
+1015
+robert.hodges@continuent.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+22328
+
+database
+dir
+
+backup
+dir
+
+pipeline
+dir
+
+extractor
+dir
+
+util
+dir
+

@@ -1,0 +1,227 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1349/trunk/replicator/src/java/com/continuent/tungsten/replicator/database
+END
+SqlStatementParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/1179/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/SqlStatementParser.java
+END
+DrizzleDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1073/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/DrizzleDatabase.java
+END
+PreparedStatementCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/PreparedStatementCache.java
+END
+TableMetadataCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/TableMetadataCache.java
+END
+User.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1041/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/User.java
+END
+SqlOperation.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/893/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/SqlOperation.java
+END
+Session.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1041/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/Session.java
+END
+DatabaseException.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/DatabaseException.java
+END
+SqlOperationMatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/SqlOperationMatcher.java
+END
+OracleEventId.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/975/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/OracleEventId.java
+END
+MySQLOperationStringBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/319/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/MySQLOperationStringBuilder.java
+END
+DBMS.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/685/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/DBMS.java
+END
+PreparedStatementHolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/830/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/PreparedStatementHolder.java
+END
+JdbcURL.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/354/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/JdbcURL.java
+END
+EventIdFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/975/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/EventIdFactory.java
+END
+Table.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1073/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/Table.java
+END
+MySQLDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1122/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/MySQLDatabase.java
+END
+AdditionalTypes.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/AdditionalTypes.java
+END
+MySQLCommentEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/1262/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/MySQLCommentEditor.java
+END
+Database.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1205/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/Database.java
+END
+DatabaseHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/DatabaseHelper.java
+END
+VerticaDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1210/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/VerticaDatabase.java
+END
+GreenplumDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1073/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/GreenplumDatabase.java
+END
+MySQLEventId.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/990/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/MySQLEventId.java
+END
+Key.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/830/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/Key.java
+END
+PostgreSQLDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/1073/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/PostgreSQLDatabase.java
+END
+AbstractDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1205/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/AbstractDatabase.java
+END
+SqlCommentEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1010/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/SqlCommentEditor.java
+END
+MySQLOperationMatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/897/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/MySQLOperationMatcher.java
+END
+OracleDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1349/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/OracleDatabase.java
+END
+DerbyDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1122/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/DerbyDatabase.java
+END
+SqlScriptGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/785/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/SqlScriptGenerator.java
+END
+TableMatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/706/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/TableMatcher.java
+END
+DatabaseFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1164/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/DatabaseFactory.java
+END
+Column.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1259/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/Column.java
+END
+MySQLDrizzleDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/904/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/MySQLDrizzleDatabase.java
+END
+EventId.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/974/trunk/replicator/src/java/com/continuent/tungsten/replicator/database/EventId.java
+END

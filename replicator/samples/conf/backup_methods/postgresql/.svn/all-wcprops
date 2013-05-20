@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/405/trunk/replicator/samples/conf/backup_methods/postgresql
+END
+pg_dump.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/405/trunk/replicator/samples/conf/backup_methods/postgresql/pg_dump.tpl
+END

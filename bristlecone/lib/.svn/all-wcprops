@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/bristlecone/!svn/ver/146/trunk/bristlecone/lib
+END
+logkit-1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/bristlecone/!svn/ver/73/trunk/bristlecone/lib/logkit-1.2.jar
+END
+ApacheJMeter_java.jar
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/bristlecone/!svn/ver/73/trunk/bristlecone/lib/ApacheJMeter_java.jar
+END
+junit.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/lib/junit.jar
+END
+jfreechart-1.0.12.jar
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/bristlecone/!svn/ver/34/trunk/bristlecone/lib/jfreechart-1.0.12.jar
+END
+tungsten-common.jar
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/bristlecone/!svn/ver/146/trunk/bristlecone/lib/tungsten-common.jar
+END
+dom4j-1.6.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/lib/dom4j-1.6.1.jar
+END
+commons-logging.jar
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/bristlecone/!svn/ver/61/trunk/bristlecone/lib/commons-logging.jar
+END
+log4j.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/lib/log4j.jar
+END
+ApacheJMeter_core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/bristlecone/!svn/ver/73/trunk/bristlecone/lib/ApacheJMeter_core.jar
+END
+classes12.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/bristlecone/!svn/ver/122/trunk/bristlecone/lib/classes12.jar
+END
+jline-0.9.94.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/bristlecone/!svn/ver/61/trunk/bristlecone/lib/jline-0.9.94.jar
+END
+jcommon-1.0.15.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/bristlecone/!svn/ver/34/trunk/bristlecone/lib/jcommon-1.0.15.jar
+END
+tungsten-common-src.jar
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/bristlecone/!svn/ver/146/trunk/bristlecone/lib/tungsten-common-src.jar
+END

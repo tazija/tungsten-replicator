@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1300/trunk/replicator/scripts
+END
+tungsten.tables
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1295/trunk/replicator/scripts/tungsten.tables
+END
+determine_capture_position.sql
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1300/trunk/replicator/scripts/determine_capture_position.sql
+END
+create_change_set.sql
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1300/trunk/replicator/scripts/create_change_set.sql
+END
+setupCDC.sh
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/1300/trunk/replicator/scripts/setupCDC.sh
+END
+prepare_tables.sql
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1300/trunk/replicator/scripts/prepare_tables.sql
+END
+create_tungsten_load.sql
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1295/trunk/replicator/scripts/create_tungsten_load.sql
+END
+enable_disable_change_set.sql
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1300/trunk/replicator/scripts/enable_disable_change_set.sql
+END
+drop_tungsten_load.sql
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1295/trunk/replicator/scripts/drop_tungsten_load.sql
+END
+cleanup_cdc_tables.sql
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1295/trunk/replicator/scripts/cleanup_cdc_tables.sql
+END
+create_synonym.sql
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1295/trunk/replicator/scripts/create_synonym.sql
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1295/trunk/replicator/scripts/README
+END
+delete_user.sql
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1295/trunk/replicator/scripts/delete_user.sql
+END
+setupCDC.conf
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1295/trunk/replicator/scripts/setupCDC.conf
+END
+0b.sql
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1295/trunk/replicator/scripts/0b.sql
+END
+create_publisher_subscriber.sql
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1300/trunk/replicator/scripts/create_publisher_subscriber.sql
+END
+add_change_table.sql
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1300/trunk/replicator/scripts/add_change_table.sql
+END
+updateCDC.sh
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1300/trunk/replicator/scripts/updateCDC.sh
+END
+cleanup_cdc_tables-10.sql
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1295/trunk/replicator/scripts/cleanup_cdc_tables-10.sql
+END
+get_oracle_version.sql
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1295/trunk/replicator/scripts/get_oracle_version.sql
+END
+create_change_table.sql
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1300/trunk/replicator/scripts/create_change_table.sql
+END
+drop_change_table.sql
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1300/trunk/replicator/scripts/drop_change_table.sql
+END

@@ -1,0 +1,23 @@
+# Describes a query benchmark that tests query latency with differing
+# numbers of threads and rows selected.   Queries are very light and put
+# little or no load on the database. 
+#
+# To invoke this test try the following command. 
+#   $bin/benchmark.sh -props ReadSimpleScenario.properties
+
+# Scenario name. 
+scenario=com.continuent.bristlecone.benchmark.scenarios.ReadSimpleScenario
+
+# Database connection information.  
+include=connection_mysql.properties.properties|connection_mcluster.properties
+
+# Test duration and number of threads.  
+bound=duration
+duration=60
+threads=50
+
+# Database table information. 
+tables=1
+datatype=varchar
+datawidth=100
+datarows=10|100|1000

@@ -1,0 +1,340 @@
+<!--
+  Bristlecone Test Tools for Databases
+  Copyright (C) 2006-2007 Continuent Inc.
+  Contact: bristlecone@lists.forge.continuent.org
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of version 2 of the GNU General Public License as
+  published by the Free Software Foundation.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
+
+  Initial developer(s): Robert Hodges and Ralph Hannus.
+  Contributor(s):
+-->
+
+<project name="bristlecone" default="all" basedir=".">
+	<!-- customizable properties -->
+	<property file="local.build.properties" />
+
+	<!-- default properties -->
+	<property file="build.properties" />
+
+	<!-- uncustomizable properties -->
+	<tstamp />
+	<property name="version" value="${versionnumber}" />
+
+	<property name="distdir" value="${basedir}/dist" />
+	<property name="builddir" value="${basedir}/build" />
+	<property name="srcdir" value="${basedir}/src" />
+	<property name="lib" value="${basedir}/lib" />
+
+	<property name="configdir" value="${basedir}/config" />
+	<property name="samplesdir" value="${basedir}/samples" />
+	<property name="libdir" value="${basedir}/lib" />
+	<property name="libextdir" value="${basedir}/lib-ext" />
+	<property name="xmldir" value="${basedir}/xml" />
+	<property name="docdir" value="${basedir}/doc" />
+	<property name="bindir" value="${basedir}/bin" />
+	<property name="build.dist" value="${builddir}/dist" />
+	<property name="build.bristlecone" value="${builddir}/dist/bristlecone" />
+	<property name="src.bristlecone" value="${builddir}/src/bristlecone" />
+
+	<property name="build.classes" value="${builddir}/classes" />
+	<property name="build.jar" value="${builddir}/jar" />
+
+	<property name="testsrc" value="${basedir}/test" />
+
+	<property name="build.test" value="${builddir}/test" />
+
+	<!-- classpath -->
+	<path id="classpath">
+		<fileset dir="${lib}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	<path id="testclasspath">
+		<fileset dir="${libdir}">
+			<include name="junit.jar" />
+		</fileset>
+		<fileset dir="${build.bristlecone}/lib">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${build.bristlecone}/lib-ext">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${lib}">
+			<include name="dom4j-1.6.1.jar" />
+		</fileset>
+	</path>
+
+	<!-- Initialize the ant environment -->
+	<target name="init">
+		<mkdir dir="${builddir}" />
+		<mkdir dir="${build.classes}" />
+		<mkdir dir="${build.jar}" />
+		<mkdir dir="${distdir}" />
+	</target>
+
+	<!-- Clean up the build environment -->
+	<target name="clean" description="Clean output directories">
+		<delete dir="${distdir}" />
+		<delete dir="${builddir}" />
+		<delete dir="testdb" />
+	</target>
+
+	<!-- Compile the source -->
+	<target name="compile" depends="init" description="Compile code">
+		<javac srcdir="${srcdir}" destdir="${build.classes}" target="${javac.target}" source="${javac.source}" classpathref="classpath" debug="${javac.debug}" depend="${javac.depend}" deprecation="${javac.deprecation}" optimize="${javac.optimize}" encoding="${javac.encoding}" includeantruntime="false"/>
+	</target>
+
+	<!-- Generate Javadoc. -->
+	<target name="javadoc" depends="dist" description="Generate javadoc">
+		<javadoc packagenames="com.continuent.*" sourcepath="${srcdir}" classpathref="classpath" defaultexcludes="yes" destdir="${build.bristlecone}/doc/javadoc" author="true" version="true" use="true" windowtitle="Bristlecone Java API">
+		</javadoc>
+	</target>
+
+	<!-- Create the bristlecone.jar file -->
+	<target name="jar" depends="compile">
+		<jar destfile="${build.jar}/bristlecone.jar">
+			<manifest>
+				<attribute name="Specification-Title" value="${specification.title.bristlecone}" />
+				<attribute name="Specification-Version" value="${version}" />
+				<attribute name="Specification-Vendor" value="${specification.vendor}" />
+				<attribute name="Implementation-Title" value="${specification.title.bristlecone}" />
+				<attribute name="Implementation-Version" value="${version}" />
+				<attribute name="Implementation-Vendor" value="${specification.vendor}" />
+			</manifest>
+			<fileset dir="${build.classes}">
+				<include name="**/*.class" />
+			</fileset>
+			<fileset dir="${xmldir}">
+				<include name="evaluator.dtd" />
+			</fileset>
+		</jar>
+	</target>
+
+	<!-- Initialize the test environment -->
+	<target name="init-test">
+		<mkdir dir="${builddir}/test" />
+		<mkdir dir="${builddir}/test/reports" />
+	</target>
+
+	<!-- Compile the test programs -->
+	<target name="compile-test" depends="dist,init-test">
+		<javac srcdir="${testsrc}" destdir="${build.test}" target="${javac.target}" source="${javac.source}" classpathref="testclasspath" debug="${javac.debug}" depend="${javac.depend}" deprecation="${javac.deprecation}" optimize="${javac.optimize}" encoding="${javac.encoding}" includeantruntime="false"/>
+	</target>
+
+	<!-- Run the tests -->
+	<target name="test" depends="compile-test" description="Run tests">
+		<!-- Eclipse's ant is by default missing a junit.jar location,      -->
+		<!-- add one in "Window->Preferences->Ant->RunTime".                -->
+		<!-- You can use this one for instance: eclipse/plugins/org.junit*/ -->
+		<junit showoutput="false" printsummary="on" haltonfailure="false">
+			<classpath>
+				<path refid="testclasspath" />
+				<pathelement path="${build.bristlecone}/xml" />
+				<pathelement path="${build.bristlecone}/config" />
+				<pathelement path="${build.test}" />
+			</classpath>
+			<batchtest todir="${build.test}/reports">
+				<fileset dir="${build.test}">
+					<include name="**/*Test.class" />
+				</fileset>
+			</batchtest>
+			<formatter type="xml" usefile="on" />
+		</junit>
+		<junitreport todir="${build.test}/reports">
+			<fileset dir="${build.test}/reports">
+				<include name="*.xml" />
+			</fileset>
+			<report format="frames" todir="${build.test}/reports/html" />
+		</junitreport>
+	</target>
+
+	<!-- Initialize the build -->
+	<target name="init-build">
+		<mkdir dir="${build.dist}" />
+		<mkdir dir="${build.bristlecone}" />
+		<mkdir dir="${build.bristlecone}/config" />
+		<mkdir dir="${build.bristlecone}/config/benchmark" />
+		<mkdir dir="${build.bristlecone}/config/evaluator" />
+		<mkdir dir="${build.bristlecone}/lib" />
+		<mkdir dir="${build.bristlecone}/lib-ext" />
+		<mkdir dir="${build.bristlecone}/xml" />
+		<mkdir dir="${build.bristlecone}/bin" />
+		<mkdir dir="${build.bristlecone}/doc" />
+	</target>
+
+	<!-- Build evaluator -->
+	<target name="dist" depends="init-build,jar" description="Build everything or refresh existing build">
+		<copy todir="${build.bristlecone}/lib" file="${build.jar}/bristlecone.jar">
+		</copy>
+		<copy todir="${build.bristlecone}/lib" verbose="true">
+			<fileset dir="${libdir}">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+		<copy todir="${build.bristlecone}/lib-ext" verbose="true" failonerror="false">
+			<fileset dir="${libextdir}">
+				<include name="*.jar" />
+			</fileset>
+			<fileset dir="${project.sql-router}/build/jars">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+		<copy todir="${build.bristlecone}/lib-ext">
+			<fileset dir="${libextdir}/mysql">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+		<copy todir="${build.bristlecone}/lib-ext">
+			<fileset dir="${libextdir}/postgres">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+		<copy todir="${build.bristlecone}/config">
+			<fileset dir="${configdir}">
+				<include name="*.properties" />
+				<include name="jgroups_tcp.xml" />
+			</fileset>
+		</copy>
+		<copy todir="${build.bristlecone}/config/evaluator">
+			<fileset dir="${configdir}/evaluator">
+				<include name="README" />
+				<include name="*sample*.xml" />
+			</fileset>
+		</copy>
+		<copy todir="${build.bristlecone}/config/benchmark">
+			<fileset dir="${configdir}/benchmark">
+				<include name="*.properties" />
+			</fileset>
+		</copy>
+		<copy todir="${build.bristlecone}/samples">
+			<fileset dir="${samplesdir}">
+			  <exclude name="**/.svn" />
+			</fileset>
+		</copy>
+		<copy todir="${build.bristlecone}/bin">
+			<fileset dir="${bindir}">
+				<include name="*" />
+			</fileset>
+			<filterset>
+				<filter token="VERSION" value="${version}" />
+			</filterset>
+		</copy>
+		<chmod perm="a+x" type="file">
+			<fileset dir="${build.bristlecone}/bin">
+                <include name="**/*" />
+			</fileset>
+		</chmod>
+
+		<copy todir="${build.bristlecone}">
+			<fileset dir="${basedir}">
+				<include name="README" />
+			</fileset>
+			<filterset>
+				<filter token="VERSION" value="${version}" />
+			</filterset>
+		</copy>
+		<copy todir="${build.bristlecone}/doc">
+			<fileset dir="${docdir}">
+				<include name="BENCHMARK.TXT" />
+				<include name="EVALUATOR.TXT" />
+			</fileset>
+			<filterset>
+				<filter token="VERSION" value="${version}" />
+			</filterset>
+		</copy>
+		<copy todir="${build.bristlecone}/doc/licenses">
+			<fileset dir="${docdir}/licenses">
+				<include name="**/*.*" />
+			</fileset>
+		</copy>
+		<copy todir="${build.bristlecone}/xml" file="${xmldir}/evaluator.dtd" />
+	</target>
+
+	<!-- Build source tree -->
+	<target name="src" description="Build or refresh source tree">
+		<mkdir dir="${src.bristlecone}" />
+		<copy todir="${src.bristlecone}" file=".checkstyle" />
+		<copy todir="${src.bristlecone}" file=".checkstyle" />
+		<copy todir="${src.bristlecone}" file=".classpath" />
+		<copy todir="${src.bristlecone}" file=".project" />
+		<copy todir="${src.bristlecone}" file="LICENSE" />
+		<copy todir="${src.bristlecone}" file="README" />
+		<copy todir="${src.bristlecone}" file="build.properties" />
+		<copy todir="${src.bristlecone}" file="build.xml" />
+
+		<copy todir="${src.bristlecone}/.settings">
+			<fileset dir=".settings" />
+		</copy>
+		<copy todir="${src.bristlecone}/bin">
+			<fileset dir="bin" />
+		</copy>
+		<copy todir="${src.bristlecone}/config">
+			<fileset dir="config" />
+		</copy>
+		<copy todir="${src.bristlecone}/doc">
+			<fileset dir="doc" />
+		</copy>
+		<copy todir="${src.bristlecone}/eclipse-settings">
+			<fileset dir="eclipse-settings" />
+		</copy>
+		<copy todir="${src.bristlecone}/lib">
+			<fileset dir="lib" />
+		</copy>
+		<copy todir="${src.bristlecone}/lib-ext">
+			<fileset dir="lib-ext" />
+		</copy>
+		<copy todir="${src.bristlecone}/src">
+			<fileset dir="src" />
+		</copy>
+		<copy todir="${src.bristlecone}/test">
+			<fileset dir="test" />
+		</copy>
+		<copy todir="${src.bristlecone}/xml">
+			<fileset dir="xml" />
+		</copy>
+	</target>
+
+	<!-- Create the distribution files -->
+	<target name="releases" depends="src,dist" description="Create distributable releases">
+
+		<!-- Build binary files. -->
+		<zip destfile="${distdir}/bristlecone-${version}-bin.zip" basedir="${build.dist}" includes="**/*">
+			<zipfileset dir="${build.bristlecone}" prefix="bristlecone-${version}-bin">
+				<include name="*/** " />
+			</zipfileset>
+		</zip>
+
+		<tar destfile="${distdir}/bristlecone-${version}-bin.tar.gz" longfile="gnu" compression="gzip">
+			<tarfileset dir="${build.bristlecone}" prefix="bristlecone-${version}-bin" mode="755">
+				<include name="bin/*.sh" />
+			</tarfileset>
+			<tarfileset dir="${build.bristlecone}" prefix="bristlecone-${version}-bin">
+				<include name="**/*" />
+				<exclude name="bin/*.sh" />
+			</tarfileset>
+		</tar>
+
+		<!-- Build source file. -->
+		<zip destfile="${distdir}/bristlecone-${version}-src.zip">
+			<zipfileset dir="${src.bristlecone}" includes="**/*" prefix="bristlecone-${version}-src" />
+		</zip>
+
+		<tar destfile="${distdir}/bristlecone-${version}-src.tar.gz" longfile="gnu" compression="gzip">
+			<tarfileset dir="${src.bristlecone}" includes="**/*" prefix="bristlecone-${version}-src" />
+		</tar>
+	</target>
+
+	<!-- Do full build and test -->
+	<target name="all" depends="clean,dist,test" description="Clean, build, and test everything" />
+</project>

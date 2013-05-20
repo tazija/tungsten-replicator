@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/1355/trunk/replicator
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/1204/trunk/replicator/.classpath
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/1/trunk/replicator/LICENSE
+END
+sample.local.build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1/trunk/replicator/sample.local.build.properties
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/1015/trunk/replicator/.project
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/1183/trunk/replicator/build.properties
+END
+sample.test.properties
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/1/trunk/replicator/sample.test.properties
+END
+test.properties
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/1210/trunk/replicator/test.properties
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/1336/trunk/replicator/build.xml
+END

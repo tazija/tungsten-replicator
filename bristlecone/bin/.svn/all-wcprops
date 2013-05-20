@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/bristlecone/!svn/ver/155/trunk/bristlecone/bin
+END
+croc.sh
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/bristlecone/!svn/ver/113/trunk/bristlecone/bin/croc.sh
+END
+benchmark.sh
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/bristlecone/!svn/ver/104/trunk/bristlecone/bin/benchmark.sh
+END
+evalsvc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/bristlecone/!svn/ver/61/trunk/bristlecone/bin/evalsvc
+END
+evaluator.bat
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/bristlecone/!svn/ver/34/trunk/bristlecone/bin/evaluator.bat
+END
+evaluator.sh
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/bristlecone/!svn/ver/104/trunk/bristlecone/bin/evaluator.sh
+END
+evalctrl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/bristlecone/!svn/ver/61/trunk/bristlecone/bin/evalctrl
+END
+concurrent_evaluator.pl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/bristlecone/!svn/ver/155/trunk/bristlecone/bin/concurrent_evaluator.pl
+END

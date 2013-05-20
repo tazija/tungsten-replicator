@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 84
+build
+bin
+deploy.sh
+testFileDeletion
+testFileRetention
+testFileRetentionAndInactive
+
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/1/trunk/commons/lib-test
+END
+drizzle-jdbc-0.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1/trunk/commons/lib-test/drizzle-jdbc-0.6.jar
+END
+mysql-connector-java-5.1.13-bin.jar
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1/trunk/commons/lib-test/mysql-connector-java-5.1.13-bin.jar
+END
+junit-4.4-src.zip
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1/trunk/commons/lib-test/junit-4.4-src.zip
+END
+junit-4.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/1/trunk/commons/lib-test/junit-4.4.jar
+END

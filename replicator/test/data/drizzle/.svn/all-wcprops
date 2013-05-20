@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1/trunk/replicator/test/data/drizzle
+END
+create_table.txnlog
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1/trunk/replicator/test/data/drizzle/create_table.txnlog
+END
+delete.txnlog
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1/trunk/replicator/test/data/drizzle/delete.txnlog
+END
+update.txnlog
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1/trunk/replicator/test/data/drizzle/update.txnlog
+END
+create_schema.txnlog
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1/trunk/replicator/test/data/drizzle/create_schema.txnlog
+END
+insert.txnlog
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1/trunk/replicator/test/data/drizzle/insert.txnlog
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/873/trunk/replicator/test/java/com/continuent/tungsten/replicator/prefetch
+END
+PrefetchSqlTransformerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/873/trunk/replicator/test/java/com/continuent/tungsten/replicator/prefetch/PrefetchSqlTransformerTest.java
+END
+RbrChangeTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/830/trunk/replicator/test/java/com/continuent/tungsten/replicator/prefetch/RbrChangeTest.java
+END

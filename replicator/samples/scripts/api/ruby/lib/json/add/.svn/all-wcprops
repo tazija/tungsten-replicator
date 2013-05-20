@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/141/trunk/replicator/samples/scripts/api/ruby/lib/json/add
+END
+core.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/141/trunk/replicator/samples/scripts/api/ruby/lib/json/add/core.rb
+END
+rails.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/141/trunk/replicator/samples/scripts/api/ruby/lib/json/add/rails.rb
+END

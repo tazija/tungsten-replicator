@@ -1,0 +1,14 @@
+<!DOCTYPE EvaluatorConfiguration SYSTEM "file://../xml/evaluator.dtd">
+<EvaluatorConfiguration name="mysql" testDuration="1200"
+	autoCommit="true" statusInterval="2" htmlFile="mysqlResults.html">
+	<Database driver="com.mysql.jdbc.Driver" 		
+		url="jdbc:mysql://@{HOST.HOST}:@{REPL_DBPORT}/evaluator?createDatabaseIfNotExist=true&amp;autoReconnect=true"
+		user="@{CONN_CLIENTLOGIN}" 
+		password="@{CONN_CLIENTPASSWORD}"/>
+	 
+	<TableGroup name="tbl" size="100">
+		<ThreadGroup name="A" threadCount="10" thinkTime="50"
+			updates="30" deletes="40" inserts="30" readSize="10"
+			rampUpInterval="5" rampUpIncrement="20" reconnectInterval="1" />
+	</TableGroup>
+</EvaluatorConfiguration>

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1076/trunk/commons/src/java/com/continuent/tungsten/common/commands
+END
+FileCommands.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1028/trunk/commons/src/java/com/continuent/tungsten/common/commands/FileCommands.java
+END
+PrefixFileFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1028/trunk/commons/src/java/com/continuent/tungsten/common/commands/PrefixFileFilter.java
+END
+PropertyCommands.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/commands/PropertyCommands.java
+END
+DirectoryCommands.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1076/trunk/commons/src/java/com/continuent/tungsten/common/commands/DirectoryCommands.java
+END

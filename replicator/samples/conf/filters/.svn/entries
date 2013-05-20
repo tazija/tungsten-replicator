@@ -1,0 +1,46 @@
+10
+
+dir
+1355
+https://tungsten-replicator.googlecode.com/svn/trunk/replicator/samples/conf/filters
+https://tungsten-replicator.googlecode.com/svn
+
+
+
+2013-05-09T14:57:08.622009Z
+1331
+linas.virbalas@continuent.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9f5e3340-5c9a-25cb-7c1c-c133a2e9e928
+
+postgresql
+dir
+
+default
+dir
+
+slony
+dir
+
+mysql
+dir
+
+oracle
+dir
+
+mongodb
+dir
+

@@ -1,0 +1,437 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/154/trunk/cookbook
+END
+paths
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/144/trunk/cookbook/paths
+END
+install_standard_replication
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/144/trunk/cookbook/install_standard_replication
+END
+test_star.sh
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/144/trunk/cookbook/test_star.sh
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/150/trunk/cookbook/.project
+END
+show_conf
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/144/trunk/cookbook/show_conf
+END
+tool.sh
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/153/trunk/cookbook/tool.sh
+END
+clear_cluster_star.sh
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/144/trunk/cookbook/clear_cluster_star.sh
+END
+emacslog
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/144/trunk/cookbook/emacslog
+END
+edit_conf
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/144/trunk/cookbook/edit_conf
+END
+validate_cluster
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/144/trunk/cookbook/validate_cluster
+END
+install_all_masters
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/153/trunk/cookbook/install_all_masters
+END
+take-over
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/149/trunk/cookbook/take-over
+END
+vimlog
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/144/trunk/cookbook/vimlog
+END
+copy_backup
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/144/trunk/cookbook/copy_backup
+END
+show_fan_in.sh
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/144/trunk/cookbook/show_fan_in.sh
+END
+MANIFEST
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/153/trunk/cookbook/MANIFEST
+END
+collect_logs
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/144/trunk/cookbook/collect_logs
+END
+insert_retrieve
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/147/trunk/cookbook/insert_retrieve
+END
+REFERENCE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/148/trunk/cookbook/REFERENCE.txt
+END
+show_all_masters.sh
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/144/trunk/cookbook/show_all_masters.sh
+END
+log
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/144/trunk/cookbook/log
+END
+query_all_nodes
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/147/trunk/cookbook/query_all_nodes
+END
+add_node_star
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/144/trunk/cookbook/add_node_star
+END
+COMMON_NODES.sh
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/143/trunk/cookbook/COMMON_NODES.sh
+END
+simple_services
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/130/trunk/cookbook/simple_services
+END
+readme
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/144/trunk/cookbook/readme
+END
+show_master_slave.sh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/144/trunk/cookbook/show_master_slave.sh
+END
+heartbeat
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/144/trunk/cookbook/heartbeat
+END
+vimconf
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/144/trunk/cookbook/vimconf
+END
+switch
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/144/trunk/cookbook/switch
+END
+check_cookbook
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/153/trunk/cookbook/check_cookbook
+END
+deploy_to_sandboxes
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/153/trunk/cookbook/deploy_to_sandboxes
+END
+install_master_slave_direct
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/144/trunk/cookbook/install_master_slave_direct
+END
+load_data
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/148/trunk/cookbook/load_data
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/144/trunk/cookbook/README.txt
+END
+install_master_slave
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/153/trunk/cookbook/install_master_slave
+END
+install_fan_in
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/153/trunk/cookbook/install_fan_in
+END
+show_cluster
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/144/trunk/cookbook/show_cluster
+END
+services
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/144/trunk/cookbook/services
+END
+conf
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/144/trunk/cookbook/conf
+END
+NODES_MASTER_SLAVE.sh
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/143/trunk/cookbook/NODES_MASTER_SLAVE.sh
+END
+thl
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/144/trunk/cookbook/thl
+END
+test_master_slave.sh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/144/trunk/cookbook/test_master_slave.sh
+END
+emacsconf
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/144/trunk/cookbook/emacsconf
+END
+replicator
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/144/trunk/cookbook/replicator
+END
+clear_cluster_master_slave.sh
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/144/trunk/cookbook/clear_cluster_master_slave.sh
+END
+USER_VALUES.sh
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/153/trunk/cookbook/USER_VALUES.sh
+END
+NODES_ALL_MASTERS.sh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/143/trunk/cookbook/NODES_ALL_MASTERS.sh
+END
+NODES_STAR.sh
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/143/trunk/cookbook/NODES_STAR.sh
+END
+query_node
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/147/trunk/cookbook/query_node
+END
+test_all_masters.sh
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/144/trunk/cookbook/test_all_masters.sh
+END
+clear_all
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/144/trunk/cookbook/clear_all
+END
+test_cluster
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/153/trunk/cookbook/test_cluster
+END
+vilog
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/144/trunk/cookbook/vilog
+END
+show_log
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/144/trunk/cookbook/show_log
+END
+show_star.sh
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/144/trunk/cookbook/show_star.sh
+END
+utilities.sh
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/153/trunk/cookbook/utilities.sh
+END
+clear_cluster_all_masters.sh
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/144/trunk/cookbook/clear_cluster_all_masters.sh
+END
+BOOTSTRAP.sh
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/154/trunk/cookbook/BOOTSTRAP.sh
+END
+tungsten_service
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/147/trunk/cookbook/tungsten_service
+END
+clear_cluster
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/153/trunk/cookbook/clear_cluster
+END
+backups
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/144/trunk/cookbook/backups
+END
+help
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/147/trunk/cookbook/help
+END
+NODES_FAN_IN.sh
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/143/trunk/cookbook/NODES_FAN_IN.sh
+END
+install_star
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/153/trunk/cookbook/install_star
+END
+clear_cluster_master_slave_direct.sh
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/144/trunk/cookbook/clear_cluster_master_slave_direct.sh
+END
+configure_service
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/148/trunk/cookbook/configure_service
+END
+add_node_master_slave
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/144/trunk/cookbook/add_node_master_slave
+END
+test_fan_in.sh
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/144/trunk/cookbook/test_fan_in.sh
+END
+clear_cluster_fan_in.sh
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/144/trunk/cookbook/clear_cluster_fan_in.sh
+END
+test_all_topologies
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/144/trunk/cookbook/test_all_topologies
+END
+trepctl
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/144/trunk/cookbook/trepctl
+END

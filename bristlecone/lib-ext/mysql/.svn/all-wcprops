@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/bristlecone/!svn/ver/103/trunk/bristlecone/lib-ext/mysql
+END
+drizzle-jdbc-0.9-SNAPSHOT.jar
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/bristlecone/!svn/ver/103/trunk/bristlecone/lib-ext/mysql/drizzle-jdbc-0.9-SNAPSHOT.jar
+END
+mysql-connector-java-5.1.13-bin.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/bristlecone/!svn/ver/103/trunk/bristlecone/lib-ext/mysql/mysql-connector-java-5.1.13-bin.jar
+END

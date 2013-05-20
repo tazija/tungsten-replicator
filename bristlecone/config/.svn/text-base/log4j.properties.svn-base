@@ -1,0 +1,22 @@
+# Set the options for the Console appender.
+# Console's layout is a PatternLayout, using the conversion pattern
+# %d: current date in ISO8601 format
+# %p: priority of the logging event
+# %c: category name
+# %m: the message
+log4j.appender.Console=org.apache.log4j.ConsoleAppender
+log4j.appender.Console.layout=org.apache.log4j.PatternLayout
+log4j.appender.Console.layout.ConversionPattern=%d{HH:mm:ss,SSS} %-5p %m\n
+
+# Root logger set to INFO using the Console appender defined above.
+log4j.rootLogger=INFO, Console
+
+
+# Activate DEBUG mode for specific classes to debug problems, as shown by 
+# following example. 
+#log4j.logger.com.continuent.bristlecone.evaluator.Evaluator=DEBUG, Console
+#log4j.additivity.com.continuent.bristlecone.evaluator.Evaluator=false
+#log4j.logger.com.continuent.bristlecone.benchmark.scenarios.ReadScalingAggregatesScenario=DEBUG, Console
+#log4j.logger.com.continuent.bristlecone.benchmark.scenarios=DEBUG, Console
+#log4j.additivity.com.continuent.bristlecone.benchmark.scenarios=false
+

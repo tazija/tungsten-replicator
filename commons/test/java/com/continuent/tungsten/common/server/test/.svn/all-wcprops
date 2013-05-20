@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1014/trunk/commons/test/java/com/continuent/tungsten/common/server/test
+END
+JmxManagerTDisabledBecauseItFailsEveryNowAndThen.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/!svn/ver/1014/trunk/commons/test/java/com/continuent/tungsten/common/server/test/JmxManagerTDisabledBecauseItFailsEveryNowAndThen.java
+END
+Trial.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1014/trunk/commons/test/java/com/continuent/tungsten/common/server/test/Trial.java
+END
+TrialMBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1014/trunk/commons/test/java/com/continuent/tungsten/common/server/test/TrialMBean.java
+END

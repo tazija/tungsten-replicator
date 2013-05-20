@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1015/trunk/replicator/test/java/com/continuent/tungsten/replicator/pipeline
+END
+PipelineConfigBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/1015/trunk/replicator/test/java/com/continuent/tungsten/replicator/pipeline/PipelineConfigBuilder.java
+END
+SampleService.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1015/trunk/replicator/test/java/com/continuent/tungsten/replicator/pipeline/SampleService.java
+END
+JavaOpsTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/873/trunk/replicator/test/java/com/continuent/tungsten/replicator/pipeline/JavaOpsTest.java
+END
+PipelineHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1015/trunk/replicator/test/java/com/continuent/tungsten/replicator/pipeline/PipelineHelper.java
+END
+PipelineTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1015/trunk/replicator/test/java/com/continuent/tungsten/replicator/pipeline/PipelineTest.java
+END
+SampleFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/779/trunk/replicator/test/java/com/continuent/tungsten/replicator/pipeline/SampleFilter.java
+END
+PipelineProgressTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/1015/trunk/replicator/test/java/com/continuent/tungsten/replicator/pipeline/PipelineProgressTest.java
+END
+PipelineFilterTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/1015/trunk/replicator/test/java/com/continuent/tungsten/replicator/pipeline/PipelineFilterTest.java
+END

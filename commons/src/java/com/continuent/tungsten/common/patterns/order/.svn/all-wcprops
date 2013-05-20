@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1076/trunk/commons/src/java/com/continuent/tungsten/common/patterns/order
+END
+HighWaterResourceFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/1027/trunk/commons/src/java/com/continuent/tungsten/common/patterns/order/HighWaterResourceFactory.java
+END
+SequenceException.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1028/trunk/commons/src/java/com/continuent/tungsten/common/patterns/order/SequenceException.java
+END
+Sequence.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1028/trunk/commons/src/java/com/continuent/tungsten/common/patterns/order/Sequence.java
+END
+RingBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1076/trunk/commons/src/java/com/continuent/tungsten/common/patterns/order/RingBuffer.java
+END
+HighWaterResource.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1038/trunk/commons/src/java/com/continuent/tungsten/common/patterns/order/HighWaterResource.java
+END

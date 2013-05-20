@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/796/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/serializer
+END
+Serializer.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/369/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/serializer/Serializer.java
+END
+ProtobufSerializer.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/796/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/serializer/ProtobufSerializer.java
+END
+JavaSerializer.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/369/trunk/replicator/src/java/com/continuent/tungsten/replicator/thl/serializer/JavaSerializer.java
+END

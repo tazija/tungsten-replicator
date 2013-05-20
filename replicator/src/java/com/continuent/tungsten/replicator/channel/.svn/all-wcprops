@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1090/trunk/replicator/src/java/com/continuent/tungsten/replicator/channel
+END
+ChannelAssignmentService.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/1090/trunk/replicator/src/java/com/continuent/tungsten/replicator/channel/ChannelAssignmentService.java
+END
+ShardChannelTable.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1090/trunk/replicator/src/java/com/continuent/tungsten/replicator/channel/ShardChannelTable.java
+END

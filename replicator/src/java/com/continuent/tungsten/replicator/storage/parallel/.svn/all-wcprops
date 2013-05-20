@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1265/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/parallel
+END
+PartitionerResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/255/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/parallel/PartitionerResponse.java
+END
+LoadBalancingPartitioner.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/990/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/parallel/LoadBalancingPartitioner.java
+END
+Partitioner.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/774/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/parallel/Partitioner.java
+END
+RoundRobinPartitioner.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/990/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/parallel/RoundRobinPartitioner.java
+END
+HashPartitioner.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/1265/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/parallel/HashPartitioner.java
+END
+PartitionerUtility.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/parallel/PartitionerUtility.java
+END
+StatefulPartitioner.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/871/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/parallel/StatefulPartitioner.java
+END
+SimplePartitioner.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/990/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/parallel/SimplePartitioner.java
+END
+PartitionMetadata.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/871/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/parallel/PartitionMetadata.java
+END
+ParallelQueueExtractor.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/394/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/parallel/ParallelQueueExtractor.java
+END
+ParallelQueueApplier.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/358/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/parallel/ParallelQueueApplier.java
+END
+ShardListPartitioner.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/1265/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/parallel/ShardListPartitioner.java
+END
+ParallelQueueStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/1110/trunk/replicator/src/java/com/continuent/tungsten/replicator/storage/parallel/ParallelQueueStore.java
+END

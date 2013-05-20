@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1265/trunk/replicator/src/java/com/continuent/tungsten/replicator/event
+END
+ReplOptionParams.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1179/trunk/replicator/src/java/com/continuent/tungsten/replicator/event/ReplOptionParams.java
+END
+ReplDBMSHeader.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1145/trunk/replicator/src/java/com/continuent/tungsten/replicator/event/ReplDBMSHeader.java
+END
+ReplEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/255/trunk/replicator/src/java/com/continuent/tungsten/replicator/event/ReplEvent.java
+END
+ReplControlEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/255/trunk/replicator/src/java/com/continuent/tungsten/replicator/event/ReplControlEvent.java
+END
+DBMSEmptyEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1093/trunk/replicator/src/java/com/continuent/tungsten/replicator/event/DBMSEmptyEvent.java
+END
+DBMSEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/9/trunk/replicator/src/java/com/continuent/tungsten/replicator/event/DBMSEvent.java
+END
+EventMetadataFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1265/trunk/replicator/src/java/com/continuent/tungsten/replicator/event/EventMetadataFilter.java
+END
+ReplDBMSFilteredEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/692/trunk/replicator/src/java/com/continuent/tungsten/replicator/event/ReplDBMSFilteredEvent.java
+END
+ReplDBMSEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1145/trunk/replicator/src/java/com/continuent/tungsten/replicator/event/ReplDBMSEvent.java
+END
+ReplOption.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/event/ReplOption.java
+END
+ReplDBMSHeaderData.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1145/trunk/replicator/src/java/com/continuent/tungsten/replicator/event/ReplDBMSHeaderData.java
+END
+EventSchemaStatistics.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/891/trunk/replicator/src/java/com/continuent/tungsten/replicator/event/EventSchemaStatistics.java
+END

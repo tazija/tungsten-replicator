@@ -1,0 +1,12 @@
+controllerOne.address=172.16.10.212
+controllerOne.jdbcPort=25322
+controllerTwo.address=172.16.10.210
+controllerTwo.jdbcPort=25323
+login=sybase
+password=password
+vdb=test
+cluster.properties=scluster.properties
+clear=false
+backend.driver=com.sybase.jdbc3.jdbc.SybDriver
+backend1.url=jdbc:sybase:Tds:172.16.10.212:5000/test
+backend2.url=jdbc:sybase:Tds:172.16.10.210:5000/test1

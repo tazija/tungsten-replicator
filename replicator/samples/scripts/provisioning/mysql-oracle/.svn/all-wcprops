@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1354/trunk/replicator/samples/scripts/provisioning/mysql-oracle
+END
+03_post-table-loading.sh
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1354/trunk/replicator/samples/scripts/provisioning/mysql-oracle/03_post-table-loading.sh
+END
+env.sh
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1354/trunk/replicator/samples/scripts/provisioning/mysql-oracle/env.sh
+END
+pk.sql
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1354/trunk/replicator/samples/scripts/provisioning/mysql-oracle/pk.sql
+END
+01_first-tungtsen-install.sh
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1354/trunk/replicator/samples/scripts/provisioning/mysql-oracle/01_first-tungtsen-install.sh
+END
+00_buildsb.sh
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1354/trunk/replicator/samples/scripts/provisioning/mysql-oracle/00_buildsb.sh
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1354/trunk/replicator/samples/scripts/provisioning/mysql-oracle/README
+END
+02_table-load.sh
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1354/trunk/replicator/samples/scripts/provisioning/mysql-oracle/02_table-load.sh
+END

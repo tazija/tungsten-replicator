@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1188/trunk/replicator/samples/conf/filters/mysql
+END
+colnames.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/405/trunk/replicator/samples/conf/filters/mysql/colnames.tpl
+END
+settostring.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1188/trunk/replicator/samples/conf/filters/mysql/settostring.tpl
+END
+mysqlsessions.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/405/trunk/replicator/samples/conf/filters/mysql/mysqlsessions.tpl
+END
+enumtostring.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/898/trunk/replicator/samples/conf/filters/mysql/enumtostring.tpl
+END

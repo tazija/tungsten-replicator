@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1278/trunk/replicator/src/java/com/continuent/tungsten/replicator/util
+END
+WatchManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/950/trunk/replicator/src/java/com/continuent/tungsten/replicator/util/WatchManager.java
+END
+AtomicIntervalGuard.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1264/trunk/replicator/src/java/com/continuent/tungsten/replicator/util/AtomicIntervalGuard.java
+END
+WatchAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/util/WatchAction.java
+END
+Watch.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/947/trunk/replicator/src/java/com/continuent/tungsten/replicator/util/Watch.java
+END
+EventIdWatchPredicate.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/936/trunk/replicator/src/java/com/continuent/tungsten/replicator/util/EventIdWatchPredicate.java
+END
+HeartbeatWatchPredicate.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/936/trunk/replicator/src/java/com/continuent/tungsten/replicator/util/HeartbeatWatchPredicate.java
+END
+WatchPredicate.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/util/WatchPredicate.java
+END
+AtomicCounter.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/990/trunk/replicator/src/java/com/continuent/tungsten/replicator/util/AtomicCounter.java
+END
+SourceTimestampWatchPredicate.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/936/trunk/replicator/src/java/com/continuent/tungsten/replicator/util/SourceTimestampWatchPredicate.java
+END
+SeqnoWatchPredicate.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/936/trunk/replicator/src/java/com/continuent/tungsten/replicator/util/SeqnoWatchPredicate.java
+END
+ProcessHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1278/trunk/replicator/src/java/com/continuent/tungsten/replicator/util/ProcessHelper.java
+END

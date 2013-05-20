@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/1/trunk/replicator/test/data
+END
+mysql-bin.index
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1/trunk/replicator/test/data/mysql-bin.index
+END
+binlog_5events.000001
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1/trunk/replicator/test/data/binlog_5events.000001
+END
+binlog_trx.000001
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1/trunk/replicator/test/data/binlog_trx.000001
+END
+binlog_rbr_1.000001
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1/trunk/replicator/test/data/binlog_rbr_1.000001
+END

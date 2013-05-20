@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1210/trunk/replicator/samples/scripts/batch
+END
+infobright-connect.sql
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1073/trunk/replicator/samples/scripts/batch/infobright-connect.sql
+END
+mysql-merge.sql
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1073/trunk/replicator/samples/scripts/batch/mysql-merge.sql
+END
+vertica-stream-merge.sql
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1210/trunk/replicator/samples/scripts/batch/vertica-stream-merge.sql
+END
+vertica-connect.sql
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1210/trunk/replicator/samples/scripts/batch/vertica-connect.sql
+END
+infobright-merge.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1151/trunk/replicator/samples/scripts/batch/infobright-merge.js
+END
+infobright-merge.sql
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1073/trunk/replicator/samples/scripts/batch/infobright-merge.sql
+END
+infinidb-connect.sql
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1073/trunk/replicator/samples/scripts/batch/infinidb-connect.sql
+END
+vertica6-connect.sql
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1210/trunk/replicator/samples/scripts/batch/vertica6-connect.sql
+END
+vertica-merge.sql
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1210/trunk/replicator/samples/scripts/batch/vertica-merge.sql
+END
+mysql-connect.sql
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/792/trunk/replicator/samples/scripts/batch/mysql-connect.sql
+END
+vertica-stream-connect.sql
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1210/trunk/replicator/samples/scripts/batch/vertica-stream-connect.sql
+END
+infinidb-merge.sql
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1120/trunk/replicator/samples/scripts/batch/infinidb-merge.sql
+END
+mysql-merge.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1151/trunk/replicator/samples/scripts/batch/mysql-merge.js
+END
+vertica6-merge.sql
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1210/trunk/replicator/samples/scripts/batch/vertica6-merge.sql
+END

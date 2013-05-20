@@ -1,0 +1,18 @@
+K 10
+svn:ignore
+V 90
+build
+log
+testdb
+local.build.properties
+junitvmwatcher*.properties
+deploy.sh
+config.local
+
+K 13
+svn:mergeinfo
+V 167
+/branches/replicator-issue-370/replicator:973,997-1018,1031-1037,1049-1067
+/branches/replicator-parallel-thl:158-254
+/branches/single-command-install/replicator:73-105
+END

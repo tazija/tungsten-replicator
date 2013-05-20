@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/321/trunk/replicator-extra/bin/pg
+END
+pg-wal-plugin
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/321/trunk/replicator-extra/bin/pg/pg-wal-plugin
+END
+pg-wal-archive
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/321/trunk/replicator-extra/bin/pg/pg-wal-archive
+END
+pg-wal-restore
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/321/trunk/replicator-extra/bin/pg/pg-wal-restore
+END
+pg-wal-archive-send
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/321/trunk/replicator-extra/bin/pg/pg-wal-archive-send
+END

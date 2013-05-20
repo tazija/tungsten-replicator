@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/449/trunk/replicator-extra/lib/ruby
+END
+pg-wal-archive-send.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/12/trunk/replicator-extra/lib/ruby/pg-wal-archive-send.rb
+END
+migrate-service-mysql-tungsten.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/12/trunk/replicator-extra/lib/ruby/migrate-service-mysql-tungsten.rb
+END
+plugin.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/321/trunk/replicator-extra/lib/ruby/plugin.rb
+END
+migrate-service-tungsten-mysql.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/12/trunk/replicator-extra/lib/ruby/migrate-service-tungsten-mysql.rb
+END
+pg-wal-plugin.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/449/trunk/replicator-extra/lib/ruby/pg-wal-plugin.rb
+END
+service_migrator.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/12/trunk/replicator-extra/lib/ruby/service_migrator.rb
+END
+pg-wal-wrapper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/12/trunk/replicator-extra/lib/ruby/pg-wal-wrapper.rb
+END
+pg-wal-archive.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/207/trunk/replicator-extra/lib/ruby/pg-wal-archive.rb
+END
+pg-wal-restore.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/12/trunk/replicator-extra/lib/ruby/pg-wal-restore.rb
+END

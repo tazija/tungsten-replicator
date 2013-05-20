@@ -1,0 +1,327 @@
+                    INTRODUCTION TO EVALUATOR UTILITY
+                         R. Hannus and R. Hodges
+                            15 September 2007
+                Copyright (c) 2006-2007 Continuent, Inc.
+
+1 WHAT EVALUATOR DOES
+
+The Evaluator is a load generation tool.  It was developed to
+demonstrate Uni/Cluster clustering.  There is nothing specific to
+Uni/Cluster in the Evaluator. It will run directly against a database
+server as well as against Uni/Cluster.
+
+The evaluator queries are designed to put a load on a database
+server. The queries are CPU intensive, but do not stress other
+aspects of the database server such as disk access. It is assumed
+that the type of load on the server does not matter to the client
+application.
+
+
+2 HOW EVALUATOR WORKS
+
+The Evaluator is a self-contained Java application and, therefore,
+uses JDBC as the means for connecting to databases.  It runs a
+configurable number of threads executing a configurable load of
+read and write requests against the target database. The read queries
+create a load on the server, because they are designed to force 2
+table scans for each query. This creates a high CPU load with fairly
+small tables and small number of client threads.
+
+The form of the read query is as follows: 
+
+  select c.* from tbl3 c join 
+    tbl1 a on c.k1 = a.k1 join 
+      tbl2 b on c.k2 = b.k2 
+    where a.value between ? and ? 
+      and b.value between ? and ? 
+
+The following query plan illustrates why this query creates such a
+strong load on the server.  The output is from PostgreSQL 8.2.5.  
+
+  Hash Join  (cost=5.11..787.70 rows=71 width=28) 
+    Hash Cond: (c.k2 = b.k2) 
+    -> Nested Loop  (cost=0.00..775.95 rows=1581 width=28) 
+       -> Seq Scan on tbl1 a  (cost=0.00..5.06 rows=8 width=4) 
+          Filter: ((value >= 10) AND (value <= 100)) 
+       -> Index Scan using tbl3_pkey on tbl3 c  (cost=0.00..93.89 rows=198 width=28) 
+          Index Cond: (c.k1 = a.k1) 
+    -> Hash  (cost=5.00..5.00 rows=9 width=4) 
+      -> Seq Scan on tbl2 b  (cost=0.00..5.00 rows=9 width=4) 
+         Filter: ((value >= 90) AND (value <= 200))A
+
+
+3 PLATFORM PREREQUISITES AND SETUP
+
+You must be running JDK 1.5 or higher to execute Evaluator.  In
+addition, any Jar files used to connect to test databases should
+be placed in the lib-ext directory.  The Evaluator start-up script
+will automatically add these to the class path at startup time.
+
+
+4 RUNNING EVALUATOR
+
+4.1 INVOCATION
+
+The Evaluator is a simple command line Java program.  Windows and Unix
+run scripts are provided in the bin directory.  The script invocation 
+is 
+
+  evaluator.[sh|bat] [options] config_file
+
+where options are 
+
+  -graph    Log results on graphical display
+  -name     Supply alternate name for HTML/XML output
+  -help     Print usage
+
+The configuration file must always be supplied.  The configuration file
+provides values to control the load characteristics.  
+
+Here's an example of invocation on Linux that will work out-of-the box.  
+It runs a short test using the Hypersonic database and presenting results.  
+
+4.2 OUTPUT 
+
+The output of the evaluator program is a set of text messages giving
+the status of the running process.  Sample configuration files are
+located in the config directory.
+
+Optional XML, CSV, and HTML files containing statistics can also
+be generated. Microsoft Excel can be used to create graphs of the
+statistics.   
+
+4.3 GRAPHICAL DISPLAY
+
+In addition to text output Evaluator can show statistics dynamically on 
+a graph.  This is quite useful to assure you that something is actually 
+happening.  The -graph option turns this on.  
+
+4.4 EXAMPLES
+
+Sample configuration files are located in the config/evaluator 
+directory.  The following example shows how to run the Hypersonic 
+test with graphical output.  
+
+  bin/evaluator.sh -graph config/evaluator/hsql_sample.xml 
+
+This will run a short test and then terminate.  The graphical display
+remains visible until you close it or kill the Evaluator process. 
+
+
+5 EVALUATOR CONFIGURATION REFERENCE
+
+The evaluator is configured by values which are provided in an
+appropriately formatted XML document. This section provides details
+about the various configuration elements that can be found in the
+Evaluator configuration XML files. All values are of character data
+type.
+
+Note that generated load on the system is primarily determined by
+the number threads and their think time.  Increasing the number of
+threads or decreasing their think time will increase the load on
+the database.  Increasing the table size will also increase the
+load on the system, but is hard to adjust to get a particular load.
+The rampUpInterval and rampUpIncrement parameters can be used to
+put an increasing load on the system. The response time will spike
+and queries per second will stop increasing when the systems capacity
+has been reached.
+
+5.1 EvaluatorConfiguration
+
+This is root element of the XML document. It contains a Database
+element and one or more TableGroup elements. The EvaluatorConfiguration
+element has the following attributes.
+
+5.2 Name (required)
+
+The name attribute identifies the configuration. 
+
+5.3 testDuration (optional)
+
+testDuration indicates how long the test will run. The value is
+specified in seconds. The default value is 10 seconds.
+
+5.4 xmlFile (optional)
+
+The name of an optional output XML file.  This can be loaded into a 
+tool like Excel to create graphs of results. 
+
+5.5 csvFile (optional)
+
+The name of an optional output CSV file.  This file can likewise
+be loaded into Excel in order to create graphs of the results.
+
+5.6 statusInterval (optional)
+
+Indicates how frequently statistics should be reported. The statistics
+go to the standard out device and to the XML file if one is specified.
+The default value is 2. The value is specified in seconds.
+
+5.7 autoCommit (optional)
+
+This attribute indicates whether or not auto commit should be enabled
+for the queries. The default value is true.
+
+5.8 Database
+
+The Database tag contains the specification of the target database.
+The Database tag has the following attributes.
+
+5.8.1 url
+
+The url is the JDBC URL for the test database. Tables will be created
+and dropped in this database. Do not use a database containing
+important information. The tables used for testing are not very
+large, so the disk space requirements are minimal.
+
+5.8.2 Driver (required)
+
+This is the JDBC drive to use for the database connection.
+
+5.8.3 User (required)
+
+This is the database login for the connection. This user must have
+the ability to create and drop tables in the specified database.
+
+5.8.4 Password (required)
+
+This is the user's password in the database.
+
+5.8.5 TableGroup
+
+The TableGroup tag defines a set of tables containing the test data.
+The set consists for 3 tables. The table names are generated by
+placing 1, 2, and 3 after the specified name. The base tables
+(numbers 1 and 2) are loaded with the number of rows specified by
+the size attribute. Third table is loaded by joining the base tables
+to form a cross product. Therefore, the third tables row count is
+the square of the size. A TableGroup contains one or more ThreadGroup
+tags. The TableGroup tag has the following attributes.
+
+5.8.5.1 name (required)
+
+This will be the prefix of tables created. Therefore, it must be a
+valid SQL identifier.
+
+5.8.5.2 size (optional)
+
+This specifies the number of rows in the base tables.
+
+5.8.6 ThreadGroup
+
+The ThreadGroup tag defines a set of client threads that will generate 
+requests against the target database. A ThreadGroup has the following 
+attributes:
+
+5.8.6.1 Name (required)
+
+This the prefix for the client names. The names will be generated
+by adding a number suffix.
+
+5.8.6.2 threadCount (optional)
+
+This is the number of clients in this group. The default value is
+5.
+
+5.8.6.3 readSize  (optional)
+
+This is the average number of rows that should be returned by the
+select query. The default value is 2.
+
+5.8.6.4 thinkTime (optional)
+
+This is the average amount of time in milliseconds the client will
+sleep between queries. The default value is 0.
+
+5.8.6.5 rampUpInterval (optional)
+
+This specifies the period of time in seconds to wait before starting
+the next group of client threads. The number of threads started in
+each group is specified by the rampUpIncrement attribute. The value
+0 indicates that all threads should be started immediately. The
+default value is 0.
+
+5.8.6.6 rampUpIncrement (optional)
+
+This specifies the number of threads to start each rampUpIncrement
+period. The value 0 indicates there is no ramp up and all threads
+will be started immediately. The default value is 5.
+
+5.8.6.7 updates (optional)
+
+This is the percentage of the queries that should be update requests.
+The default value is 0.
+
+5.8.6.8 inserts (optional)
+
+This specifies the percentage of the queries that should be insert
+requests. The default value is 0.
+
+5.8.6.9 Deletes (optional)
+
+This specifies the percentage of the queries that should be delete
+requests. The default value is 0.
+
+
+6 OUTPUT FILE FORMATS
+
+XML, CSV, ad HTML files contain the same information. Microsoft
+Excel 2003 Professional Edition has tools for importing XML documents.
+Older versions of Excel, the version of Excel included in Microsoft
+Office 2003 Standard Edition and OpenOffice Calc can import data
+from HTML files.  All versions of these tools can import CSV.
+
+The XML file contains a single EvaluatorResults tag and a series
+of Stats tags with the attributes listed below. The HTML file
+contains a single HTML table with the column headers listed below.
+CSV output contains an initial header line followed by lines
+containing data.
+
+6.1 Average response time
+
+This is the average response time for the select queries in
+milliseconds.
+
+6.2 Deletes
+
+This is the number of delete requests executed in this time period.
+
+6.3 Inserts
+
+This is the number of insert requests executed in this time period.
+
+6.4 Interval
+
+This is the amount of time in seconds that these statistics cover.
+
+6.5 Label
+
+The label is the date and time when these statistics were collected. 
+
+6.6 Queries
+
+This the number of select queries executed in this interval.
+
+6.7 Queries per second
+
+This is the number of queries divided by the number of second in
+the interval.
+
+6.8 Rows read
+
+This is the number of table rows retrieved from the database during
+this interval. This value divided by the number of queries should
+be approximately equal to the read size specified in the configuration.
+
+6.9 Time
+
+This is the elapsed time for the current test run when these
+statistics were collected.
+
+6.10  Updates
+
+This is the number of updates performed in this interval.
+
+6.11  Users
+
+This is the number of simulated users currently running.

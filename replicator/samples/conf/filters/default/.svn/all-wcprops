@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1331/trunk/replicator/samples/conf/filters/default
+END
+dbtransform.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1094/trunk/replicator/samples/conf/filters/default/dbtransform.tpl
+END
+eventmetadata.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/809/trunk/replicator/samples/conf/filters/default/eventmetadata.tpl
+END
+foreignkeychecks.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/405/trunk/replicator/samples/conf/filters/default/foreignkeychecks.tpl
+END
+tabletransform.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1094/trunk/replicator/samples/conf/filters/default/tabletransform.tpl
+END
+dropstatementdata.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/467/trunk/replicator/samples/conf/filters/default/dropstatementdata.tpl
+END
+customcdc.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1275/trunk/replicator/samples/conf/filters/default/customcdc.tpl
+END
+optimizeupdates.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/632/trunk/replicator/samples/conf/filters/default/optimizeupdates.tpl
+END
+CDC.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1294/trunk/replicator/samples/conf/filters/default/CDC.tpl
+END
+breadcrumbs.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1291/trunk/replicator/samples/conf/filters/default/breadcrumbs.tpl
+END
+zerodate2null.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1106/trunk/replicator/samples/conf/filters/default/zerodate2null.tpl
+END
+ansiquotes.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/593/trunk/replicator/samples/conf/filters/default/ansiquotes.tpl
+END
+tableignore.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/468/trunk/replicator/samples/conf/filters/default/tableignore.tpl
+END
+dummy.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/405/trunk/replicator/samples/conf/filters/default/dummy.tpl
+END
+delay.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/405/trunk/replicator/samples/conf/filters/default/delay.tpl
+END
+buildindextable.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/930/trunk/replicator/samples/conf/filters/default/buildindextable.tpl
+END
+bidiSlave.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/405/trunk/replicator/samples/conf/filters/default/bidiSlave.tpl
+END
+shardbyseqno.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1237/trunk/replicator/samples/conf/filters/default/shardbyseqno.tpl
+END
+removecolumnsfilter.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/934/trunk/replicator/samples/conf/filters/default/removecolumnsfilter.tpl
+END
+shardbytable.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1073/trunk/replicator/samples/conf/filters/default/shardbytable.tpl
+END
+printeventfilter.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/930/trunk/replicator/samples/conf/filters/default/printeventfilter.tpl
+END
+javascript.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1331/trunk/replicator/samples/conf/filters/default/javascript.tpl
+END
+noonlykeywords.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/593/trunk/replicator/samples/conf/filters/default/noonlykeywords.tpl
+END
+shardfilter.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1168/trunk/replicator/samples/conf/filters/default/shardfilter.tpl
+END
+rename.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1223/trunk/replicator/samples/conf/filters/default/rename.tpl
+END
+casetransform.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/405/trunk/replicator/samples/conf/filters/default/casetransform.tpl
+END
+replicate.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/706/trunk/replicator/samples/conf/filters/default/replicate.tpl
+END
+pkey.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/829/trunk/replicator/samples/conf/filters/default/pkey.tpl
+END
+ignoreserver.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/405/trunk/replicator/samples/conf/filters/default/ignoreserver.tpl
+END
+dropcomments.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/467/trunk/replicator/samples/conf/filters/default/dropcomments.tpl
+END
+logger.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/405/trunk/replicator/samples/conf/filters/default/logger.tpl
+END

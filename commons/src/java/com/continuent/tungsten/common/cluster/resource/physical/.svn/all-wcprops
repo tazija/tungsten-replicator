@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1318/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/physical
+END
+Replicator.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/1318/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/physical/Replicator.java
+END
+Capabilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/1014/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/physical/Capabilities.java
+END
+DataSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/1014/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/physical/DataSource.java
+END
+ReplicatorCapabilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/1014/trunk/commons/src/java/com/continuent/tungsten/common/cluster/resource/physical/ReplicatorCapabilities.java
+END

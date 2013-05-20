@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1227/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql
+END
+FormatDescriptionLogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/357/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/FormatDescriptionLogEvent.java
+END
+MysqlBinlog.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/939/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/MysqlBinlog.java
+END
+StartLogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/357/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/StartLogEvent.java
+END
+MySQLExtractor.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/1179/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/MySQLExtractor.java
+END
+RelayLogTask.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/776/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/RelayLogTask.java
+END
+UpdateRowsLogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/372/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/UpdateRowsLogEvent.java
+END
+RotateLogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/357/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/RotateLogEvent.java
+END
+BinlogIndex.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/357/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/BinlogIndex.java
+END
+RelayLogPosition.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/791/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/RelayLogPosition.java
+END
+DeleteFileLogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/357/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/DeleteFileLogEvent.java
+END
+IntvarLogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/372/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/IntvarLogEvent.java
+END
+WriteRowsLogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/372/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/WriteRowsLogEvent.java
+END
+QueryLogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/QueryLogEvent.java
+END
+RelayLogClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/RelayLogClient.java
+END
+SerialBlob.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/SerialBlob.java
+END
+BeginLoadQueryLogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/357/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/BeginLoadQueryLogEvent.java
+END
+MySQLExtractException.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/MySQLExtractException.java
+END
+DeleteRowsLogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/357/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/DeleteRowsLogEvent.java
+END
+MySQLBinLogUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/MySQLBinLogUtils.java
+END
+LogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1227/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/LogEvent.java
+END
+AppendBlockLogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/357/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/AppendBlockLogEvent.java
+END
+RandLogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/372/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/RandLogEvent.java
+END
+XidLogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/372/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/XidLogEvent.java
+END
+TableMapLogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/357/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/TableMapLogEvent.java
+END
+StopLogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/357/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/StopLogEvent.java
+END
+UserVarLogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/372/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/UserVarLogEvent.java
+END
+ExecuteLoadQueryLogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/!svn/ver/357/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/ExecuteLoadQueryLogEvent.java
+END
+BinlogReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/BinlogReader.java
+END
+RowsLogEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/1000/trunk/replicator/src/java/com/continuent/tungsten/replicator/extractor/mysql/RowsLogEvent.java
+END

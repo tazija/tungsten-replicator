@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1350/trunk/replicator/src/java/com/continuent/tungsten/replicator/management
+END
+ExtendedActionEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/915/trunk/replicator/src/java/com/continuent/tungsten/replicator/management/ExtendedActionEvent.java
+END
+OpenReplicatorManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/1317/trunk/replicator/src/java/com/continuent/tungsten/replicator/management/OpenReplicatorManager.java
+END
+MockEventDispatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/949/trunk/replicator/src/java/com/continuent/tungsten/replicator/management/MockEventDispatcher.java
+END
+ReplicatorStateException.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/378/trunk/replicator/src/java/com/continuent/tungsten/replicator/management/ReplicatorStateException.java
+END
+OpenReplicatorManagerMBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/management/OpenReplicatorManagerMBean.java
+END
+OpenReplicatorPlugin.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/1041/trunk/replicator/src/java/com/continuent/tungsten/replicator/management/OpenReplicatorPlugin.java
+END
+MockOpenReplicatorContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/management/MockOpenReplicatorContext.java
+END
+ReplicationServiceManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/1350/trunk/replicator/src/java/com/continuent/tungsten/replicator/management/ReplicationServiceManager.java
+END
+OpenReplicatorManagerCtrl.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/1333/trunk/replicator/src/java/com/continuent/tungsten/replicator/management/OpenReplicatorManagerCtrl.java
+END
+ReplicationServiceManagerMBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/management/ReplicationServiceManagerMBean.java
+END
+OpenReplicatorContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/915/trunk/replicator/src/java/com/continuent/tungsten/replicator/management/OpenReplicatorContext.java
+END
+OpenReplicatorSignaler.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/management/OpenReplicatorSignaler.java
+END

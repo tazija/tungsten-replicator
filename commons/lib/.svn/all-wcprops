@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/1244/trunk/commons/lib
+END
+jackson-xc-1.9.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1039/trunk/commons/lib/jackson-xc-1.9.2.jar
+END
+protobuf-java-2.2.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1/trunk/commons/lib/protobuf-java-2.2.0.jar
+END
+protobuf-java-2.3.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1/trunk/commons/lib/protobuf-java-2.3.0.jar
+END
+commons-cli-1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1158/trunk/commons/lib/commons-cli-1.2.jar
+END
+json_simple-1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/184/trunk/commons/lib/json_simple-1.1.jar
+END
+xstream-1.3.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/1/trunk/commons/lib/xstream-1.3.1.jar
+END
+jackson-jaxrs-1.9.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1039/trunk/commons/lib/jackson-jaxrs-1.9.2.jar
+END
+velocity-1.7-sources.jar
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1203/trunk/commons/lib/velocity-1.7-sources.jar
+END
+log4j-1.2.16-sources.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/341/trunk/commons/lib/log4j-1.2.16-sources.jar
+END
+hedera-2.0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1/trunk/commons/lib/hedera-2.0.1.jar
+END
+commons-configuration-1.9.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1191/trunk/commons/lib/commons-configuration-1.9.jar
+END
+jsr311-api-1.1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1244/trunk/commons/lib/jsr311-api-1.1.1.jar
+END
+commons-collections-3.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1139/trunk/commons/lib/commons-collections-3.2.1.jar
+END
+commons-lang-2.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1139/trunk/commons/lib/commons-lang-2.4.jar
+END
+commons-logging-1.1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1/trunk/commons/lib/commons-logging-1.1.1.jar
+END
+jackson-mapper-asl-1.9.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1039/trunk/commons/lib/jackson-mapper-asl-1.9.2.jar
+END
+protobuf-java-2.2.0-sources.jar
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1/trunk/commons/lib/protobuf-java-2.2.0-sources.jar
+END
+jgroups-all.jar
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/1/trunk/commons/lib/jgroups-all.jar
+END
+xpp3_min-1.1.4c.jar
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/1/trunk/commons/lib/xpp3_min-1.1.4c.jar
+END
+jline-0.9.94.jar
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1/trunk/commons/lib/jline-0.9.94.jar
+END
+jackson-core-asl-1.9.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/1039/trunk/commons/lib/jackson-core-asl-1.9.2.jar
+END
+velocity-1.7.jar
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/1139/trunk/commons/lib/velocity-1.7.jar
+END
+log4j-1.2.16.jar
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/341/trunk/commons/lib/log4j-1.2.16.jar
+END

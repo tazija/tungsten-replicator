@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1145/trunk/replicator/src/java/com/continuent/tungsten/replicator/prefetch
+END
+RbrTableChangeSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/830/trunk/replicator/src/java/com/continuent/tungsten/replicator/prefetch/RbrTableChangeSet.java
+END
+RbrRowImage.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/830/trunk/replicator/src/java/com/continuent/tungsten/replicator/prefetch/RbrRowImage.java
+END
+PrefetchSqlTransformer.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/873/trunk/replicator/src/java/com/continuent/tungsten/replicator/prefetch/PrefetchSqlTransformer.java
+END
+RbrRowChange.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/830/trunk/replicator/src/java/com/continuent/tungsten/replicator/prefetch/RbrRowChange.java
+END
+RbrChangeList.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/830/trunk/replicator/src/java/com/continuent/tungsten/replicator/prefetch/RbrChangeList.java
+END
+KeySelect.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/845/trunk/replicator/src/java/com/continuent/tungsten/replicator/prefetch/KeySelect.java
+END
+PrefetchApplier.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1122/trunk/replicator/src/java/com/continuent/tungsten/replicator/prefetch/PrefetchApplier.java
+END
+PrefetchStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1145/trunk/replicator/src/java/com/continuent/tungsten/replicator/prefetch/PrefetchStore.java
+END
+SlowQueryCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/prefetch/SlowQueryCache.java
+END

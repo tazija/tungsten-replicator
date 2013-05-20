@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1101/trunk/replicator/src/java/com/continuent/tungsten/replicator/dbms
+END
+DBMSData.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/dbms/DBMSData.java
+END
+OneRowChange.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1101/trunk/replicator/src/java/com/continuent/tungsten/replicator/dbms/OneRowChange.java
+END
+LoadDataFileQuery.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/dbms/LoadDataFileQuery.java
+END
+RowChangeData.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/9/trunk/replicator/src/java/com/continuent/tungsten/replicator/dbms/RowChangeData.java
+END
+LoadDataFileDelete.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/dbms/LoadDataFileDelete.java
+END
+LoadDataFileFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/dbms/LoadDataFileFragment.java
+END
+StatementData.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/dbms/StatementData.java
+END
+RowIdData.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/320/trunk/replicator/src/java/com/continuent/tungsten/replicator/dbms/RowIdData.java
+END

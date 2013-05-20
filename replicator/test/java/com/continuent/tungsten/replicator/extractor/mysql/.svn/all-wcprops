@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1015/trunk/replicator/test/java/com/continuent/tungsten/replicator/extractor/mysql
+END
+BinlogIndexTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/370/trunk/replicator/test/java/com/continuent/tungsten/replicator/extractor/mysql/BinlogIndexTest.java
+END
+RelayLogPositionTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/1/trunk/replicator/test/java/com/continuent/tungsten/replicator/extractor/mysql/RelayLogPositionTest.java
+END
+BinlogTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/1015/trunk/replicator/test/java/com/continuent/tungsten/replicator/extractor/mysql/BinlogTest.java
+END

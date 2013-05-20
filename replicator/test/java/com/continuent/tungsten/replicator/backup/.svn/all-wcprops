@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1278/trunk/replicator/test/java/com/continuent/tungsten/replicator/backup
+END
+TestBackupManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1015/trunk/replicator/test/java/com/continuent/tungsten/replicator/backup/TestBackupManager.java
+END
+TestStorageService.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1278/trunk/replicator/test/java/com/continuent/tungsten/replicator/backup/TestStorageService.java
+END
+TestProcessHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1073/trunk/replicator/test/java/com/continuent/tungsten/replicator/backup/TestProcessHelper.java
+END

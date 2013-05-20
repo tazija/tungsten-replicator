@@ -1,0 +1,12 @@
+controllerOne.address=192.168.84.128
+controllerOne.jdbcPort=25332
+controllerTwo.address=192.168.84.128
+controllerTwo.jdbcPort=25333
+login=postgres
+password=
+vdb=pc
+cluster.properties=pcluster.properties
+clear=true
+backend.driver=org.postgresql.Driver
+backend1.url=jdbc:postgresql://192.168.84.128/test
+backend2.url=jdbc:postgresql://192.168.84.128/test2

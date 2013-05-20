@@ -1,0 +1,20 @@
+Benchmark Configuration README
+
+This file contains standard property files used for benchmark tests.
+Benchmark configuration files have "Scenario" in the property file
+name.  Connection property files for different database types begin
+with "connection_".
+
+To get started, link one of the connection property files to the name
+connection.properties.  Then you can run a benchmark.  Here are 
+sample commands showing how to run a benchmark against Hypersonic. 
+
+  ln -s connection_hsqldb.properties connection.properties
+  benchmark.sh -csv out.csv -html out.html -props WriteSimpleScenario.properties
+
+To test databases other than Hypersonic, you must put the JDBC driver
+in the lib-ext directory.  Otherwise, the test will fail because it will
+not find a suitable JDBC driver for the connection URL.  
+
+Property files contain comments that explain the property settings.  See
+also the user guide files in the doc directory. 

@@ -1,0 +1,139 @@
+#!/usr/bin/perl
+# simple_services
+# Shows the output of 'trepctl services' in compact way
+# (C) Continuent, Inc - 2012
+# Released under the New BSD license
+use strict;
+use warnings;
+use Getopt::Long;
+
+my $VERSION = '1.0.1';
+my %options = (
+    action   => 'show',
+    role     => 'all',
+    service  => 'all',
+    help     => 0,
+    version  => 0,
+);
+
+GetOptions(
+   'a|action=s'   => \$options{action}, 
+   'r|role=s'     => \$options{role}, 
+   's|service=s'  => \$options{service}, 
+   'h|help'       => \$options{help}, 
+   'version'      => \$options{version}, 
+) or get_help();
+
+if ( $options{version})
+{
+    print credits();
+    exit;
+}
+
+get_help() if $options{help};
+
+sub credits
+{
+    return 
+        "simple_services ver. $VERSION\n"
+        ."(C) Giuseppe Maxia 2012 for Continuent, Inc\n"
+}
+
+sub get_help
+{
+    
+    print  
+    credits(),
+    "Syntax: simple_services [options]\n"
+    . "\n"
+    . "options:\n"
+    . "-a, --action ={show|list|name} ($options{action}) \n"
+    . "-r, --role   ={master|slave}   ($options{role}) \n"
+    . "-s, --service =service_name    ($options{service}) \n"
+    . "--version\n"
+    . "-h, --help\n"
+    . "\n"
+    ;
+    exit;
+}
+
+my @services        = ();
+my $count           = -1;
+my $name_len = 0;
+while (my $line = <STDIN>)
+{
+    next if $line =~ /Processing|NAME|Finished/;
+    next if $line =~ /^\s*$/;
+    next if $line =~ /^\s*#/;
+    if ($line =~ /----/ )
+    {
+        $count++;
+    }
+    elsif ($line =~ /(\w+)\s*:\s+(.*)/) 
+    {
+        my ($key,$value) = ($1, $2);
+        $services[$count]{$key} = $value;
+        if (($key eq 'serviceName') and (length($value) > $name_len))
+        { 
+            $name_len = length($2) ;
+        }
+    }
+    else 
+    {
+        die "unhandled input $line";
+    }
+}
+
+my $service_template = 
+      "%-${name_len}s  [%s]\t"                      # name role
+    . "seqno: %10s  - latency: %7.3f - %s\n\n";     # seqno latency state    
+
+$count =0;
+for my $serv (@services)
+{
+    if ( $options{role} ne 'all')
+    {
+        next unless $serv->{role} eq $options{role};
+    }
+    if ( $options{service} ne 'all')
+    {
+        next unless $serv->{serviceName} eq $options{service};
+    }
+
+    if ($options{action} eq 'show')
+    {
+
+        printf $service_template, 
+            $serv->{serviceName},
+            $serv->{role},
+            commify($serv->{appliedLastSeqno}),
+            $serv->{appliedLatency},
+            $serv->{state};
+    }
+    elsif ($options{action} eq 'list')
+    {
+        if ($count)
+        {
+            print ",";
+        }
+        print "$serv->{serviceName}";
+    }
+    elsif ($options{action} eq 'name')
+    {
+        print "$serv->{serviceName}\n";
+    }
+    elsif ($options{action} eq 'role')
+    {
+        print "$serv->{role}\n";
+    }
+    $count++; 
+}
+print "\n" if $options{action} eq 'list';
+sub commify 
+{
+   my $text = reverse $_[0];
+   $text =~ s/(\d\d\d)(?=\d)(?!\d*\.)/$1,/g;
+   return scalar reverse $text;
+}
+
+# use Data::Dumper; print Dumper \@services;

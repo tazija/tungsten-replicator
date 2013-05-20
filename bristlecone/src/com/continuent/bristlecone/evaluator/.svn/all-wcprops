@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/bristlecone/!svn/ver/154/trunk/bristlecone/src/com/continuent/bristlecone/evaluator
+END
+ThreadConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svnroot/bristlecone/!svn/ver/153/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/ThreadConfiguration.java
+END
+RowFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/RowFactory.java
+END
+MovingAverageDemo.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/bristlecone/!svn/ver/49/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/MovingAverageDemo.java
+END
+StatisticsListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/StatisticsListener.java
+END
+HTMLWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/HTMLWriter.java
+END
+Evaluator.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bristlecone/!svn/ver/154/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/Evaluator.java
+END
+GraphicalEvaluatorDisplay.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svnroot/bristlecone/!svn/ver/61/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/GraphicalEvaluatorDisplay.java
+END
+TableGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bristlecone/!svn/ver/61/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/TableGroup.java
+END
+Configuration.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/bristlecone/!svn/ver/138/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/Configuration.java
+END
+EvaluatorException.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/EvaluatorException.java
+END
+CsvWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/CsvWriter.java
+END
+Statistics.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bristlecone/!svn/ver/34/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/Statistics.java
+END
+ReadsVersusWritesDisplay.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svnroot/bristlecone/!svn/ver/61/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/ReadsVersusWritesDisplay.java
+END
+EvaluatorThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/bristlecone/!svn/ver/153/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/EvaluatorThread.java
+END
+DataSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/bristlecone/!svn/ver/49/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/DataSource.java
+END
+XMLWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/bristlecone/!svn/ver/2/trunk/bristlecone/src/com/continuent/bristlecone/evaluator/XMLWriter.java
+END

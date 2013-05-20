@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/206/trunk/replicator-extra/samples/conf
+END
+sample.postgresql-wal.properties
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/106/trunk/replicator-extra/samples/conf/sample.postgresql-wal.properties
+END
+sample.postgresql.tungsten.conf
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/106/trunk/replicator-extra/samples/conf/sample.postgresql.tungsten.conf
+END

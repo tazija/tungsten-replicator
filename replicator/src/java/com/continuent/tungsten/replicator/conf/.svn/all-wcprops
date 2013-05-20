@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1328/trunk/replicator/src/java/com/continuent/tungsten/replicator/conf
+END
+ReplicatorMonitorMBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/conf/ReplicatorMonitorMBean.java
+END
+ReplicatorRole.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/conf/ReplicatorRole.java
+END
+FailurePolicy.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1138/trunk/replicator/src/java/com/continuent/tungsten/replicator/conf/FailurePolicy.java
+END
+PropertiesManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/conf/PropertiesManager.java
+END
+ReplicatorRuntime.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1328/trunk/replicator/src/java/com/continuent/tungsten/replicator/conf/ReplicatorRuntime.java
+END
+ReplicatorConf.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1328/trunk/replicator/src/java/com/continuent/tungsten/replicator/conf/ReplicatorConf.java
+END
+MonitorThreadInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/conf/MonitorThreadInfo.java
+END
+ReplicatorMonitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/conf/ReplicatorMonitor.java
+END
+MonitorThreadBucket.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1/trunk/replicator/src/java/com/continuent/tungsten/replicator/conf/MonitorThreadBucket.java
+END
+ReplicatorRuntimeConf.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1015/trunk/replicator/src/java/com/continuent/tungsten/replicator/conf/ReplicatorRuntimeConf.java
+END
