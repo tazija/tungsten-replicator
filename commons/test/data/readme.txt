@@ -1,1 +1,0 @@
-Password for keystore / trustore = secret

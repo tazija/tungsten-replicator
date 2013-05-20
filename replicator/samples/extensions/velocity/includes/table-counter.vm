@@ -1,6 +1,0 @@
-## Counting tables.
-#if ( !$counter )
-  #set ( $counter = 1 )
-#else
-  #set( $counter = $counter + 1 )
-#end
