@@ -30,18 +30,20 @@ package com.continuent.tungsten.replicator.database;
 import com.continuent.tungsten.common.csv.CsvWriter;
 import com.continuent.tungsten.common.csv.NullPolicy;
 import com.continuent.tungsten.replicator.ReplicatorException;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import java.io.BufferedWriter;
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Types;
+import java.sql.*;
 import java.util.ArrayList;
 
 /**
  * @author Sergey Bushik
  */
 public class NuoDBDatabase extends AbstractDatabase {
+
+    private Logger logger = Logger.getLogger(getClass());
+
 
     public NuoDBDatabase() throws SQLException {
         dbms = DBMS.NUODB;
@@ -195,7 +197,7 @@ public class NuoDBDatabase extends AbstractDatabase {
         if (baseTablesOnly) {
             types = new String[]{"TABLE"};
         }
-        return databaseMetaData.getTables(null, schemaName, null, null);
+        return databaseMetaData.getTables(null, schemaName, null, types);
     }
 
     @Override
@@ -213,5 +215,110 @@ public class NuoDBDatabase extends AbstractDatabase {
     @Override
     public String getDatabaseObjectName(String name) {
         return "\"" + name + "\"";
+    }
+
+    @Override
+    public boolean supportsUseDefaultSchema() {
+        return true;
+    }
+
+    @Override
+    public boolean supportsCreateDropSchema() {
+        return true;
+    }
+
+    @Override
+    public void createSchema(String schema) throws SQLException {
+        execute("CREATE SCHEMA " + getDatabaseObjectName(schema));
+    }
+
+    @Override
+    public void dropSchema(String schema) throws SQLException {
+        execute("DROP SCHEMA " + getDatabaseObjectName(schema));
+    }
+
+    @Override
+    public String getUseSchemaQuery(String schema) {
+        return "USE " + getDatabaseObjectName(schema);
+    }
+
+    @Override
+    public void useDefaultSchema(String schema) throws SQLException {
+        execute(getUseSchemaQuery(schema));
+        this.defaultSchema = schema;
+    }
+
+    public void createTable(Table table, boolean replace) throws SQLException {
+        if (!isTableExists(table) || replace) {
+            super.createTable(table, replace);
+        }
+    }
+
+    private boolean isTableExists(Table table) {
+        String query = getSelectTableQuery(table);
+        Statement statement = null;
+        ResultSet tables = null;
+        boolean exists = false;
+        try {
+            debug(query);
+            statement = dbConn.createStatement();
+            tables = statement.executeQuery(query);
+            exists = tables.next();
+        } catch (SQLException exception) {
+            error(exception, query);
+        } finally {
+            close(tables);
+            close(statement);
+        }
+        return exists;
+    }
+
+    protected void debug(String query) {
+        if (logger.isDebugEnabled()) {
+            logger.debug(query);
+        }
+    }
+
+    protected void error(SQLException exception, String query) {
+        if (logger.isEnabledFor(Level.ERROR)) {
+            logger.error("Query failed " + query + " with a message" + exception.getMessage());
+        }
+    }
+
+    protected void close(ResultSet resultSet) {
+        if (resultSet != null) {
+            try {
+                resultSet.close();
+            } catch (SQLException exception) {
+                if (logger.isEnabledFor(Level.ERROR)) {
+                    logger.warn("Unable to close result set", exception);
+                }
+            }
+        }
+    }
+
+    protected void close(Statement statement) {
+        if (statement != null) {
+            try {
+                statement.close();
+            } catch (SQLException exception) {
+                if (logger.isEnabledFor(Level.ERROR)) {
+                    logger.warn("Unable to close statement", exception);
+                }
+            }
+        }
+    }
+
+    protected String getSelectTableQuery(Table table) {
+        return "SELECT * FROM SYSTEM.TABLES WHERE SCHEMA='" + table.getSchema() + "' AND TABLENAME='" + table.getName() + "'";
+    }
+
+    public void dropTable(Table table) {
+        try {
+            execute("DROP TABLE IF EXISTS " + table.getSchema() + "." + table.getName());
+        } catch (SQLException e) {
+            if (logger.isDebugEnabled())
+                logger.debug("Unable to drop table; this may be expected", e);
+        }
     }
 }

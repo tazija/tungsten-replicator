@@ -22,25 +22,6 @@
 
 package com.continuent.tungsten.replicator.applier;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.sql.DatabaseMetaData;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.SQLWarning;
-import java.sql.Statement;
-import java.sql.Types;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.regex.Pattern;
-
-import org.apache.log4j.Logger;
-
 import com.continuent.tungsten.replicator.ReplicatorException;
 import com.continuent.tungsten.replicator.conf.FailurePolicy;
 import com.continuent.tungsten.replicator.conf.ReplicatorRuntime;
@@ -48,34 +29,24 @@ import com.continuent.tungsten.replicator.consistency.ConsistencyCheck;
 import com.continuent.tungsten.replicator.consistency.ConsistencyCheckFactory;
 import com.continuent.tungsten.replicator.consistency.ConsistencyException;
 import com.continuent.tungsten.replicator.consistency.ConsistencyTable;
-import com.continuent.tungsten.replicator.database.Column;
-import com.continuent.tungsten.replicator.database.Database;
-import com.continuent.tungsten.replicator.database.DatabaseFactory;
-import com.continuent.tungsten.replicator.database.MySQLOperationMatcher;
-import com.continuent.tungsten.replicator.database.SqlOperation;
-import com.continuent.tungsten.replicator.database.SqlOperationMatcher;
-import com.continuent.tungsten.replicator.database.Table;
-import com.continuent.tungsten.replicator.database.TableMetadataCache;
-import com.continuent.tungsten.replicator.dbms.DBMSData;
-import com.continuent.tungsten.replicator.dbms.LoadDataFileDelete;
-import com.continuent.tungsten.replicator.dbms.LoadDataFileFragment;
-import com.continuent.tungsten.replicator.dbms.LoadDataFileQuery;
-import com.continuent.tungsten.replicator.dbms.OneRowChange;
+import com.continuent.tungsten.replicator.database.*;
+import com.continuent.tungsten.replicator.dbms.*;
 import com.continuent.tungsten.replicator.dbms.OneRowChange.ColumnSpec;
-import com.continuent.tungsten.replicator.dbms.RowChangeData;
-import com.continuent.tungsten.replicator.dbms.RowIdData;
-import com.continuent.tungsten.replicator.dbms.StatementData;
-import com.continuent.tungsten.replicator.event.DBMSEmptyEvent;
-import com.continuent.tungsten.replicator.event.DBMSEvent;
-import com.continuent.tungsten.replicator.event.ReplDBMSEvent;
-import com.continuent.tungsten.replicator.event.ReplDBMSFilteredEvent;
-import com.continuent.tungsten.replicator.event.ReplDBMSHeader;
-import com.continuent.tungsten.replicator.event.ReplOption;
-import com.continuent.tungsten.replicator.event.ReplOptionParams;
+import com.continuent.tungsten.replicator.event.*;
 import com.continuent.tungsten.replicator.heartbeat.HeartbeatTable;
 import com.continuent.tungsten.replicator.plugin.PluginContext;
 import com.continuent.tungsten.replicator.thl.CommitSeqnoTable;
 import com.continuent.tungsten.replicator.thl.THLManagerCtrl;
+import org.apache.log4j.Logger;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.sql.*;
+import java.util.*;
+import java.util.regex.Pattern;
+
+import static java.lang.String.format;
 
 /**
  * Implements a DBMS implementation-independent applier. DBMS-specific features
@@ -554,7 +525,11 @@ public class JdbcApplier implements RawApplier
         logger.warn("No applier for rowid data specified");
     }
 
-    protected void applyStatementData(StatementData data)
+    protected void applyStatementData(StatementData data) throws ReplicatorException {
+        applyStatementData(data, false);
+    }
+
+    protected void applyStatementData(StatementData data, Boolean escapeProcessing)
             throws ReplicatorException
     {
         /*
@@ -582,7 +557,9 @@ public class JdbcApplier implements RawApplier
             else
                 statement.addBatch(new String(data.getQueryAsBytes()));
 
-            statement.setEscapeProcessing(false);
+            if (escapeProcessing != null) {
+                statement.setEscapeProcessing(escapeProcessing);
+            }
             try
             {
                 updateCount = statement.executeBatch();
@@ -1715,8 +1692,7 @@ public class JdbcApplier implements RawApplier
             // Create the database. Note that we need to see if we have a
             // privileged account as some slaves like Amazon RDS do not allow
             // superuser.
-            if (!context.isPrivilegedSlaveUpdate())
-            {
+            if (!context.isPrivilegedSlaveUpdate()) {
                 logger.info("Assuming non-privileged JDBC login for apply");
             }
             conn = DatabaseFactory.createDatabase(url, user, password,
@@ -1754,30 +1730,37 @@ public class JdbcApplier implements RawApplier
             tableMetadataCache = new TableMetadataCache(5000);
 
             // Set up heartbeat table.
-            heartbeatTable = new HeartbeatTable(
-                    context.getReplicatorSchemaName(),
-                    runtime.getTungstenTableType());
+            heartbeatTable = createHeartbeatTable(context);
             heartbeatTable.initializeHeartbeatTable(conn);
 
             // Create consistency table
-            Table consistency = ConsistencyTable
-                    .getConsistencyTableDefinition(metadataSchema);
-            conn.createTable(consistency, false);
+            Table consistencyTable = createConsistencyTable(context);
+            conn.createTable(consistencyTable, false);
 
             // Set up commit seqno table and fetch the last processed event.
-            commitSeqnoTable = new CommitSeqnoTable(conn,
-                    context.getReplicatorSchemaName(),
-                    runtime.getTungstenTableType(), false);
+            commitSeqnoTable = createCommitSeqnoTable(context);
             commitSeqnoTable.prepare(taskId);
             lastProcessedEvent = commitSeqnoTable.lastCommitSeqno(taskId);
 
         }
         catch (SQLException e)
         {
-            String message = String.format("Failed using url=%s, user=%s", url,
+            String message = format("Failed using url=%s, user=%s", url,
                     user);
             throw new ReplicatorException(message, e);
         }
+    }
+
+    protected Table createConsistencyTable(PluginContext context) {
+        return ConsistencyTable.getConsistencyTableDefinition(context.getReplicatorSchemaName());
+    }
+
+    protected HeartbeatTable createHeartbeatTable(PluginContext context) {
+        return new HeartbeatTable(context.getReplicatorSchemaName(), context.getTungstenTableType());
+    }
+
+    protected CommitSeqnoTable createCommitSeqnoTable(PluginContext context) throws SQLException {
+        return new CommitSeqnoTable(conn, context.getReplicatorSchemaName(), context.getTungstenTableType(), false);
     }
 
     /**

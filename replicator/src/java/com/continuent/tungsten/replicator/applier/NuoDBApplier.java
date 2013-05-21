@@ -28,19 +28,25 @@
 package com.continuent.tungsten.replicator.applier;
 
 import com.continuent.tungsten.replicator.ReplicatorException;
+import com.continuent.tungsten.replicator.database.JdbcURLHelper;
+import com.continuent.tungsten.replicator.dbms.StatementData;
 import com.continuent.tungsten.replicator.plugin.PluginContext;
 import org.apache.log4j.Logger;
+
+import java.util.Map;
 
 /**
  * @author Sergey Bushik
  */
 public class NuoDBApplier extends JdbcApplier {
 
+    public static final String PARAMETER_SCHEMA = "schema";
     private transient Logger logger = Logger.getLogger(getClass());
 
     private String host = "localhost";
     private Integer port;
     private String database;
+    private String schema;
     private String params;
 
     public void configure(PluginContext context) throws ReplicatorException {
@@ -54,17 +60,31 @@ public class NuoDBApplier extends JdbcApplier {
             }
             url.append("/");
             url.append(database);
-            url.append("?");
-            if (params != null) {
+            String params = createParams();
+            if (params != null && !params.isEmpty()) {
+                url.append("?");
                 url.append(params);
             }
-            setUrl(url.toString());
+            this.url = url.toString();
         } else {
             if (logger.isDebugEnabled()) {
                 logger.debug("Property url is already set, ignoring connection properties");
             }
         }
         super.configure(context);
+    }
+
+    protected String createParams() {
+        Map<String, Object> parameters = JdbcURLHelper.parseParams(params);
+        if (schema != null && !schema.isEmpty()) {
+            parameters.put(PARAMETER_SCHEMA, schema);
+        }
+        return JdbcURLHelper.mergeParams(parameters);
+    }
+
+    @Override
+    protected void applyStatementData(StatementData data) throws ReplicatorException {
+        applyStatementData(data, null);
     }
 
     public void setHost(String host) {
@@ -77,6 +97,10 @@ public class NuoDBApplier extends JdbcApplier {
 
     public void setDatabase(String database) {
         this.database = database;
+    }
+
+    public void setSchema(String schema) {
+        this.schema = schema;
     }
 
     public void setParams(String params) {

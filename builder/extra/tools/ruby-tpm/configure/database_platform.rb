@@ -196,7 +196,7 @@ class ConfigureDatabasePlatform
         @database_classes[o.get_uri_scheme()] = klass
       }
     end
-    
+
     @database_classes
   end
   

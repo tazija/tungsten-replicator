@@ -22,23 +22,13 @@
 
 package com.continuent.tungsten.replicator.thl;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Timestamp;
-import java.sql.Types;
-
-import org.apache.log4j.Logger;
-
 import com.continuent.tungsten.replicator.ReplicatorException;
-import com.continuent.tungsten.replicator.database.Column;
-import com.continuent.tungsten.replicator.database.Database;
-import com.continuent.tungsten.replicator.database.GreenplumDatabase;
-import com.continuent.tungsten.replicator.database.Key;
-import com.continuent.tungsten.replicator.database.Table;
+import com.continuent.tungsten.replicator.database.*;
 import com.continuent.tungsten.replicator.event.ReplDBMSHeader;
 import com.continuent.tungsten.replicator.event.ReplDBMSHeaderData;
+import org.apache.log4j.Logger;
+
+import java.sql.*;
 
 /**
  * Encapsulates definition and management of the trep_commit_seqno table, which
@@ -115,7 +105,8 @@ public class CommitSeqnoTable
         commitSeqnoTableTaskId = new Column("task_id", java.sql.Types.INTEGER);
         commitSeqnoTableSeqno = new Column("seqno", java.sql.Types.BIGINT);
         commitSeqnoTableFragno = new Column("fragno", Types.SMALLINT);
-        commitSeqnoTableLastFrag = new Column("last_frag", Types.CHAR, 1);
+        commitSeqnoTableLastFrag = database instanceof NuoDBDatabase ?
+                new Column("last_frag", Types.BOOLEAN) : new Column("last_frag", Types.CHAR, 1);
         commitSeqnoTableSourceId = new Column("source_id", Types.VARCHAR, 128);
         commitSeqnoTableEpochNumber = new Column("epoch_number", Types.BIGINT);
         commitSeqnoTableEventId = new Column("eventid", Types.VARCHAR, 128);
@@ -157,7 +148,6 @@ public class CommitSeqnoTable
             ((GreenplumDatabase) database).setDistributedBy(schema,
                     commitSeqnoTable.getName(), GREENPLUM_DISTRIBUTED_BY);
         }
-
     }
 
     // Set up prepared statements.
@@ -647,5 +637,101 @@ public class CommitSeqnoTable
             {
             }
         }
+    }
+
+    public Table getCommitSeqnoTable() {
+        return commitSeqnoTable;
+    }
+
+    public void setCommitSeqnoTable(Table commitSeqnoTable) {
+        this.commitSeqnoTable = commitSeqnoTable;
+    }
+
+    public Column getCommitSeqnoTableTaskId() {
+        return commitSeqnoTableTaskId;
+    }
+
+    public void setCommitSeqnoTableTaskId(Column commitSeqnoTableTaskId) {
+        this.commitSeqnoTableTaskId = commitSeqnoTableTaskId;
+    }
+
+    public Column getCommitSeqnoTableSeqno() {
+        return commitSeqnoTableSeqno;
+    }
+
+    public void setCommitSeqnoTableSeqno(Column commitSeqnoTableSeqno) {
+        this.commitSeqnoTableSeqno = commitSeqnoTableSeqno;
+    }
+
+    public Column getCommitSeqnoTableFragno() {
+        return commitSeqnoTableFragno;
+    }
+
+    public void setCommitSeqnoTableFragno(Column commitSeqnoTableFragno) {
+        this.commitSeqnoTableFragno = commitSeqnoTableFragno;
+    }
+
+    public Column getCommitSeqnoTableLastFrag() {
+        return commitSeqnoTableLastFrag;
+    }
+
+    public void setCommitSeqnoTableLastFrag(Column commitSeqnoTableLastFrag) {
+        this.commitSeqnoTableLastFrag = commitSeqnoTableLastFrag;
+    }
+
+    public Column getCommitSeqnoTableSourceId() {
+        return commitSeqnoTableSourceId;
+    }
+
+    public void setCommitSeqnoTableSourceId(Column commitSeqnoTableSourceId) {
+        this.commitSeqnoTableSourceId = commitSeqnoTableSourceId;
+    }
+
+    public Column getCommitSeqnoTableEpochNumber() {
+        return commitSeqnoTableEpochNumber;
+    }
+
+    public void setCommitSeqnoTableEpochNumber(Column commitSeqnoTableEpochNumber) {
+        this.commitSeqnoTableEpochNumber = commitSeqnoTableEpochNumber;
+    }
+
+    public Column getCommitSeqnoTableEventId() {
+        return commitSeqnoTableEventId;
+    }
+
+    public void setCommitSeqnoTableEventId(Column commitSeqnoTableEventId) {
+        this.commitSeqnoTableEventId = commitSeqnoTableEventId;
+    }
+
+    public Column getCommitSeqnoTableAppliedLatency() {
+        return commitSeqnoTableAppliedLatency;
+    }
+
+    public void setCommitSeqnoTableAppliedLatency(Column commitSeqnoTableAppliedLatency) {
+        this.commitSeqnoTableAppliedLatency = commitSeqnoTableAppliedLatency;
+    }
+
+    public Column getCommitSeqnoTableExtractTimestamp() {
+        return commitSeqnoTableExtractTimestamp;
+    }
+
+    public void setCommitSeqnoTableExtractTimestamp(Column commitSeqnoTableExtractTimestamp) {
+        this.commitSeqnoTableExtractTimestamp = commitSeqnoTableExtractTimestamp;
+    }
+
+    public Column getCommitSeqnoTableUpdateTimestamp() {
+        return commitSeqnoTableUpdateTimestamp;
+    }
+
+    public void setCommitSeqnoTableUpdateTimestamp(Column commitSeqnoTableUpdateTimestamp) {
+        this.commitSeqnoTableUpdateTimestamp = commitSeqnoTableUpdateTimestamp;
+    }
+
+    public Column getCommitSeqnoTableShardId() {
+        return commitSeqnoTableShardId;
+    }
+
+    public void setCommitSeqnoTableShardId(Column commitSeqnoTableShardId) {
+        this.commitSeqnoTableShardId = commitSeqnoTableShardId;
     }
 }

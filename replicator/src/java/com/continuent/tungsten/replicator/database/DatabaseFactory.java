@@ -23,7 +23,11 @@
 
 package com.continuent.tungsten.replicator.database;
 
+import org.apache.log4j.Logger;
+
 import java.sql.SQLException;
+
+import static java.lang.String.format;
 
 /**
  * This class defines a DatabaseFactory
@@ -32,10 +36,13 @@ import java.sql.SQLException;
  * @version 1.0
  */
 public class DatabaseFactory {
+
+    private static Logger logger = Logger.getLogger(DatabaseFactory.class);
+
     /**
      * Shorthand method to allocate a non-privileged connection with no vendor identification.
      */
-    static public Database createDatabase(String url, String user,
+    public static Database createDatabase(String url, String user,
                                           String password) throws SQLException {
         return createDatabase(url, user, password, false, null);
     }
@@ -43,7 +50,7 @@ public class DatabaseFactory {
     /**
      * Shorthand method to allocate a privileged connection without vendor identification.
      */
-    static public Database createDatabase(String url, String user,
+    public static Database createDatabase(String url, String user,
                                           String password, boolean privileged) throws SQLException {
         return createDatabase(url, user, password, privileged, null);
     }
@@ -52,16 +59,19 @@ public class DatabaseFactory {
      * Creates a new connection to a database.
      *
      * @param url        JDBC url
-     * @param user       Database loging
-     * @param password   Password for same
+     * @param user       database user to login as
+     * @param password   password to authenticate with
      * @param privileged If true, this account has SUPER/SYSDBA privileges. This may increase the capabilities of the
      *                   account.
      * @param vendor     Optional vendor string
      * @return A database connection instance
      * @throws SQLException Thrown if there is a failure creating the connection
      */
-    static public Database createDatabase(String url, String user,
+    public static Database createDatabase(String url, String user,
                                           String password, boolean privileged, String vendor) throws SQLException {
+        if (logger.isDebugEnabled()) {
+            logger.debug(format("Creating connection using %s URL", url));
+        }
         Database database;
         if (url.startsWith("jdbc:drizzle")) {
             database = new DrizzleDatabase();
@@ -81,18 +91,15 @@ public class DatabaseFactory {
             database = new GreenplumDatabase();
         } else if (url.startsWith("jdbc:vertica")) {
             database = new VerticaDatabase();
-        } else if (url.startsWith("com.nuodb")) {
+        } else if (url.startsWith("jdbc:com.nuodb")) {
             database = new NuoDBDatabase();
         } else {
             throw new RuntimeException("Unsupported URL type: " + url);
         }
-
         database.setUrl(url);
         database.setUser(user);
         database.setPassword(password);
         database.setPrivileged(privileged);
-
         return database;
     }
-
 }
