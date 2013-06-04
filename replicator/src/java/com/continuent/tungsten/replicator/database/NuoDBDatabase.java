@@ -44,6 +44,16 @@ public class NuoDBDatabase extends AbstractDatabase {
 
     private Logger logger = Logger.getLogger(getClass());
 
+    private static final String GET_COLUMNS_QUERY =
+            "SELECT NULL AS TABLE_CAT, SCHEMA AS TABLE_SCHEM, TABLENAME AS TABLE_NAME, FIELD AS COLUMN_NAME, " +
+            "JDBCTYPE AS DATA_TYPE, NAME AS TYPE_NAME, LENGTH AS COLUMN_SIZE, DEFAULTVALUE AS COLUMN_DEF, " +
+            "SCALE AS DECIMAL_DIGITS, REMARKS, FIELDPOSITION AS ORDINAL_POSITION, " +
+            "(CASE WHEN FLAGS=0 THEN 'YES' ELSE 'NO' END) AS IS_NULLABLE, " +
+            "(CASE WHEN FLAGS=0 THEN 1 ELSE 0 END) AS NULLABLE, " +
+            "(CASE WHEN GENERATOR_SEQUENCE!='' THEN 'YES' ELSE 'NO' END) AS IS_AUTOINCREMENT " +
+            "FROM SYSTEM.FIELDS AS F " +
+            "INNER JOIN SYSTEM.DATATYPES AS D ON F.DATATYPE = D.ID " +
+            "WHERE F.SCHEMA=? AND F.TABLENAME=? ORDER BY F.FIELDPOSITION ASC";
 
     public NuoDBDatabase() throws SQLException {
         dbms = DBMS.NUODB;
@@ -209,7 +219,11 @@ public class NuoDBDatabase extends AbstractDatabase {
     @Override
     public ResultSet getColumnsResultSet(DatabaseMetaData databaseMetaData, String schemaName,
                                          String tableName) throws SQLException {
-        return databaseMetaData.getColumns(null, schemaName, tableName, null);
+        Connection connection = databaseMetaData.getConnection();
+        PreparedStatement statement = connection.prepareStatement(GET_COLUMNS_QUERY);
+        statement.setString(1, schemaName);
+        statement.setString(2, tableName);
+        return statement.executeQuery();
     }
 
     @Override

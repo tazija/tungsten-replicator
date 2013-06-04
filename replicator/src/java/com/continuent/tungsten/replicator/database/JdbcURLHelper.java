@@ -39,33 +39,35 @@ public class JdbcURLHelper {
     public static final String PAIR_SEPARATOR = "&";
     public static final String VALUE_SEPARATOR = "=";
 
-    public static Map<String, Object> parseParams(String pairs) {
-        return parseParams(pairs, PAIR_SEPARATOR, VALUE_SEPARATOR);
+    public static Map<String, Object> parseParameters(String pairs) {
+        return parseParameters(pairs, PAIR_SEPARATOR, VALUE_SEPARATOR);
     }
 
-    public static Map<String, Object> parseParams(String pairs, String pairSeparator, String valueSeparator) {
+    public static Map<String, Object> parseParameters(String pairs,
+                                                      String pairSeparator, String valueSeparator) {
         Map<String, Object> parameters = new LinkedHashMap<String, Object>();
-        parseParams(parameters, pairs, pairSeparator, valueSeparator);
+        parseParameters(parameters, pairs, pairSeparator, valueSeparator);
         return parameters;
     }
 
-    public static void parseParams(Map<String, Object> params, String pairs, String pairSeparator,
-                                   String valueSeparator) {
+    public static void parseParameters(Map<String, Object> parameters, String pairs,
+                                       String pairSeparator, String valueSeparator) {
         if (pairs != null) {
             for (String pair : pairs.split(pairSeparator)) {
                 String[] values = pair.split(valueSeparator);
-                params.put(values[0], values.length > 1 ? values[1] : null);
+                parameters.put(values[0], values.length > 1 ? values[1] : null);
             }
         }
     }
 
-    public static String mergeParams(Map<String, Object> parameters) {
-        return mergeParams(parameters, PAIR_SEPARATOR, VALUE_SEPARATOR);
+    public static String mergeParameters(Map<String, Object> parameters) {
+        return mergeParameters(parameters, PAIR_SEPARATOR, VALUE_SEPARATOR);
     }
 
-    public static String mergeParams(Map<String, Object> params, String pairSeparator, String valueSeparator) {
+    public static String mergeParameters(Map<String, Object> parameters,
+                                         String pairSeparator, String valueSeparator) {
         StringBuilder pairs = new StringBuilder();
-        for (Iterator<Map.Entry<String, Object>> iterator = params.entrySet().iterator(); iterator.hasNext(); ) {
+        for (Iterator<Map.Entry<String, Object>> iterator = parameters.entrySet().iterator(); iterator.hasNext(); ) {
             Map.Entry<String, Object> pair = iterator.next();
             pairs.append(pair.getKey());
             pairs.append(valueSeparator);

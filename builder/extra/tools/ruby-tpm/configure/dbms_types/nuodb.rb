@@ -61,10 +61,6 @@ class NuoDBDatabasePlatform < ConfigureDatabasePlatform
     raise "NuoDB extractor is not yet implemented"
   end
 
-  def get_applier_filters()
-    []
-  end
-
   def get_default_master_log_directory
     nil
   end

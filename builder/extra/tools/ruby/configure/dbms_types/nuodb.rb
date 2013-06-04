@@ -10,6 +10,18 @@ class NuoDBDatabasePlatform < ConfigureDatabasePlatform
     super(host, port, username, password, config, ds_alias)
   end
 
+  def enable_applier_filter_pkey?
+    false
+  end
+
+  def enable_applier_filter_bidiSlave?
+    false
+  end
+
+  def enable_applier_filter_colnames?
+    false
+  end
+
   def get_uri_scheme
     DBMS_NUODB
   end
@@ -24,17 +36,6 @@ class NuoDBDatabasePlatform < ConfigureDatabasePlatform
 
   def get_database
     @config.getProperty(REPL_NUODB_DATABASE)
-  end
-
-  def get_thl_uri
-    "jdbc:com.nuodb://${replicator.global.db.host}:${replicator.global.db.port}/${replicator.applier.dbms.database}?schema=${replicator.schema}"
-  end
-
-  def check_thl_schema(thl_schema)
-    schemas = run("SHOW SCHEMA \"#{thl_schema}\"")
-    if schemas != ""
-      raise "THL schema #{thl_schema} already exists at #{get_connection_summary()}"
-    end
   end
 
   def get_schema
@@ -56,6 +57,10 @@ class NuoDBDatabasePlatform < ConfigureDatabasePlatform
     end
   end
 
+  def get_thl_uri
+    nil
+  end
+
   def get_default_port
     "48004"
   end
@@ -66,10 +71,6 @@ class NuoDBDatabasePlatform < ConfigureDatabasePlatform
 
   def get_extractor_template
     raise "NuoDB extractor is not yet implemented"
-  end
-
-  def get_applier_filters()
-    []
   end
 
   def get_default_master_log_directory

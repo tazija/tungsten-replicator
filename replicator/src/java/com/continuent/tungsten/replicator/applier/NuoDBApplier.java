@@ -28,12 +28,14 @@
 package com.continuent.tungsten.replicator.applier;
 
 import com.continuent.tungsten.replicator.ReplicatorException;
-import com.continuent.tungsten.replicator.database.JdbcURLHelper;
 import com.continuent.tungsten.replicator.dbms.StatementData;
 import com.continuent.tungsten.replicator.plugin.PluginContext;
 import org.apache.log4j.Logger;
 
 import java.util.Map;
+
+import static com.continuent.tungsten.replicator.database.JdbcURLHelper.mergeParameters;
+import static com.continuent.tungsten.replicator.database.JdbcURLHelper.parseParameters;
 
 /**
  * @author Sergey Bushik
@@ -47,7 +49,7 @@ public class NuoDBApplier extends JdbcApplier {
     private Integer port;
     private String database;
     private String schema;
-    private String params;
+    private String parameters;
 
     public void configure(PluginContext context) throws ReplicatorException {
         if (url == null) {
@@ -60,10 +62,10 @@ public class NuoDBApplier extends JdbcApplier {
             }
             url.append("/");
             url.append(database);
-            String params = createParams();
-            if (params != null && !params.isEmpty()) {
+            String parameters = createParameters();
+            if (parameters != null && !parameters.isEmpty()) {
                 url.append("?");
-                url.append(params);
+                url.append(parameters);
             }
             this.url = url.toString();
         } else {
@@ -74,12 +76,12 @@ public class NuoDBApplier extends JdbcApplier {
         super.configure(context);
     }
 
-    protected String createParams() {
-        Map<String, Object> parameters = JdbcURLHelper.parseParams(params);
+    protected String createParameters() {
+        Map<String, Object> parameters = parseParameters(this.parameters);
         if (schema != null && !schema.isEmpty()) {
             parameters.put(PARAMETER_SCHEMA, schema);
         }
-        return JdbcURLHelper.mergeParams(parameters);
+        return mergeParameters(parameters);
     }
 
     @Override
@@ -103,7 +105,7 @@ public class NuoDBApplier extends JdbcApplier {
         this.schema = schema;
     }
 
-    public void setParams(String params) {
-        this.params = params;
+    public void setParameters(String parameters) {
+        this.parameters = parameters;
     }
 }
