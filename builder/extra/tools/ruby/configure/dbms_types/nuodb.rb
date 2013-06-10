@@ -58,7 +58,7 @@ class NuoDBDatabasePlatform < ConfigureDatabasePlatform
   end
 
   def get_thl_uri
-    nil
+    "jdbc:com.nuodb://${replicator.global.db.host}:${replicator.global.db.port}/${replicator.applier.dbms.database}"
   end
 
   def get_default_port

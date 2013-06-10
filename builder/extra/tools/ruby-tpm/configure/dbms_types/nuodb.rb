@@ -10,6 +10,18 @@ class NuoDBDatabasePlatform < ConfigureDatabasePlatform
     super(host, port, username, password, config, ds_alias)
   end
 
+  def enable_applier_filter_pkey?
+    false
+  end
+
+  def enable_applier_filter_bidiSlave?
+    false
+  end
+
+  def enable_applier_filter_colnames?
+    false
+  end
+
   def get_uri_scheme
     DBMS_NUODB
   end
@@ -46,7 +58,7 @@ class NuoDBDatabasePlatform < ConfigureDatabasePlatform
   end
 
   def get_thl_uri
-    nil
+    "jdbc:com.nuodb://${replicator.global.db.host}:${replicator.global.db.port}/${replicator.applier.dbms.database}"
   end
 
   def get_default_port
