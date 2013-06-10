@@ -10,18 +10,6 @@ class NuoDBDatabasePlatform < ConfigureDatabasePlatform
     super(host, port, username, password, config, ds_alias)
   end
 
-  def enable_applier_filter_pkey?
-    false
-  end
-
-  def enable_applier_filter_bidiSlave?
-    false
-  end
-
-  def enable_applier_filter_colnames?
-    false
-  end
-
   def get_uri_scheme
     DBMS_NUODB
   end
